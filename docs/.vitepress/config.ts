@@ -1,14 +1,19 @@
 import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
+const opDescription = '一个包含通用组件的库'
+const opTitle = 'Open-Design'
+
+
 export default defineConfig({
-  title: "Open-Design",
-  description: "A VitePress Site",
+  title: opTitle,
+  description: opDescription,
+  head: [['link']]
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
-      { text: 'Home', link: '/' },
-      { text: 'Examples', link: '/markdown-examples' }
+      { text: '主页', link: '/' },
+      { text: '组件', link: '/markdown-examples' }
     ],
 
     sidebar: [
