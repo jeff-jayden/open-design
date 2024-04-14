@@ -1,12 +1,10 @@
-import { fileURLToPath, URL } from 'node:url'
+import { fileURLToPath, URL } from "node:url";
 
-import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
-import VueDevTools from 'vite-plugin-vue-devtools'
-import {resolve} from "node:path";
-import VueMacros from 'unplugin-vue-macros'
-import vueJsx from '@vitejs/plugin-vue-jsx'
-import dts from "vite-plugin-dts";
+import { defineConfig } from "vite";
+import vue from "@vitejs/plugin-vue";
+import vueJsx from "@vitejs/plugin-vue-jsx";
+import VueMacros from "unplugin-vue-macros";
+import { resolve } from "node:path";
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -17,10 +15,6 @@ export default defineConfig({
         vueJsx: vueJsx(), // if needed
       },
     }),
-    VueDevTools(),
-    dts({
-      tsconfigPath: "./tsconfig.build.json",
-    }),
   ],
   resolve: {
     alias: {
@@ -28,18 +22,15 @@ export default defineConfig({
     },
   },
   build: {
+    outDir: "dist/umd",
     lib: {
       entry: resolve(__dirname, "src/index.ts"),
       name: "open-design",
       fileName: "open-design",
+      formats: ["umd"],
     },
     rollupOptions: {
-      external: [
-        "vue",
-        "@fortawesome/fontawesome-svg-core",
-        "@fortawesome/free-solid-svg-icons",
-        "@fortawesome/vue-fontawesome",
-      ],
+      external: ["vue"],
       output: {
         exports: "named",
         globals: {
@@ -53,5 +44,5 @@ export default defineConfig({
         },
       },
     },
-  }
-})
+  },
+});

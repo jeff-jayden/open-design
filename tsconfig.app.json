@@ -1,8 +1,9 @@
 {
-  "extends": "@vue/tsconfig/tsconfig.dom.json",
-  "include": ["env.d.ts", "src/**/*", "src/**/*.vue"],
+  "include": ["env.d.ts", "src/**/*", "src/**/*.vue", "postcss.config.cjs"],
   "exclude": ["src/**/__tests__/*"],
   "compilerOptions": {
+    "jsx": "preserve",
+    "jsxImportSource": "vue",
     "composite": true,
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
 
