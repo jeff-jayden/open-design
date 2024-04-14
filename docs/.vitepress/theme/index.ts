@@ -19,7 +19,6 @@ export default {
     })
   },
   enhanceApp({ app, router, siteData }) {
-    // ...
     app.component('demo-preview', ElementPlusContainer)
   }
 } satisfies Theme
