@@ -12,7 +12,7 @@ hero:
       link: /guide/quickstart
     - theme: alt
       text: 在GitHub上查看
-      link: /api-examples
+      link: https://github.com/jeff-jayden/open-design
 
 features:
   - title: Vue3组件库 💡
