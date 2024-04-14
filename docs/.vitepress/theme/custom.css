@@ -1,0 +1,39 @@
+:root {
+    --vp-c-brand: var(--vk-color-primary);
+    --vp-c-brand-light: var(--vk-color-primary-light-3);
+    --vp-c-brand-lighter: var(--vk-color-primary-light-5);
+    --vp-c-brand-dark: var(--vk-color-primary-dark-2);
+    --vp-c-brand-darker: #265F99;
+  
+    --component-preview-bg: var(--vp-code-block-bg);
+    --component-preview-soft: var(--vp-code-block-bg-light);
+  }
+  
+  body {
+    color: var(--vp-c-text-1);
+  }
+  h1, h2, h3, h4, h5, h6, p {
+    color: var(--vp-c-text-1);
+  }
+  
+
+  .image-container {
+    position: relative; /* 设置相对定位 */
+  }
+  
+  .image-container .VPImage {
+    position: absolute; /* 设置绝对定位 */
+    top: 50%; /* 位于父元素的垂直中心 */
+    left: 50%; /* 位于父元素的水平中心 */
+    transform: translate(-50%, -50%); /* 平移，以使其中心与父元素的中心对齐 */
+    animation: rotate 10s linear infinite; /* 设置旋转动画 */
+  }
+
+  @keyframes rotate {
+    from {
+      transform: translate(-50%, -50%) rotate(0deg); /* 初始状态 */
+    }
+    to {
+      transform: translate(-50%, -50%) rotate(360deg); /* 最终状态 */
+    }
+  }
