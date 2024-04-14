@@ -4,7 +4,6 @@ import {defineConfig} from 'vitepress'
 const opDescription = '一个包含通用组件的库'
 const opTitle = 'Open-Design'
 
-
 export default defineConfig({
     title: opTitle,
     description: opDescription,
@@ -42,6 +41,14 @@ export default defineConfig({
         editLink: {
             pattern: 'https://github.com/jeff-jayden/open-design.git',
             text: '为此页提供修改建议'
+        },
+
+        lastUpdated: {
+            text: 'Last updated',
+            formatOptions: {
+                dateStyle: 'short',
+                timeStyle: 'medium'
+            }
         },
 
         nav: [
