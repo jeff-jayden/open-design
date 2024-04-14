@@ -1,73 +1,73 @@
 :root {
   /* colors */
-  --snow-color-white: #ffffff;
-  --snow-color-black: #000000;
+  --open-color-white: #ffffff;
+  --open-color-black: #000000;
   --colors: (
     primary: #409eff,
     success: #67c23a,
     warning: #e6a23c,
     danger: #f56c6c,
-    info: #909399
+    info: #909399,
   );
 
   @each $val, $color in var(--colors) {
-    --snow-color-$(val): $(color);
+    --open-color-$(val): $(color);
     @for $i from 3 to 9 by 2 {
-      --snow-color-$(val)-light-$(i): mix(#fff, $(color), .$(i))
+      --open-color-$(val)-light-$(i): mix(#fff, $(color), .$(i))
     }
-    --snow-color-$(val)-light-8: mix(#fff, $(color), .8);
-    --snow-color-$(val)-dark-2: mix(#000, $(color), .2);
+    --open-color-$(val)-light-8: mix(#fff, $(color), .8);
+    --open-color-$(val)-dark-2: mix(#000, $(color), .2);
   }
 
-  --snow-bg-color: #ffffff;
-  --snow-bg-color-page: #f2f3f5;
-  --snow-bg-color-overlay: #ffffff;
-  --snow-text-color-primary: #303133;
-  --snow-text-color-regular: #606266;
-  --snow-text-color-secondary: #909399;
-  --snow-text-color-placeholder: #a8abb2;
-  --snow-text-color-disabled: #c0c4cc;
-  --snow-border-color: #dcdfe6;
-  --snow-border-color-light: #e4e7ed;
-  --snow-border-color-lighter: #ebeef5;
-  --snow-border-color-extra-light: #f2f6fc;
-  --snow-border-color-dark: #d4d7de;
-  --snow-border-color-darker: #cdd0d6;
-  --snow-fill-color: #f0f2f5;
-  --snow-fill-color-light: #f5f7fa;
-  --snow-fill-color-lighter: #fafafa;
-  --snow-fill-color-extra-light: #fafcff;
-  --snow-fill-color-dark: #ebedf0;
-  --snow-fill-color-darker: #e6e8eb;
-  --snow-fill-color-blank: #ffffff;
+  --open-bg-color: #ffffff;
+  --open-bg-color-page: #f2f3f5;
+  --open-bg-color-overlay: #ffffff;
+  --open-text-color-primary: #303133;
+  --open-text-color-regular: #606266;
+  --open-text-color-secondary: #909399;
+  --open-text-color-placeholder: #a8abb2;
+  --open-text-color-disabled: #c0c4cc;
+  --open-border-color: #dcdfe6;
+  --open-border-color-light: #e4e7ed;
+  --open-border-color-lighter: #ebeef5;
+  --open-border-color-extra-light: #f2f6fc;
+  --open-border-color-dark: #d4d7de;
+  --open-border-color-darker: #cdd0d6;
+  --open-fill-color: #f0f2f5;
+  --open-fill-color-light: #f5f7fa;
+  --open-fill-color-lighter: #fafafa;
+  --open-fill-color-extra-light: #fafcff;
+  --open-fill-color-dark: #ebedf0;
+  --open-fill-color-darker: #e6e8eb;
+  --open-fill-color-blank: #ffffff;
 
   /* border */
-  --snow-border-width: 1px;
-  --snow-border-style: solid;
-  --snow-border-color-hover: var(--snow-text-color-disabled);
-  --snow-border: var(--snow-border-width) var(--snow-border-style) var(--snow-border-color);
-  --snow-border-radius-base: 4px;
-  --snow-border-radius-small: 2px;
-  --snow-border-radius-round: 20px;
-  --snow-border-radius-circle: 100%;
+  --open-border-width: 1px;
+  --open-border-style: solid;
+  --open-border-color-hover: var(--open-text-color-disabled);
+  --open-border: var(--open-border-width) var(--open-border-style) var(--open-border-color);
+  --open-border-radius-base: 4px;
+  --open-border-radius-small: 2px;
+  --open-border-radius-round: 20px;
+  --open-border-radius-circle: 100%;
 
   /*font*/
-  --snow-font-size-extra-large: 20px;
-  --snow-font-size-large: 18px;
-  --snow-font-size-medium: 16px;
-  --snow-font-size-base: 14px;
-  --snow-font-size-small: 13px;
-  --snow-font-size-extra-small: 12px;
-  --snow-font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "\5fae\8f6f\96c5\9ed1", Arial, sans-serif;
-  --snow-font-weight-primary: 500;
+  --open-font-size-extra-large: 20px;
+  --open-font-size-large: 18px;
+  --open-font-size-medium: 16px;
+  --open-font-size-base: 14px;
+  --open-font-size-small: 13px;
+  --open-font-size-extra-small: 12px;
+  --open-font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "\5fae\8f6f\96c5\9ed1", Arial, sans-serif;
+  --open-font-weight-primary: 500;
 
   /*disabled*/
-  --snow-disabled-bg-color: var(--snow-fill-color-light);
-  --snow-disabled-text-color: var(--snow-text-color-placeholder);
-  --snow-disabled-border-color: var(--snow-border-color-light);
-  
+  --open-disabled-bg-color: var(--open-fill-color-light);
+  --open-disabled-text-color: var(--open-text-color-placeholder);
+  --open-disabled-border-color: var(--open-border-color-light);
+
   /*animation*/
-  --snow-transition-duration: .3s;
-  --snow-transition-duration-fast: .2s;
+  --open-transition-duration: .3s;
+  --open-transition-duration-fast: .2s;
 
 }
