@@ -1,4 +1,9 @@
 import {defineConfig} from 'vitepress'
+import {
+    containerPreview,
+    componentPreview,
+} from "@vitepress-demo-preview/plugin";
+import {fileURLToPath, URL} from "node:url";
 
 // https://vitepress.dev/reference/site-config
 const opDescription = '一个包含通用组件的库'
@@ -11,6 +16,21 @@ export default defineConfig({
 
     head: [['link', {rel: "icon", href: "/snowflake.png"}]],
 
+    vite: {
+        plugins: [],
+        resolve: {
+            alias: {
+                "@": fileURLToPath(new URL("../../src", import.meta.url)),
+            },
+        },
+    },
+
+    markdown: {
+        config(md) {
+            md.use(containerPreview);
+            md.use(componentPreview);
+        },
+    },
     themeConfig: {
         // https://vitepress.dev/reference/default-theme-config
         logo: '/snowflake.png',
@@ -67,6 +87,16 @@ export default defineConfig({
                     ],
                 },
             ],
+            '/components/': [
+                {
+                    text: '组件总览',
+                    items: [
+                        {
+                            text: '组件总览', link: '/components/index'
+                        }
+                    ]
+                }
+            ]
         },
 
         socialLinks: [
