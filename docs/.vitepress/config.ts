@@ -1,4 +1,5 @@
 import {defineConfig} from 'vitepress'
+import minimist from "minimist";
 import {
     containerPreview,
     componentPreview,
@@ -8,8 +9,12 @@ import {fileURLToPath, URL} from "node:url";
 // https://vitepress.dev/reference/site-config
 const opDescription = '一个包含通用组件的库'
 const opTitle = 'Open-Design'
+const argv = minimist(process.argv.slice(2));
+const build = argv.build || false;
 
+// @ts-ignore
 export default defineConfig({
+    base: build ? '/open-design/' : '/',
     title: opTitle,
     description: opDescription,
     lastUpdated: true,
