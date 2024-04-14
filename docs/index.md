@@ -15,7 +15,7 @@ hero:
   actions:
     - theme: brand
       text: 快速开始
-      link: /guide/quickstart
+      link: /guide/install
     - theme: alt
       text: 在GitHub上查看
       link: https://github.com/jeff-jayden/open-design
