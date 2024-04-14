@@ -1,8 +1,8 @@
 {
-  "name": "@qinloong/snow-sky",
+  "name": "@hyh/open-design",
   "version": "1.0.0",
   "type": "module",
-  "author": "qinloong",
+  "author": "hyh",
   "license": "MIT",
   "keywords": [
     "component",
@@ -21,13 +21,13 @@
   "sideEffects": [
     "dist/index.css"
   ],
-  "main": "./dist/umd/snow-sky.umd.cjs",
-  "module": "./dist/es/snow-sky.js",
+  "main": "./dist/umd/open-design.umd.cjs",
+  "module": "./dist/es/open-design.js",
   "types": "./dist/types/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/es/snow-sky.js",
-      "require": "./dist/umd/snow-sky.umd.cjs",
+      "import": "./dist/es/open-design.js",
+      "require": "./dist/umd/open-design.umd.cjs",
       "types": "./dist/types/index.d.ts"
     },
     "./dist/": {
