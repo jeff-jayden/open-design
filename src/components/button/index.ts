@@ -1,9 +1,9 @@
-import Button from "@/components/button/button.vue";
+import OpenButton from "@/components/button/button.vue";
 import type {App} from "vue";
 
-Button.install = (app: App) => {
-    app.component(Button.name, Button)
+OpenButton.install = (app: App) => {
+    app.component(OpenButton.name, OpenButton)
 }
 
-export default Button
+export default OpenButton
 export * from './types'

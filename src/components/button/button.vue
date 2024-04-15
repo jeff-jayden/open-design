@@ -15,8 +15,8 @@
     :autofocus="autofocus"
     :type="nativeType"
   >
-    <Icon icon="spinner" spin v-if="loading"></Icon>
-    <Icon :icon="icon" v-if="icon"></Icon>
+    <OpenIcon icon="spinner" spin v-if="loading"></OpenIcon>
+    <OpenIcon :icon="icon" v-if="icon"></OpenIcon>
     <span>
       <slot/>
     </span>
@@ -24,8 +24,8 @@
 </template>
 
 <script setup lang="ts">
-import Icon from '@/components/icon/icon.vue'
-import {ButtonProps} from "@/components/button/types";
+import OpenIcon from '@/components/icon/icon.vue'
+import type {ButtonProps} from "@/components/button/types";
 import {ref} from "vue";
 
 defineOptions({

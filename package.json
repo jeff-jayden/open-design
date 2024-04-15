@@ -1,6 +1,6 @@
 {
-  "name": "@hyh/open-design",
-  "version": "1.0.1",
+  "name": "@jeff-jayden/open-design",
+  "version": "1.0.3",
   "type": "module",
   "author": "hyh",
   "license": "MIT",
@@ -54,7 +54,9 @@
     "@fortawesome/fontawesome-svg-core": "^6.5.1",
     "@fortawesome/free-solid-svg-icons": "^6.5.1",
     "@fortawesome/vue-fontawesome": "^3.0.6",
+    "@jeff-jayden/open-design": "^1.0.3",
     "@popperjs/core": "^2.11.8",
+    "@qinloong/snow-sky": "^1.0.0",
     "async-validator": "^4.2.5",
     "axios": "^1.3.4",
     "lodash-es": "^4.17.21"

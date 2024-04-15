@@ -1,9 +1,9 @@
 import type {App} from 'vue'
-import Icon from './icon.vue'
+import OpenIcon from './icon.vue'
 
-Icon.install = (app: App) => {
-    app.component(Icon.name, Icon)
+OpenIcon.install = (app: App) => {
+    app.component(OpenIcon.name, OpenIcon)
 }
 
-export default Icon
+export default OpenIcon
 export * from './types'
