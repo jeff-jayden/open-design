@@ -7,8 +7,8 @@
 <script setup lang="ts">
 import {FontAwesomeIcon} from '@fortawesome/vue-fontawesome'
 import type {IconProps} from './types'
-import {omit} from 'lodash-es';
-import {computed} from 'vue';
+import {omit} from 'lodash-es'
+import {computed} from 'vue'
 
 defineOptions({
   name: 'OpenIcon',

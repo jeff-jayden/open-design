@@ -24,7 +24,7 @@
 </template>
 
 <script setup lang="ts">
-import OpenIcon from '@/components/icon/icon.vue'
+import OpenIcon from '../icon/icon.vue'
 import type {ButtonProps} from "@/components/button/types";
 import {ref} from "vue";
 
