@@ -1,44 +1,44 @@
-<script setup>
-import Button from '@/components/button/button.vue'
-import Icon from '@/components/icon/icon.vue'
-</script>
 <template>
 <div class="basic block">
-  <Button> hello </Button>
-  <Button type="primary"> Primary </Button>
-  <Button type="success"> Success </Button>
-  <Button type="warning"> Warning </Button>
-  <Button type="danger"> Danger </Button>
-  <Button type="info"> Info </Button>
+  <OpenButton> Default </OpenButton>
+  <OpenButton type="primary"> Primary </OpenButton>
+  <OpenButton type="info"> Info </OpenButton>
+  <OpenButton type="success"> Success </OpenButton>
+  <OpenButton type="warning"> Warning </OpenButton>
+  <OpenButton type="danger"> Danger </OpenButton>
 </div>
 
 <div class="plain block">
-  <Button plain> hello </Button>
-  <Button type="primary" plain> Primary </Button>
-  <Button type="success" plain> Success </Button>
-  <Button type="warning" plain> Warning </Button>
-  <Button type="danger" plain> Danger </Button>
-  <Button type="info" plain> Info </Button>
+  <OpenButton plain> Plain </OpenButton>
+  <OpenButton type="primary" plain> Primary </OpenButton>
+  <OpenButton type="info" plain> Info </OpenButton>
+  <OpenButton type="success" plain> Success </OpenButton>
+  <OpenButton type="warning" plain> Warning </OpenButton>
+  <OpenButton type="danger" plain> Danger </OpenButton>
 </div>
 
 <div class="round block">
-  <Button round> hello </Button>
-  <Button type="primary" round> Primary </Button>
-  <Button type="success" round> Success </Button>
-  <Button type="warning" round> Warning </Button>
-  <Button type="danger" round> Danger </Button>
-  <Button type="info" round> Info </Button>
+  <OpenButton round> Round </OpenButton>
+  <OpenButton type="primary" round> Primary </OpenButton>
+  <OpenButton type="info" round> Info </OpenButton>
+  <OpenButton type="success" round> Success </OpenButton>
+  <OpenButton type="warning" round> Warning </OpenButton>
+  <OpenButton type="danger" round> Danger </OpenButton>
 </div>
 
 <div class="circle block">
-  <Button circle> <Icon icon="star" /> </Button>
-  <Button type="primary" circle> <Icon icon="star" /> </Button>
-  <Button type="success" circle> <Icon icon="star" /> </Button>
-  <Button type="warning" circle> <Icon icon="star" /> </Button>
-  <Button type="danger" circle> <Icon icon="star" /> </Button>
-  <Button type="info" circle> <Icon icon="star" /> </Button>
+  <OpenButton circle> <OpenIcon icon="magnifying-glass" /> </OpenButton>
+  <OpenButton type="primary" circle> <OpenIcon icon="magnifying-glass" /> </OpenButton>
+  <OpenButton type="success" circle> <OpenIcon icon="magnifying-glass" /> </OpenButton>
+  <OpenButton type="warning" circle> <OpenIcon icon="magnifying-glass" /> </OpenButton>
+  <OpenButton type="danger" circle> <OpenIcon icon="magnifying-glass" /> </OpenButton>
+  <OpenButton type="info" circle> <OpenIcon icon="magnifying-glass" /> </OpenButton>
 </div>
 </template>
+<script setup>
+import OpenButton from '@/components/button/button.vue'
+import OpenIcon from '@/components/icon/icon.vue'
+</script>
 <style>
 .block {
   margin-bottom: 10px;
