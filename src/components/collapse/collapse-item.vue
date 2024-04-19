@@ -9,7 +9,9 @@
 </template>
 
 <script setup lang="ts">
+import {ref} from "vue";
 
+const disabled = ref(true)
 </script>
 
 <style scoped>
