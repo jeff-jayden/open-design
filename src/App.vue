@@ -3,10 +3,12 @@
   <OpenButton type="danger" :loading="false" icon="arrow-down">Primary</OpenButton>
   <Button plain>Plain Button</Button>
   
-  <Collapse :model-value="value">
+  <Collapse :model-value="value" @change="fn" accordion>
     <collapse-item name="1" title="Consistency" disabled>
-      Consistent with real life: in line with the process and logic of real life, and comply with languages and habits that the users are used to;
-      Consistent within interface: all elements should be consistent, such as: design style, icons and texts, position of elements, etc.
+      Consistent with real life: in line with the process and logic of real life, and comply with languages and habits
+      that the users are used to;
+      Consistent within interface: all elements should be consistent, such as: design style, icons and texts, position
+      of elements, etc.
     </collapse-item>
     <collapse-item name="2" title="Feedback">
       dsfasdfds
@@ -27,11 +29,22 @@ import Collapse from "@/components/collapse/collapse.vue";
 import CollapseItem from "@/components/collapse/collapse-item.vue";
 // import {Collapse, CollapseItem} from '@qinloong/snow-sky'
 
+const value = ref(['1', '2'])
+
+
 onMounted(() => {
   console.log('aaaa' + import.meta.url)
+  setTimeout(() => {
+    value.value = ['2', '3']
+    console.log(value.value)
+    console.log(111)
+  },1000)
 })
 
-const value = ref(['1','2'])
+
+const fn = (val: any) => {
+  console.log(val)
+}
 
 </script>
 
