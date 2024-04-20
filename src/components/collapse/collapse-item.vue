@@ -1,6 +1,9 @@
 <template>
   <div
       class="open-collapse-item"
+      :class="{
+          'is-disabled': disabled
+      }"
   >
     <div
         @click="handleClick"
@@ -38,6 +41,9 @@ defineOptions({
 
 const handleClick = () => {
   console.log(props.name)
+  if(props.disabled){
+    return
+  }
   collapseContext?.handleItemClick(props.name)
 }
 

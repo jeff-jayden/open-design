@@ -17,8 +17,9 @@ defineOptions({
   name: 'OpenCollapse'
 })
 
-watch(props.modelValue, () => {
+watch(() => props.modelValue, () => {
   activeNames.value = props.modelValue
+  console.log('activeNames.value: ' + activeNames.value)
 })
 
 //解决item点击时做的事情
@@ -30,7 +31,7 @@ const handleItemClick = (item: NameType) => {
     _activeNames = [activeNames.value[0] === item ? '' : item]
     activeNames.value = _activeNames
   } else {
-    console.log('修改前的：'+_activeNames)
+    console.log('修改前的：' + _activeNames)
     //不是手风琴模式
     const index = _activeNames.indexOf(item)
     if (index > -1) {
@@ -43,7 +44,7 @@ const handleItemClick = (item: NameType) => {
     activeNames.value = _activeNames
     console.log('修改后的：' + _activeNames)
   }
-  //触发事件？？？
+  //触发事件  弹出事件给开发者用
   emits('update:modelValue', _activeNames)
   emits('change', _activeNames)
 }
