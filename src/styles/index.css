@@ -1,7 +1,7 @@
 @import './vars.css';
 @import './reset.css';
 @import '../components/button/style.css';
-/*@import '../components/Collapse/style.css';*/
+@import '../components/collapse/style.css';
 @import '../components/icon/style.css';
 /*@import '../components/Tooltip/style.css';*/
 /*@import '../components/Dropdown/style.css';*/

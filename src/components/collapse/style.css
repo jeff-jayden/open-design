@@ -1,5 +1,5 @@
 .open-collapse {
-    --open-collase-border-color: var(--open-border-color-light);
+    --open-collapse-border-color: var(--open-border-color-light);
     --open-collapse-header-height: 48px;
     --open-collapse-header-bg-color: var(--open-fill-color-blank);
     --open-collapse-header-text-color: var(--open-text-color-primary);
