@@ -10,7 +10,6 @@
     --open-collapse-disabled-text-color: var(--open-disabled-text-color);
     --open-collapse-disabled-border-color: var(--open-border-color-lighter);
     border-top: 1px solid var(--open-collapse-border-color);
-    border-bottom: 1px solid var(--open-collapse-border-color);
 }
 
 .open-collapse-item__header {

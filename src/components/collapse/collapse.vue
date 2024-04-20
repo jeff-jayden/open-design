@@ -26,13 +26,13 @@ watch(() => props.modelValue, () => {
 const handleItemClick = (item: NameType) => {
   console.log('handleItemClick ' + item)
   let _activeNames = [...activeNames.value]
-  //如果是手风琴模式
+  //如果是手风琴模式  只有一个值
   if (props.accordion) {
     _activeNames = [activeNames.value[0] === item ? '' : item]
     activeNames.value = _activeNames
   } else {
     console.log('修改前的：' + _activeNames)
-    //不是手风琴模式
+    //不是手风琴模式  有多个值
     const index = _activeNames.indexOf(item)
     if (index > -1) {
       //存在 删除对应的item 即关闭一个item
