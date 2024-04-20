@@ -1,5 +1,5 @@
 <template>
-  <Icon icon="arrow-up" size="2xl" type="danger" color="#0e7a0d"/>
+  <Icon icon="arrow-up" size="2xl" type="danger" color="blue"/>
   <OpenButton type="danger" :loading="false" icon="arrow-down">Primary</OpenButton>
   <Button plain>Plain Button</Button>
   
@@ -17,6 +17,12 @@
       sass
     </collapse-item>
   </Collapse>
+  
+  <tooltip
+    content="你好，我叫坤坤"
+  >
+    <button>点击我</button>
+  </tooltip>
 
 </template>
 
@@ -27,6 +33,8 @@ import {Button} from "@jeff-jayden/open-design";
 import {onMounted, ref} from "vue";
 import Collapse from "@/components/collapse/collapse.vue";
 import CollapseItem from "@/components/collapse/collapse-item.vue";
+import tooltip from '@/components/tooltip/tooltip.vue'
+// import {Tooltip} from "@qinloong/snow-sky";
 // import {Collapse, CollapseItem} from '@qinloong/snow-sky'
 
 const value = ref(['1', '2'])
