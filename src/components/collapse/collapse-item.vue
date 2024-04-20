@@ -7,6 +7,7 @@
   >
     <div
         @click="handleClick"
+        :id="`item-header-${name}`"
         class="open-collapse-item__header"
         :class="{
           'is-active': isActive,
@@ -41,7 +42,7 @@ defineOptions({
 
 const handleClick = () => {
   console.log(props.name)
-  if(props.disabled){
+  if (props.disabled) {
     return
   }
   collapseContext?.handleItemClick(props.name)
