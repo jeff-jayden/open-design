@@ -1,9 +1,6 @@
 <template>
   <div
-      class="open-collapse-item"
-      :class="{
-          'is-disabled': disabled
-      }"
+      :class="['open-collapse-item',{'is-disabled': disabled}]"
   >
     <div
         @click="handleClick"

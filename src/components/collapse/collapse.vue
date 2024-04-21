@@ -7,7 +7,8 @@
 <script setup lang="ts">
 
 import {provide, ref, watch} from "vue";
-import {collapseContextKey, CollapseEmits, CollapseProps, NameType} from "@/components/collapse/types";
+import type {CollapseEmits, CollapseProps, NameType} from '@/components/collapse/types'
+import {collapseContextKey} from "@/components/collapse/types";
 
 const emits = defineEmits<CollapseEmits>()
 const props = defineProps<CollapseProps>()
