@@ -21,8 +21,9 @@
         line-height: 1.4;
         text-align: justify;
         word-break: break-word;
-        /*设置两个内容去三角形的地方*/
+        box-shadow: 0 0 10px 1px var(--open-box-shadow-color);
 
+        /*设置两个内容去三角形的地方*/
         #arrow,
         #arrow::before {
             position: absolute;
