@@ -19,9 +19,11 @@
   </Collapse>
   
   <tooltip
-    content="你好，我叫坤坤"
+    content="你好，我叫坤坤的数据库恢复较快速度和反抗撒旦回复楼上加快速度很费解啊撒旦解放国际大厦股份 看见翻盖手机贷款购房价款"
+    placement="top-end"
+    trigger="hover"
   >
-    <button>点击我</button>
+    <OpenButton plain>点击我</OpenButton>
   </tooltip>
 
 </template>
@@ -29,7 +31,7 @@
 <script setup lang="ts">
 import OpenButton from '@/components/button/button.vue'
 import Icon from '@/components/icon/icon.vue'
-import {Button} from "@jeff-jayden/open-design";
+// import {Button} from "@jeff-jayden/open-design";
 import {onMounted, ref} from "vue";
 import Collapse from "@/components/collapse/collapse.vue";
 import CollapseItem from "@/components/collapse/collapse-item.vue";
