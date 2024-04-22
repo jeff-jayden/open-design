@@ -59,6 +59,7 @@
     "@qinloong/snow-sky": "^1.0.0",
     "async-validator": "^4.2.5",
     "axios": "^1.3.4",
+    "element-plus": "^2.7.1",
     "lodash-es": "^4.17.21"
   },
   "peerDependencies": {

@@ -23,8 +23,9 @@
         content="你好，我叫坤坤的数据库恢复较快速度和反抗撒旦回复楼上加快速度很费解啊撒旦解放国际大厦股份 看见翻盖手机贷款购房价款"
         placement="top-end"
         trigger="hover"
+        effect="light"
     >
-      <OpenButton plain>点击我</OpenButton>
+      <OpenButton>点击我</OpenButton>
     </tooltip>
     
     <OpenDropDown
@@ -35,11 +36,19 @@
     >
       列表
     </OpenDropDown>
+    
+    <el-tooltip
+        content="dksjdkjasdkl"
+        effect="dark"
+    >
+      el-tooltip
+    </el-tooltip>
   </div>
 
 </template>
 
 <script setup lang="ts">
+import {ElTooltip} from "element-plus";
 import OpenButton from '@/components/button/button.vue'
 import Icon from '@/components/icon/icon.vue'
 // import {Button} from "@jeff-jayden/open-design";

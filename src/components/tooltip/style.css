@@ -1,5 +1,7 @@
 .open-tooltip {
     --open-popover-bg-color: var(--open-bg-color-overlay);
+    --open-popover-bg-color-dark: var(--open-color-black);
+    --open-popover-bg-before-color: var(--open-color-black);
     --open-popover-font-size: var(--open-font-size-base);
     --open-popover-border-color: var(--open-border-color);
     --open-popover-padding: 12px;
@@ -10,12 +12,21 @@
 
 .open-tooltip {
     .open-tooltip__popper {
-        background: var(--open-popover-bg-color);
+
+        &.light {
+            background: var(--open-popover-bg-color);
+            color: var(--open-text-color-regular);
+            --open-popover-bg-before-color: var(--open-popover-bg-color)
+        }
+        &.dark {
+            background: var(--open-popover-bg-color-dark);
+            color: var(--open-popover-bg-color);
+            --open-popover-bg-color: var(--open-bg-color-overlay);
+        }
         border: 1px solid var(--open-popover-border-color);
         padding: var(--open-popover-padding);
         border-radius: var(--open-popover-border-radius);
         font-size: var(--open-popover-font-size);
-        color: var(--open-text-color-regular);
         box-sizing: border-box;
         z-index: 1000;
         line-height: 1.4;
@@ -30,7 +41,7 @@
             width: 8px;
             height: 8px;
             box-sizing: border-box;
-            background: var(--open-popover-bg-color);
+            background: var(--open-popover-bg-before-color);
         }
 
         #arrow {

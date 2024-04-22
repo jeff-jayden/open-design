@@ -16,6 +16,10 @@
     <Transition :name="transitionName" mode="out-in">
       <div
           class="open-tooltip__popper"
+          :class="{
+            'light':effect === 'light',
+            'dark':effect === 'dark'
+          }"
           ref="popperNode"
           v-if="isOpen"
       >
@@ -33,6 +37,7 @@ import type {TooltipEmits, TooltipInstance, tooltipProps} from "@/components/too
 import {computed, reactive, ref, watch} from "vue";
 import {debounce} from "lodash-es";
 import {createPopper, Instance} from "@popperjs/core";
+import {light} from "@fortawesome/fontawesome-svg-core/import.macro";
 
 defineOptions({
   name: 'OpenToolTip'
@@ -71,7 +76,6 @@ const popperOptions = computed(() => {
     ...props.popperOptions
   }
 })
-
 
 
 watch(() => props.manual, (isManual) => {
@@ -147,7 +151,7 @@ const handleEvent = () => {
   }
 }
 
-if(!props.manual){
+if (!props.manual) {
   handleEvent()
 }
 
