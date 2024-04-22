@@ -1,6 +1,8 @@
 import {tooltipProps} from "@/components/tooltip";
 import {VNode} from "vue";
 
+export type DropDownType = 'primary' | 'success' | 'warning' | 'danger' | 'info'
+
 export interface MenuOption {
     label: string | VNode;
     key: string | number;
@@ -9,8 +11,11 @@ export interface MenuOption {
 }
 
 export interface DropdownProps extends tooltipProps {
-    menuOptions: MenuOption[];
+    menuOptions?: MenuOption[];
     hideAfterClick?: boolean;
+    splitButton?: boolean;
+    type?: DropDownType;
+    disabled?: boolean;
 }
 
 export interface DropdownEmits {

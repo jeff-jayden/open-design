@@ -28,14 +28,26 @@
       <OpenButton>点击我</OpenButton>
     </tooltip>
     
-    <OpenDropDown
+    <open-drop-down
+        
         :menu-options="menuOptions"
-        trigger="click"
+        trigger="hover"
+        effect="light"
+        hide-after-click
+    >
+      <open-button icon="arrow-down">无分割线</open-button>
+    </open-drop-down>
+    
+    <open-drop-down
+        type="primary"
+        :menu-options="menuOptions"
+        trigger="hover"
         hide-after-click
         @select="handleSelect"
+        split-button
     >
-      列表
-    </OpenDropDown>
+      有分割线
+    </open-drop-down>
     
     <el-tooltip
         content="dksjdkjasdkl"

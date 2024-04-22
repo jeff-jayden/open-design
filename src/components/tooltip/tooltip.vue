@@ -123,6 +123,7 @@ const openDebounce = debounce(open, 30)
 const closeDebounce = debounce(close, 30)
 
 const openFinal = () => {
+  console.log('调用了开启')
   closeDebounce.cancel()
   openDebounce()
 }

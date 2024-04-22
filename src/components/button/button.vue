@@ -16,10 +16,10 @@
     :type="nativeType"
   >
     <OpenIcon icon="spinner" spin v-if="loading"></OpenIcon>
-    <OpenIcon :icon="icon" v-if="icon"></OpenIcon>
     <span>
       <slot/>
     </span>
+    <OpenIcon :icon="icon" v-if="icon"></OpenIcon>
   </button>
 </template>
 

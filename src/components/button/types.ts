@@ -1,4 +1,4 @@
-import type {PropType} from "vue";
+import {InjectionKey, PropType} from "vue";
 
 export type ButtonType = 'primary' | 'success' | 'warning' | 'danger' | 'info'
 export type ButtonSize = 'large' | 'small'
@@ -15,6 +15,20 @@ export interface ButtonProps {
     autofocus?: boolean;
     icon?: string;
     loading?: boolean;
+}
+
+export interface ButtonGroupContext {
+    size?: ButtonProps['size']
+    type?: ButtonProps['type']
+}
+
+export const buttonGroupContextKey: InjectionKey<ButtonGroupContext> = Symbol(
+    'buttonGroupContextKey'
+)
+
+export interface ButtonGroupProps {
+    type?: ButtonType;
+    size?: ButtonSize;
 }
 
 export interface ButtonInstance {
