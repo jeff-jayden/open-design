@@ -1,6 +1,6 @@
 <template>
   <div class="open-dropdown">
-    <Tooltip
+    <open-tool-tip
         :effect="effect"
         :trigger="trigger"
         :placement="placement"
@@ -29,7 +29,7 @@
       <template #default v-if="!splitButton">
         <slot></slot>
       </template>
-    </Tooltip>
+    </open-tool-tip>
     
     <template v-if="splitButton">
       <open-button-group>
@@ -37,6 +37,7 @@
             :type="type"
             :disabled="disabled"
             role="button"
+            @click="handlerMainButtonClick"
         >
           <slot name="default"/>
         </open-button>
@@ -45,6 +46,7 @@
             :disabled="disabled"
             role="button"
             class="caret-button"
+            v-on="events"
         >
           <open-icon icon="arrow-down"/>
         </open-button>
@@ -57,11 +59,10 @@
 
 import OpenIcon from '@/components/icon'
 import OpenButton from "@/components/button";
-import Tooltip from "@/components/tooltip/tooltip.vue";
 import type {DropdownProps, DropdownEmits, DropdownInstance, MenuOption} from '@/components/dropdown/types'
 import RenderVnode from "@/util/RenderVnode";
-import {reactive, ref} from "vue";
-import type {TooltipInstance} from "@/components/tooltip";
+import {onMounted, reactive, ref, watch} from "vue";
+import OpenToolTip, {TooltipInstance} from "@/components/tooltip";
 import OpenButtonGroup from "@/components/button/button-group.vue";
 
 defineOptions({
@@ -74,25 +75,47 @@ const emits = defineEmits<DropdownEmits>()
 const tooltipRef = ref<TooltipInstance | null>(null)
 const events: Record<string, any> = reactive({})
 
+
+watch(() => tooltipRef.value?.isOpen, () => {
+  console.log(tooltipRef.value?.isOpen)
+}, {immediate: true})
+
+const visible = ref(tooltipRef.value?.isOpen)
+
+const toggleTooltip = () => {
+  console.log('tooltipRef.value?.isOpen' + tooltipRef.value?.isOpen)
+  if (visible.value) {
+    tooltipRef.value?.hide()
+    visible.value = false
+  } else {
+    tooltipRef.value?.show()
+    visible.value = true
+  }
+}
+
 const handleEvent = () => {
   if (props.trigger === 'hover') {
-    events['mouseenter'] = tooltipRef?.value?.show
-    events['mouseleave'] = tooltipRef?.value?.hide
+    events['mouseenter'] = tooltipRef.value?.show
+    events['mouseleave'] = tooltipRef.value?.hide
   } else {
-    // events['click'] = toggleTooltip
+    events['click'] = toggleTooltip
   }
 }
 //TODO 分割线的时候触发tooltip
-handleEvent()
 
-// const toggleTooltip = () => {
-//   if()
-// }
+onMounted(() => {
+  handleEvent()
+})
 
 //tooltip抛出的事件给外面的人使用
 const visibleChange = (val: any) => {
   console.log('dropVal' + val)
   emits('visible-change', val)
+}
+
+const handlerMainButtonClick = (event: MouseEvent) => {
+  console.log('dropdown点击了')
+  emits('click', event)
 }
 
 const handleClickItem = (item: MenuOption) => {

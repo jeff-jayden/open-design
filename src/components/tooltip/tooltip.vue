@@ -159,7 +159,8 @@ if (!props.manual) {
 
 defineExpose<TooltipInstance>({
   'show': openFinal,
-  'hide': closeFinal
+  'hide': closeFinal,
+  'isOpen': isOpen.value
 })
 
 </script>

@@ -78,8 +78,8 @@
         background-color: var(--open-button-disabled-bg-color);
         border-color: var(--open-button-disabled-border-color);
     }
-    [class*=open-icon] + span {
-        margin-left: 6px;
+    [class*=open-icon] {
+        margin-left: 5px;
     }
 }
 @each $val in primary,success,warning,info,danger {
@@ -121,36 +121,5 @@
     padding: 5px 11px;
     font-size: 12px;
     border-radius: calc(var(--open-border-radius-base) - 1px);
-}
-
-.open-button-group {
-    .open-button {
-        &::before {
-            background: #dcdfe6;
-            opacity: .5;
-        }
-
-        &:nth-of-type(1){
-            border-top-right-radius: 0;
-            border-bottom-right-radius: 0;
-        }
-        &:last-child{
-            margin-left: 0;
-            border-top-left-radius: 0;
-            border-bottom-left-radius: 0;
-        }
-
-    }
-    &.caret-button::before {
-        background: #dcdfe6;
-        opacity: .5;
-        content: '';
-        position: absolute;
-        display: block;
-        width: 1px;
-        left: 10px;
-    }
-    display: inline-block;
-    vertical-align: middle;
 }
 

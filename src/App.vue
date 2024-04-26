@@ -29,7 +29,6 @@
     </tooltip>
     
     <open-drop-down
-        
         :menu-options="menuOptions"
         trigger="hover"
         effect="light"
@@ -41,10 +40,11 @@
     <open-drop-down
         type="primary"
         :menu-options="menuOptions"
-        trigger="hover"
+        trigger="click"
         hide-after-click
         @select="handleSelect"
         split-button
+        effect="light"
     >
       有分割线
     </open-drop-down>
@@ -55,6 +55,21 @@
     >
       el-tooltip
     </el-tooltip>
+    
+    
+    
+    <el-dropdown split-button type="primary" trigger="click">
+      Dropdown List
+      <template #dropdown>
+        <el-dropdown-menu>
+          <el-dropdown-item>Action 1</el-dropdown-item>
+          <el-dropdown-item>Action 2</el-dropdown-item>
+          <el-dropdown-item>Action 3</el-dropdown-item>
+          <el-dropdown-item>Action 4</el-dropdown-item>
+          <el-dropdown-item>Action 5</el-dropdown-item>
+        </el-dropdown-menu>
+      </template>
+    </el-dropdown>
   </div>
 
 </template>

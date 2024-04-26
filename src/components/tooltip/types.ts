@@ -32,4 +32,5 @@ export interface TooltipEmits {
 export interface TooltipInstance {
     show: () => void
     hide: () => void
+    isOpen: boolean
 }
