@@ -1,5 +1,8 @@
 <template>
   <div class="container">
+    <div>
+      <Icon icon="xmark"/>
+    </div>
     <Icon icon="arrow-up" size="2xl" type="danger" color="blue"/>
     <OpenButton type="danger" :loading="false" icon="arrow-down">Primary</OpenButton>
     <Button plain>Plain Button</Button>
@@ -57,7 +60,6 @@
     </el-tooltip>
     
     
-    
     <el-dropdown split-button type="primary" trigger="click">
       Dropdown List
       <template #dropdown>
@@ -70,6 +72,13 @@
         </el-dropdown-menu>
       </template>
     </el-dropdown>
+    
+    <open-button @click="showMessage" type="primary">弹出message</open-button>
+    
+    <!--    <message message="这是openMessage" show-close type="success"></message>-->
+    <!--    <message message="这是openMessage" show-close type="success"></message>-->
+    <!--    <open-message message="这是openMessage" show-close type="success"></open-message>-->
+    <!--    <open-message message="这是openMessage" show-close type="success"></open-message>-->
   </div>
 
 </template>
@@ -85,13 +94,23 @@ import CollapseItem from "@/components/collapse/collapse-item.vue";
 import tooltip from '@/components/tooltip/tooltip.vue'
 // import {Dropdown} from "@qinloong/snow-sky";
 import OpenDropDown from "@/components/dropdown/dropdown.vue";
+import {createMessage} from "@/components/message/methods";
+import sonwMessage from '@qinloong/snow-sky'
 // import {Tooltip} from "@qinloong/snow-sky";
 // import {Collapse, CollapseItem} from '@qinloong/snow-sky'
+// import OpenMessage from '@/components/message/message.vue'
+
 
 const value = ref(['1', '2'])
 
 
 onMounted(() => {
+  createMessage({message: 'hello world', showClose: true, type: "success"})
+  createMessage({message: 'hello world', showClose: true, type: "error"})
+  createMessage({message: 'hello world', showClose: true, type: "info"})
+  createMessage({message: 'hello world', showClose: true, type: "warning"})
+  
+  
   console.log('aaaa' + import.meta.url)
   setTimeout(() => {
     value.value = ['2', '3']
@@ -103,6 +122,11 @@ onMounted(() => {
 
 const fn = (val: any) => {
   console.log(val)
+}
+
+const showMessage = () => {
+  createMessage({message: 'hello world', showClose: true, type: "success"})
+  // sonwMessage({message: 'hello world', showClose: true, type: "success"})
 }
 
 const menuOptions = [
@@ -133,9 +157,5 @@ const handleSelect = (val: any) => {
 </script>
 
 <style scoped>
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+
 </style>
