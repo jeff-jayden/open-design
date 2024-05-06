@@ -9,9 +9,11 @@
     
     <Collapse :model-value="value" @change="fn" accordion>
       <collapse-item name="1" title="Consistency" disabled>
-        Consistent with real life: in line with the process and logic of real life, and comply with languages and habits
+        Consistent with real life: in line with the process and logic of real life, and comply with languages
+        and habits
         that the users are used to;
-        Consistent within interface: all elements should be consistent, such as: design style, icons and texts, position
+        Consistent within interface: all elements should be consistent, such as: design style, icons and texts,
+        position
         of elements, etc.
       </collapse-item>
       <collapse-item name="2" title="Feedback">
@@ -24,38 +26,21 @@
     
     <tooltip
         content="你好，我叫坤坤的数据库恢复较快速度和反抗撒旦回复楼上加快速度很费解啊撒旦解放国际大厦股份 看见翻盖手机贷款购房价款"
-        placement="top-end"
-        trigger="hover"
-        effect="light"
-    >
+        placement="top-end" trigger="hover"
+        effect="light">
       <OpenButton>点击我</OpenButton>
     </tooltip>
     
-    <open-drop-down
-        :menu-options="menuOptions"
-        trigger="hover"
-        effect="light"
-        hide-after-click
-    >
+    <open-drop-down :menu-options="menuOptions" trigger="hover" effect="light" hide-after-click>
       <open-button icon="arrow-down">无分割线</open-button>
     </open-drop-down>
     
-    <open-drop-down
-        type="primary"
-        :menu-options="menuOptions"
-        trigger="click"
-        hide-after-click
-        @select="handleSelect"
-        split-button
-        effect="light"
-    >
+    <open-drop-down type="primary" :menu-options="menuOptions" trigger="click" hide-after-click
+                    @select="handleSelect" split-button effect="light">
       有分割线
     </open-drop-down>
     
-    <el-tooltip
-        content="dksjdkjasdkl"
-        effect="dark"
-    >
+    <el-tooltip content="dksjdkjasdkl" effect="dark">
       el-tooltip
     </el-tooltip>
     
@@ -79,6 +64,12 @@
     <!--    <message message="这是openMessage" show-close type="success"></message>-->
     <!--    <open-message message="这是openMessage" show-close type="success"></open-message>-->
     <!--    <open-message message="这是openMessage" show-close type="success"></open-message>-->
+    
+    <OpenSwitch v-model="switchvalue" @change="handleSwitchChange"
+      on-color="#13ce66" off-color="#ff4949"
+    ></OpenSwitch>
+    {{switchvalue}}
+<!--    <Switch v-model="value1"/>-->
   </div>
 
 </template>
@@ -99,8 +90,10 @@ import sonwMessage from '@qinloong/snow-sky'
 // import {Tooltip} from "@qinloong/snow-sky";
 // import {Collapse, CollapseItem} from '@qinloong/snow-sky'
 // import OpenMessage from '@/components/message/message.vue'
+import OpenSwitch from '@/components/switch/switch.vue'
+import Switch from '@qinloong/snow-sky'
 
-
+const switchvalue = ref(true)
 const value = ref(['1', '2'])
 
 
@@ -121,6 +114,10 @@ onMounted(() => {
 
 
 const fn = (val: any) => {
+  console.log(val)
+}
+
+const handleSwitchChange = (val) => {
   console.log(val)
 }
 
@@ -156,6 +153,4 @@ const handleSelect = (val: any) => {
 
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>
