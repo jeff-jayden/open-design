@@ -71,11 +71,11 @@
     {{switchvalue}}
 <!--    <Switch v-model="value1"/>-->
     
-<!--    <div>-->
-<!--      <open-select>-->
-<!--      -->
-<!--      </open-select>-->
-<!--    </div>-->
+    <div>
+      <open-select>
+      
+      </open-select>
+    </div>
     <div>
       <open-input placeholder="hello" clearable v-model="value1"></open-input>
     </div>
@@ -101,8 +101,8 @@ import sonwMessage from '@qinloong/snow-sky'
 // import OpenMessage from '@/components/message/message.vue'
 import OpenSwitch from '@/components/switch/switch.vue'
 import Switch from '@qinloong/snow-sky'
-// import OpenSelect from "@/components/select/select.vue";
 import OpenInput from "@/components/input/input.vue";
+import OpenSelect from "@/components/select/select.vue";
 
 const switchvalue = ref(true)
 const value = ref(['1', '2'])
