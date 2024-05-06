@@ -6,9 +6,9 @@
 @import '../components/tooltip/style.css';
 @import '../components/dropdown/style.css';
 @import '../components/message/style.css';
-/*@import '../components/Input/style.css';*/
+@import '../components/input/style.css';
 @import '../components/switch/style.css';
-/*@import '../components/Select/style.css';*/
+@import '../components/select/style.css';
 /*@import '../components/Form/style.css';*/
 
 
