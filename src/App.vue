@@ -70,6 +70,12 @@
     ></OpenSwitch>
     {{switchvalue}}
 <!--    <Switch v-model="value1"/>-->
+    
+    <div>
+      <open-select>
+      
+      </open-select>
+    </div>
   </div>
 
 </template>
@@ -92,6 +98,7 @@ import sonwMessage from '@qinloong/snow-sky'
 // import OpenMessage from '@/components/message/message.vue'
 import OpenSwitch from '@/components/switch/switch.vue'
 import Switch from '@qinloong/snow-sky'
+import OpenSelect from "@/components/select/select.vue";
 
 const switchvalue = ref(true)
 const value = ref(['1', '2'])
