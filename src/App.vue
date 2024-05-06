@@ -71,10 +71,13 @@
     {{switchvalue}}
 <!--    <Switch v-model="value1"/>-->
     
+<!--    <div>-->
+<!--      <open-select>-->
+<!--      -->
+<!--      </open-select>-->
+<!--    </div>-->
     <div>
-      <open-select>
-      
-      </open-select>
+      <open-input placeholder="hello" clearable v-model="value1"></open-input>
     </div>
   </div>
 
@@ -98,11 +101,12 @@ import sonwMessage from '@qinloong/snow-sky'
 // import OpenMessage from '@/components/message/message.vue'
 import OpenSwitch from '@/components/switch/switch.vue'
 import Switch from '@qinloong/snow-sky'
-import OpenSelect from "@/components/select/select.vue";
+// import OpenSelect from "@/components/select/select.vue";
+import OpenInput from "@/components/input/input.vue";
 
 const switchvalue = ref(true)
 const value = ref(['1', '2'])
-
+const value1 = ref('')
 
 onMounted(() => {
   createMessage({message: 'hello world', showClose: true, type: "success"})
