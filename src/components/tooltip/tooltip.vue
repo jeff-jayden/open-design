@@ -38,13 +38,14 @@ import {computed, reactive, ref, watch} from "vue";
 import {debounce} from "lodash-es";
 import {createPopper, Instance} from "@popperjs/core";
 import {light} from "@fortawesome/fontawesome-svg-core/import.macro";
+import useClickOutside from "@/hooks/useClickOutside";
 
 defineOptions({
   name: 'OpenToolTip'
 })
 
 const props = withDefaults(defineProps<tooltipProps>(), {
-  effect: 'dark',
+  effect: 'light',
   placement: "bottom",
   trigger: "hover",
   transitionName: 'slide-fade'
@@ -141,6 +142,15 @@ const togglePopper = () => {
   }
 }
 
+useClickOutside(popperContainerNode, () => {
+  if (props.trigger === 'click' && isOpen.value && !props.manual) {
+    closeFinal()
+  }
+  if (isOpen.value) {
+    emits('click-outside', true)
+  }
+})
+
 const handleEvent = () => {
   if (props.trigger === 'hover') {
     console.log('hover')
@@ -156,6 +166,14 @@ if (!props.manual) {
   handleEvent()
 }
 
+watch(() => props.manual, (isManual) => {
+  if (isManual) {
+    events = {}
+    outerEvents = {}
+  } else {
+    handleEvent()
+  }
+})
 
 defineExpose<TooltipInstance>({
   'show': openFinal,

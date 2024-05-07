@@ -19,7 +19,7 @@
     position: relative;
     font-size: var(--open-font-size-base);
     display: inline-flex;
-    width: 100%;
+    width: 240px;
     line-height: var(--open-input-height);
     box-sizing: border-box;
     vertical-align: middle;

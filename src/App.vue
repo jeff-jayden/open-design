@@ -66,19 +66,22 @@
     <!--    <open-message message="这是openMessage" show-close type="success"></open-message>-->
     
     <OpenSwitch v-model="switchvalue" @change="handleSwitchChange"
-      on-color="#13ce66" off-color="#ff4949"
+                on-color="#13ce66" off-color="#ff4949"
     ></OpenSwitch>
-    {{switchvalue}}
-<!--    <Switch v-model="value1"/>-->
+    {{ switchvalue }}
+    <!--    <Switch v-model="value1"/>-->
     
     <div>
-      <open-select>
+      <open-select :options="options" v-model="selectValue" @change="selectChange">
       
       </open-select>
+      {{ selectValue }}
     </div>
     <div>
       <open-input placeholder="hello" clearable v-model="value1"></open-input>
     </div>
+    
+    
   </div>
 
 </template>
@@ -95,7 +98,7 @@ import tooltip from '@/components/tooltip/tooltip.vue'
 // import {Dropdown} from "@qinloong/snow-sky";
 import OpenDropDown from "@/components/dropdown/dropdown.vue";
 import {createMessage} from "@/components/message/methods";
-import sonwMessage from '@qinloong/snow-sky'
+import sonwMessage, {Form, Input} from '@qinloong/snow-sky'
 // import {Tooltip} from "@qinloong/snow-sky";
 // import {Collapse, CollapseItem} from '@qinloong/snow-sky'
 // import OpenMessage from '@/components/message/message.vue'
@@ -103,10 +106,12 @@ import OpenSwitch from '@/components/switch/switch.vue'
 import Switch from '@qinloong/snow-sky'
 import OpenInput from "@/components/input/input.vue";
 import OpenSelect from "@/components/select/select.vue";
+import button from "@/components/button";
 
 const switchvalue = ref(true)
 const value = ref(['1', '2'])
 const value1 = ref('')
+const selectValue = ref('')
 
 onMounted(() => {
   createMessage({message: 'hello world', showClose: true, type: "success"})
@@ -123,6 +128,27 @@ onMounted(() => {
   }, 1000)
 })
 
+const options = ref([
+  {
+    label: '哈哈哈哈哈哈',
+    value: '2313',
+    disabled: false
+  },
+  {
+    label: '哈哈哈哈哈哈',
+    value: '2313',
+    disabled: false
+  },
+  {
+    label: '哈哈哈哈哈哈',
+    value: '2313',
+    disabled: false
+  }
+])
+
+const selectChange = (val: string) => {
+  console.log('selectChange' + val)
+}
 
 const fn = (val: any) => {
   console.log(val)
