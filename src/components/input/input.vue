@@ -1,159 +1,127 @@
 <template>
+  
   <div
       class="open-input"
-      :class="{
-      [`open-input--${type}`]: type,
-      [`open-input--${size}`]: size,
-      'is-disabled': disabled,
-      'is-prepend': $slots.prepend,
-      'is-append': $slots.append,
-      'is-prefix': $slots.prefix,
-      'is-suffix': $slots.suffix,
-      'is-focus': isFocus
-    }"
   >
-    <!-- input -->
-    <template v-if="type !== 'textarea'">
-      <!-- prepend slot -->
-      <div v-if="$slots.prepend" class="open-input__prepend">
-        <slot name="prepend" />
-      </div>
-      <div class="open-input__wrapper">
+    <!--    template默认不显示-->
+    <template v-if="type!=='textarea'">
+      <div ref="wrapperRef" class="open-input__wrapper">
         <!-- prefix slot -->
-        <span v-if="$slots.prefix" class="open-input__prefix">
-            <slot name="prefix" />
+        <span v-if="$slots.prefix || prefixIcon" class="open-input__prefix">
+          <span class="open-input__prefix-inner">
+            <slot name="prefix"/>
+            <el-icon v-if="prefixIcon" class="open-input__icon">
+              <Component :is="prefixIcon"/>
+            </el-icon>
+          </span>
         </span>
         <input
+            ref="input"
             class="open-input__inner"
-            :type="showPassword ? (passwordVisible ? 'text' : 'password') : type"
-            ref="inputRef"
-            v-bind="attrs"
-            :disabled="disabled"
-            :readonly="readonly"
-            :autocomplete="autocomplete"
             :placeholder="placeholder"
-            :autofocus="autofocus"
-            :form="form"
             v-model="innerValue"
+            :minlength="minlength"
+            :maxlength="maxlength"
+            :type="showPassword ? 'text' : 'password'"
             @input="handleInput"
-            @change="handleChange"
-            @focus="handleFocus"
             @blur="handleBlur"
+            @focus="handleFocus"
+            @change="handleChange"
+            @keydown="handleKeydown"
         />
         <!-- suffix slot -->
-        <span v-if="$slots.suffix || showClear || showPasswordArea" class="open-input__suffix" @click="keepFocus">
-            <slot name="suffix" />
-            <open-icon
+        <span v-if="suffixVisible" class="open-input__suffix">
+          <span class="open-input__suffix-inner">
+            <slot name="suffix"/>
+            <el-icon
                 v-if="showClear"
-                class="open-input__clear"
+                class="open-input__icon open-input__clear"
                 @click="clear"
-                @mousedown.prevent="NOOP"
             >
-              <circle-close />
-            </open-icon>
+              <circle-close/>
+            </el-icon>
+            <!--            <el-icon-->
+            <!--                v-if="showPwdVisible"-->
+            <!--                :class="[nsInput.e('icon'), nsInput.e('password')]"-->
+            <!--                @click="handlePasswordVisible"-->
+            <!--            >-->
+            <!--              <component :is="passwordIcon"/>-->
+            <!--            </el-icon>-->
+            
+          </span>
         </span>
-      </div>
-      <!-- append slot -->
-      <div v-if="$slots.append" class="open-input__append">
-        <slot name="append" />
+      
       </div>
     </template>
-    <!-- textarea -->
+    
     <template v-else>
-      <textarea
-          class="open-textarea__wrapper"
-          v-bind="attrs"
-          ref="inputRef"
-          :disabled="disabled"
-          :readonly="readonly"
-          :autocomplete="autocomplete"
-          :placeholder="placeholder"
-          :autofocus="autofocus"
-          :form="form"
-          v-model="innerValue"
-          @input="handleInput"
-          @change="handleChange"
-          @focus="handleFocus"
-          @blur="handleBlur"
-      />
+    
     </template>
   </div>
+
 </template>
-<script setup lang="ts">
-import { ref, watch, computed, useAttrs, nextTick, inject } from 'vue'
-import type { Ref } from 'vue'
-import type { InputProps, InputEmits } from './types'
-import Icon from '../Icon/Icon.vue'
-import OpenIcon from "@/components/icon";
-import {CircleClose} from '@element-plus/icons-vue'
-// import { formItemContextKey } from '../Form/types'
+
+<script lang="ts" setup>
+
+import {InputEmits, InputProps} from "@/components/input/types";
+import {computed, ref, useSlots} from "vue";
+import {UPDATE_MODEL_EVENT} from "@/constants";
+import {
+  CircleClose,
+} from '@element-plus/icons-vue'
+
+
+const props = defineProps<InputProps>()
+const emit = defineEmits<InputEmits>()
+const slots = useSlots()
 
 defineOptions({
-  name: 'OpenInput',
-  inheritAttrs: false
+  name: 'OpenInput'
 })
-const props = withDefaults(defineProps<InputProps>(), { type: 'text', autocomplete: 'off' })
-const emits = defineEmits<InputEmits>()
-const attrs = useAttrs()
+
 const innerValue = ref(props.modelValue)
 const isFocus = ref(false)
-const passwordVisible = ref(false)
-const inputRef = ref() as Ref<HTMLInputElement>
-// const formItemContext = inject(formItemContextKey)
-// const runValidation = (trigger?: string) => {
-//   formItemContext?.validate(trigger).catch((e) => console.log(e.errors))
-// }
-const showClear = computed(() =>
-    props.clearable &&
-    !props.disabled &&
-    !!innerValue.value &&
-    isFocus.value
+
+const showClear = computed(() => props.clearable)
+
+const suffixVisible = computed(() =>
+    !!slots.suffix ||
+    !!props.suffixIcon ||
+    showClear.value
 )
-const showPasswordArea = computed(() =>
-    props.showPassword &&
-    !props.disabled &&
-    !!innerValue.value
-)
-const togglePasswordVisible = () => {
-  passwordVisible.value = !passwordVisible.value
-}
-/**只是一个占位符，空函数，为了阻止blur事件的默认行为，而导致handleBlur中isFocus.value 变为 false，使得showClear为false,进而导致clear事件无法成功调用*/
-const NOOP = () => {}
-const keepFocus = async () => {
-  await nextTick()
-  inputRef.value.focus()
-}
+
 const handleInput = () => {
-  emits('update:modelValue', innerValue.value)
-  emits('input', innerValue.value)
-  // runValidation('input')
+  emit('input', innerValue.value)
 }
-const handleChange = () => {
-  emits('change', innerValue.value)
-  // runValidation('change')
-}
+
 const handleFocus = (event: FocusEvent) => {
   isFocus.value = true
-  emits('focus', event)
+  emit('focus', event)
 }
 const handleBlur = (event: FocusEvent) => {
   console.log('blur triggered')
   isFocus.value = false
-  emits('blur', event)
-  // runValidation('blur')
+  emit('blur', event)
 }
+
+const handleChange = () => {
+  emit('change', innerValue.value)
+}
+
+const handleKeydown = (evt: KeyboardEvent) => {
+  emit('keydown', evt)
+}
+
 const clear = () => {
-  console.log('clear triggered')
   innerValue.value = ''
-  emits('update:modelValue', '')
-  emits('clear')
-  emits('input', '')
-  emits('change', '')
+  emit(UPDATE_MODEL_EVENT, '')
+  emit('change', '')
+  emit('clear')
+  emit('input', '清楚了')
 }
-watch(() => props.modelValue, (newValue) => {
-  innerValue.value = newValue
-})
-defineExpose({
-  ref: inputRef
-})
+
 </script>
+
+<style lang="scss" scoped>
+
+</style>
