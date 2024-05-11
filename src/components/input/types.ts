@@ -2,6 +2,8 @@
 export interface InputProps {
     type?: string;
     modelValue: string;
+    minlength?: string | number
+    maxlength?: string | number
     size?: 'large' | 'small';
     /**是否禁用input输入框*/
     disabled?: boolean;
@@ -14,6 +16,8 @@ export interface InputProps {
     autocomplete?: string;
     autofocus?: boolean;
     form?: string;
+    prefixIcon?: string;
+    suffixIcon?: string;
 }
 export interface InputEmits {
     /**支持v-model而添加的事件*/
@@ -24,6 +28,7 @@ export interface InputEmits {
     (e: 'change', value: string): void;
     (e: 'focus', value: FocusEvent): void;
     (e: 'blur', value: FocusEvent): void;
+    (e: 'keydown', value: KeyboardEvent): void;
     (e: 'clear'): void;
 }
 

@@ -71,23 +71,38 @@
     {{ switchvalue }}
     <!--    <Switch v-model="value1"/>-->
     
+<!--    <div>-->
+<!--      <open-select :options="options" v-model="selectValue" @change="selectChange">-->
+<!--      -->
+<!--      </open-select>-->
+<!--      {{ selectValue }}-->
+<!--    </div>-->
     <div>
-      <open-select :options="options" v-model="selectValue" @change="selectChange">
-      
-      </open-select>
-      {{ selectValue }}
+      openinput
+      <OpenInput
+          placeholder="hello"
+          clearable
+          show-password
+          v-model="value1"
+          @input="opinput"
+          :prefix-icon="Calendar"
+      ></OpenInput>
     </div>
-    <div>
-      <open-input placeholder="hello" clearable v-model="value1"></open-input>
-    </div>
+<!--    <input/>-->
     
+    <div>
+      ElInput
+      <ElInput
+        :prefix-icon="Calendar"
+      />
+    </div>
     
   </div>
 
 </template>
 
 <script setup lang="ts">
-import {ElTooltip} from "element-plus";
+import {ElInput, ElTooltip} from "element-plus";
 import OpenButton from '@/components/button/button.vue'
 import Icon from '@/components/icon/icon.vue'
 // import {Button} from "@jeff-jayden/open-design";
@@ -107,11 +122,16 @@ import Switch from '@qinloong/snow-sky'
 import OpenInput from "@/components/input/input.vue";
 import OpenSelect from "@/components/select/select.vue";
 import button from "@/components/button";
+import {Calendar} from "@element-plus/icons-vue";
 
 const switchvalue = ref(true)
 const value = ref(['1', '2'])
 const value1 = ref('')
 const selectValue = ref('')
+
+const opinput = (val) => {
+  console.log('opinput' + val)
+}
 
 onMounted(() => {
   createMessage({message: 'hello world', showClose: true, type: "success"})
