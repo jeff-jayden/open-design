@@ -1,4 +1,3 @@
-
 export interface InputProps {
     type?: string;
     modelValue: string;
@@ -16,19 +15,27 @@ export interface InputProps {
     autocomplete?: string;
     autofocus?: boolean;
     form?: string;
-    prefixIcon?: string;
-    suffixIcon?: string;
+    prefixIcon?: string | object;
+    suffixIcon?: string | object;
+    showWordLimit?: boolean;
 }
+
 export interface InputEmits {
     /**支持v-model而添加的事件*/
-    (e: 'update:modelValue', value: string) : void;
+    (e: 'update:modelValue', value: string): void;
+
     // input 的 input事件指的是值有变化就算
     (e: 'input', value: string): void;
+
     // input 的 change事件指的是修改了值，并且失去了 focus
     (e: 'change', value: string): void;
+
     (e: 'focus', value: FocusEvent): void;
+
     (e: 'blur', value: FocusEvent): void;
+
     (e: 'keydown', value: KeyboardEvent): void;
+
     (e: 'clear'): void;
 }
 

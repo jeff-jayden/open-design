@@ -77,15 +77,17 @@
 <!--      </open-select>-->
 <!--      {{ selectValue }}-->
 <!--    </div>-->
-    <div>
+    <div style="width: 240px">
       openinput
       <OpenInput
           placeholder="hello"
           clearable
-          show-password
           v-model="value1"
           @input="opinput"
           :prefix-icon="Calendar"
+          maxlength="20"
+          show-word-limit
+          show-password
       ></OpenInput>
     </div>
 <!--    <input/>-->
@@ -94,6 +96,11 @@
       ElInput
       <ElInput
         :prefix-icon="Calendar"
+        show-password
+        clearable
+        v-model="value"
+        maxlength="39"
+        show-word-limit
       />
     </div>
     
@@ -125,11 +132,12 @@ import button from "@/components/button";
 import {Calendar} from "@element-plus/icons-vue";
 
 const switchvalue = ref(true)
-const value = ref(['1', '2'])
+const value = ref('')
 const value1 = ref('')
 const selectValue = ref('')
 
 const opinput = (val) => {
+  console.log(value1.value)
   console.log('opinput' + val)
 }
 
