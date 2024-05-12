@@ -69,6 +69,7 @@
   /*animation*/
   --open-transition-duration: .3s;
   --open-transition-duration-fast: .2s;
+  --open-transition-box-shadow: .2s;
 
   /*box-shadow*/
   --open-box-shadow-color: rgba(228, 231, 237)
