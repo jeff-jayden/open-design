@@ -50,7 +50,7 @@
           </div>
           <!--          TODO-->
           <div
-              v-if="shouldShowPlaceholder"
+              v-if="false"
               :class="[
                 'selected-item',
                 'placeholder',
@@ -164,7 +164,7 @@ const isDropdownShow = ref(false);
 const tooltipRef = ref() as Ref<TooltipInstance>;
 
 const currentPlaceholder = computed(() => {
-  const _placeholder = 'please select'
+  const _placeholder = props.placeholder ?? 'please select'
   return props.multiple
       ? _placeholder
       : states.selectedLabel
