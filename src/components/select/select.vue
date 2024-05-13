@@ -47,7 +47,17 @@
             <!--            />-->
           
           </div>
-          
+          <!--          TODO-->
+          <div
+              v-if="shouldShowPlaceholder"
+              :class="[
+                'selected-item',
+                'placeholder',
+                'transparent'
+              ]"
+          >
+            <span>{{ currentPlaceholder }}</span>
+          </div>
           <div
               class="suffix"
           >
@@ -137,7 +147,8 @@ const states = reactive<SelectStates>({
   mouseHover: false,
   loading: false,
   highlightIndex: -1,
-  previousQuery: null
+  previousQuery: null,
+  selectedLabel: ''
 })
 
 const inputRef = ref<HTMLInputElement>(null)
@@ -150,6 +161,20 @@ const focus = () => {
 const isDropdownShow = ref(false);
 const tooltipRef = ref() as Ref<TooltipInstance>;
 
+const currentPlaceholder = computed(() => {
+  const _placeholder = 'please select'
+  return props.multiple
+      ? _placeholder
+      : states.selectedLabel
+})
+
+//TODO
+const shouldShowPlaceholder = computed(() => {
+  if (isArray(props.modelValue)) {
+    return props.modelValue.length === 0 && !states.inputValue
+  }
+  return props.filterable ? !states.inputValue : true
+})
 
 const showClose = computed(() =>
     props.clearable &&
@@ -203,7 +228,7 @@ const handleQueryChange = (searchValue: string) => {
   if (props.filterable && isFunction(props.filterMethod)) {
     // 执行自定义筛选方法
     filterOption.value = props.filterMethod(searchValue)
-  } else if(
+  } else if (
       props.filterable &&
       props.remote &&
       isFunction(props.remoteMethod)
@@ -279,6 +304,7 @@ const controlDropdown = (show: boolean) => {
 
 const selectItem = (e: SelectOption) => {
   if (e.disabled) return;
+  states.selectedLabel = e.label;
   states.inputValue = e.label;
   states.selectedOption = e;
   emit("change", e.value);

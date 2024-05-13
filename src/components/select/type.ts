@@ -13,12 +13,13 @@ export interface SelectStates {
     loading: boolean;
     highlightIndex: number;
     previousQuery: string;
+    selectedLabel: string;
 }
 
 export interface SelectProps {
     name?: string;
     id?: string;
-    modelValue: 'string' | 'number' | 'boolean' | 'object'
+    modelValue: 'string' | 'number' | 'boolean' | 'object' | 'Array'
     disabled?: boolean;
     effect?: 'dark' | 'light';
     options?: SelectOption[];
@@ -31,6 +32,7 @@ export interface SelectProps {
     clearIcon?: any;
     filterMethod?: Function;
     remoteMethod?: Function;
+    multiple?: boolean;
 }
 
 export interface SelectEmits {

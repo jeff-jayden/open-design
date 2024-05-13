@@ -17,6 +17,7 @@
     }
 
     .open-select-wrapper {
+        flex: 1;
         align-items: center;
         background-color: #fff;
         border-radius: 4px;
@@ -35,6 +36,15 @@
 
         &:hover {
             box-shadow: 0 0 0 1px #c0c4cc inset;
+        }
+
+        .placeholder {
+            position: absolute;
+            display: block;
+            background: red;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100%;
         }
 
         .input-wrapper {
