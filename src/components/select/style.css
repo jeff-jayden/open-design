@@ -41,7 +41,7 @@
         .placeholder {
             position: absolute;
             display: block;
-            background: red;
+            background: transparent;
             top: 50%;
             transform: translateY(-50%);
             width: 100%;
