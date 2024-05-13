@@ -71,12 +71,56 @@
     {{ switchvalue }}
     <!--    <Switch v-model="value1"/>-->
     
-<!--    <div>-->
-<!--      <open-select :options="options" v-model="selectValue" @change="selectChange">-->
-<!--      -->
-<!--      </open-select>-->
-<!--      {{ selectValue }}-->
-<!--    </div>-->
+    <div>
+      ElTooltip
+      <ElTooltip
+        content="Top Left prompts info"
+        placement="top-start"
+        trigger="click"
+      >
+        <el-button type="primary">top-start</el-button>
+      </ElTooltip>
+      <br>
+      OpenToolTip
+      <OpenToolTip
+        content="Top Left prompts info"
+        placement="top"
+        trigger="click"
+      >
+        <el-button>top-start</el-button>
+      </OpenToolTip>
+    </div>
+    
+    <div>
+      OpenSelect
+      <OpenSelect
+          :options="options"
+          v-model="selectValue"
+          @change="selectChange"
+          style="width: 240px"
+          clearable
+      >
+      
+      </OpenSelect>
+      {{ selectValue }}----------------------------------------
+      <br>
+      
+      ElSelect
+      <el-select
+          v-model="value"
+          placeholder="Select"
+          size="default"
+          clearable
+          style="width: 240px"
+      >
+        <el-option
+            v-for="item in options"
+            :key="item.value"
+            :label="item.label"
+            :value="item.value"
+        />
+      </el-select>
+    </div>
     <div style="width: 240px">
       openinput
       <OpenInput
@@ -130,6 +174,7 @@ import OpenInput from "@/components/input/input.vue";
 import OpenSelect from "@/components/select/select.vue";
 import button from "@/components/button";
 import {Calendar} from "@element-plus/icons-vue";
+import OpenToolTip from "@/components/tooltip";
 
 const switchvalue = ref(true)
 const value = ref('')
@@ -156,23 +201,28 @@ onMounted(() => {
   }, 1000)
 })
 
-const options = ref([
+const options = [
   {
-    label: '哈哈哈哈哈哈',
-    value: '2313',
-    disabled: false
+    value: 'Option1',
+    label: 'Option1',
   },
   {
-    label: '哈哈哈哈哈哈',
-    value: '2313',
-    disabled: false
+    value: 'Option2',
+    label: 'Option2',
   },
   {
-    label: '哈哈哈哈哈哈',
-    value: '2313',
-    disabled: false
-  }
-])
+    value: 'Option3',
+    label: 'Option3',
+  },
+  {
+    value: 'Option4',
+    label: 'Option4',
+  },
+  {
+    value: 'Option5',
+    label: 'Option5',
+  },
+]
 
 const selectChange = (val: string) => {
   console.log('selectChange' + val)

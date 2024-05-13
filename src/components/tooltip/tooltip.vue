@@ -24,7 +24,8 @@
           v-if="isOpen"
       >
         <slot name="content">
-          {{ content }}
+          <span v-if="rawContent" v-html="content" />
+          <span v-else>{{ content }}</span>
         </slot>
         <div id="arrow" data-popper-arrow></div>
       </div>
