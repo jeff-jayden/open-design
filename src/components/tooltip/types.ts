@@ -15,6 +15,7 @@ export type placementType =
     | 'right-end'
 
 export interface tooltipProps {
+    rawContent?: boolean;
     effect?: 'dark' | 'light';
     content?: string;
     placement?: placementType;
