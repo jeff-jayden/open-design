@@ -99,6 +99,7 @@
           @change="selectChange"
           style="width: 240px"
           clearable
+          disabled
       >
       
       </OpenSelect>
@@ -112,6 +113,7 @@
           size="default"
           clearable
           style="width: 240px"
+          disabled
       >
         <el-option
             v-for="item in options"
@@ -205,6 +207,7 @@ const options = [
   {
     value: 'Option1',
     label: 'Option1',
+    disabled: true
   },
   {
     value: 'Option2',

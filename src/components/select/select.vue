@@ -13,9 +13,13 @@
         :popper-options="popperOptions"
     >
       <template #default>
-        <div class="open-select-wrapper">
+        <div
+          class="open-select-wrapper"
+          :class="{
+            'is-disabled': disabled
+          }"
+        >
           <div
-              v-if="!selectDisabled"
               :class="['selected-item', 'input-wrapper']"
           >
             <input
@@ -27,6 +31,9 @@
                 type="text"
                 :disabled="selectDisabled"
                 class="open-select__input"
+                :class="{
+                  'disabled': selectDisabled
+                }"
                 @click.stop="toggleDropdown"
             />
             <span
@@ -43,7 +50,10 @@
           >
             <el-icon
                 v-if="iconComponent && !showClose"
-                :class="['caret', 'icon', {'is-reverse': isDropdownShow}]"
+                :class="['caret', 'icon', {
+                  'is-reverse': isDropdownShow,
+                  'disabled': selectDisabled
+                }]"
             >
               <component :is="iconComponent"/>
             </el-icon>
