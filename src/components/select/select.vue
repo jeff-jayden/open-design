@@ -37,6 +37,7 @@
                 @blur="handleBlur"
                 @input="OnInput"
                 @click.stop="toggleDropdown"
+                @keydown="handleKeydown"
             />
             <!--            <span-->
             <!--                v-if="filterable"-->
@@ -90,11 +91,12 @@
           No match data
         </div>
         <ul class="open-select__menu" v-else>
-          <template v-for="item in filterOption" :key="item.value">
+          <template v-for="(item, index) in filterOption" :key="item.value">
             <li
                 class="open-select__menu-item"
                 :class="{
                 'is-disabled': item.disabled,
+                'is-highlighted': states.highlightIndex === index,
               }"
                 @click.stop="selectItem(item)"
             >
@@ -181,6 +183,60 @@ const showClose = computed(() =>
     !selectDisabled.value &&
     states.inputValue
 )
+
+const handleKeydown = (e: KeyboardEvent) => {
+  console.log('KeyboardEvent@@@@@' + e.key)
+  switch (e.key) {
+    case "Enter":
+      if (!isDropdownShow.value) {
+        controlDropdown(true);
+      } else {
+        if (
+            states.highlightIndex > 0 &&
+            filterOption.value[states.highlightIndex]
+        ) {
+          selectItem(filterOption.value[states.highlightIndex]);
+        } else {
+          controlDropdown(false);
+        }
+      }
+      break;
+    case "Escape":
+      if (isDropdownShow.value) {
+        controlDropdown(false);
+      }
+      break;
+    case "ArrowUp":
+      e.preventDefault();
+      //states.highlightIndex = -1
+      if (filterOption.value.length > 0) {
+        if (states.highlightIndex === -1 || states.highlightIndex === 0) {
+          states.highlightIndex = filterOption.value.length - 1;
+        } else {
+          //move up
+          states.highlightIndex--;
+        }
+      }
+      break;
+    case "ArrowDown":
+      e.preventDefault();
+      //states.highlightIndex = -1
+      if (filterOption.value.length > 0) {
+        if (
+            states.highlightIndex === -1 ||
+            states.highlightIndex === filterOption.value.length - 1
+        ) {
+          states.highlightIndex = 0;
+        } else {
+          //move up
+          states.highlightIndex++;
+        }
+      }
+      break;
+    default:
+      break;
+  }
+};
 
 const toggleDropdown = () => {
   if (selectDisabled.value) return
