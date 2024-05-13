@@ -94,6 +94,7 @@
     <div>
       OpenSelect
       <OpenSelect
+          placeholder="Select"
           :options="options"
           v-model="selectValue"
           @change="selectChange"
