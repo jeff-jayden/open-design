@@ -10,6 +10,12 @@
 
 .open-select {
 
+    .open-tooltip{
+        .open-tooltip__popper {
+            padding: 0;
+        }
+    }
+
     .open-select-wrapper {
         align-items: center;
         background-color: #fff;
@@ -81,6 +87,14 @@
 
     }
 
+    .open-select__nodata {
+        color: #909399;
+        margin: 0;
+        box-sizing: border-box;
+        padding: 10px 0;
+        text-align: center;
+    }
+
     .open-select__menu {
         list-style: none;
         margin: 6px 0;
@@ -88,6 +102,7 @@
         box-sizing: border-box;
 
         .open-select__menu-item {
+            padding-left: 12px;
             margin: 0;
             font-size: var(--open-select-item-font-size);
             position: relative;

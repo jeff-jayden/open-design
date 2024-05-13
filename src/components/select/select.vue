@@ -14,8 +14,8 @@
     >
       <template #default>
         <div
-          class="open-select-wrapper"
-          :class="{
+            class="open-select-wrapper"
+            :class="{
             'is-disabled': disabled
           }"
         >
@@ -23,26 +23,29 @@
               :class="['selected-item', 'input-wrapper']"
           >
             <input
+                :readonly="!filterable"
+                :placeholder="placeholder"
                 ref="inputRef"
                 v-model="states.inputValue"
-                @focus="handleFocus"
-                @blur="handleBlur"
-                @input="OnInput"
                 type="text"
                 :disabled="selectDisabled"
                 class="open-select__input"
                 :class="{
                   'disabled': selectDisabled
                 }"
+                @focus="handleFocus"
+                @blur="handleBlur"
+                @input="OnInput"
                 @click.stop="toggleDropdown"
             />
-            <span
-                v-if="filterable"
-                ref="calculatorRef"
-                aria-hidden="true"
-                class="input-calculator"
-                v-text="states.inputValue"
-            />
+            <!--            <span-->
+            <!--                v-if="filterable"-->
+            <!--                ref="calculatorRef"-->
+            <!--                aria-hidden="true"-->
+            <!--                class="input-calculator"-->
+            <!--                v-text="states.inputValue"-->
+            <!--            />-->
+          
           </div>
           
           <div
@@ -74,7 +77,7 @@
             class="open-select__nodata"
             v-if="filterOption.length === 0"
         >
-          no match data
+          No match data
         </div>
         <ul class="open-select__menu" v-else>
           <template v-for="item in filterOption" :key="item.value">
@@ -103,6 +106,7 @@ import {SelectEmits, SelectProps, SelectOption, SelectStates} from "@/components
 import RenderVnode from "@/util/RenderVnode";
 import {TooltipInstance} from "@/components/tooltip/types";
 import {ArrowDown, CircleClose} from "@element-plus/icons-vue";
+import {isArray, isFunction} from "lodash-es";
 
 defineOptions({
   name: 'OpenSelect'
@@ -112,7 +116,8 @@ const props = withDefaults(defineProps<SelectProps>(), {
   disabled: false,
   suffixIcon: ArrowDown,
   options: () => [],
-  clearIcon: CircleClose
+  clearIcon: CircleClose,
+  filterable: false
 })
 
 const isFocus = ref(false)
@@ -132,6 +137,7 @@ const states = reactive<SelectStates>({
   mouseHover: false,
   loading: false,
   highlightIndex: -1,
+  previousQuery: null
 })
 
 const inputRef = ref<HTMLInputElement>(null)
@@ -144,10 +150,11 @@ const focus = () => {
 const isDropdownShow = ref(false);
 const tooltipRef = ref() as Ref<TooltipInstance>;
 
+
 const showClose = computed(() =>
-      props.clearable &&
-      !selectDisabled.value&&
-      states.inputValue
+    props.clearable &&
+    !selectDisabled.value &&
+    states.inputValue
 )
 
 const toggleDropdown = () => {
@@ -177,6 +184,36 @@ const handleClearClick = () => {
 const OnInput = ({target}) => {
   console.log('select: ' + target.value)
   states.inputValue = target.value
+  return onInputChange()
+}
+
+const onInputChange = () => {
+  if (states.inputValue.length > 0 && !isDropdownShow.value) {
+    isDropdownShow.value = true
+  }
+  handleQueryChange(states.inputValue)
+}
+
+const handleQueryChange = (searchValue: string) => {
+  if (states.previousQuery === searchValue) {
+    return
+  }
+  states.previousQuery = searchValue
+  //过滤方法
+  if (props.filterable && isFunction(props.filterMethod)) {
+    // 执行自定义筛选方法
+    filterOption.value = props.filterMethod(searchValue)
+  } else if(
+      props.filterable &&
+      props.remote &&
+      isFunction(props.remoteMethod)
+  ) {
+    props.remoteMethod(searchValue)
+  } else {
+    //简单过滤
+    filterOption.value = props.options.filter(option => option.label.includes(searchValue))
+  }
+  
 }
 
 const handleFocus = (event: FocusEvent) => {

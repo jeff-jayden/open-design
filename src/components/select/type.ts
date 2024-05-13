@@ -12,6 +12,7 @@ export interface SelectStates {
     mouseHover: boolean;
     loading: boolean;
     highlightIndex: number;
+    previousQuery: string;
 }
 
 export interface SelectProps {
@@ -28,6 +29,8 @@ export interface SelectProps {
     suffixIcon?: any;
     remote?: boolean;
     clearIcon?: any;
+    filterMethod?: Function;
+    remoteMethod?: Function;
 }
 
 export interface SelectEmits {

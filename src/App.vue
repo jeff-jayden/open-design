@@ -94,12 +94,13 @@
     <div>
       OpenSelect
       <OpenSelect
+          placeholder="Select"
           :options="options"
           v-model="selectValue"
           @change="selectChange"
           style="width: 240px"
           clearable
-          disabled
+          filterable
       >
       
       </OpenSelect>
@@ -108,12 +109,12 @@
       
       ElSelect
       <el-select
-          v-model="value"
+          v-model="value2"
           placeholder="Select"
           size="default"
           clearable
           style="width: 240px"
-          disabled
+          filterable
       >
         <el-option
             v-for="item in options"
@@ -181,6 +182,7 @@ import OpenToolTip from "@/components/tooltip";
 const switchvalue = ref(true)
 const value = ref('')
 const value1 = ref('')
+const value2 = ref('')
 const selectValue = ref('')
 
 const opinput = (val) => {
