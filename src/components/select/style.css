@@ -9,6 +9,7 @@
 }
 
 .open-select {
+
     .open-select-wrapper {
         align-items: center;
         background-color: #fff;
@@ -42,7 +43,17 @@
                 height: var(--open-select-item-height-defalut);
                 max-width: 100%;
                 background-color: transparent;
+
+                &.disabled {
+                    cursor: not-allowed;
+                }
             }
+        }
+
+        &.is-disabled {
+            background: #f5f7fa;
+            color: var(--open-select-item-disabled-font-color);
+            cursor: not-allowed;
         }
     }
 
@@ -61,6 +72,9 @@
 
             &.is-reverse {
                 transform: rotateZ(180deg);
+            }
+            &.disabled {
+                cursor: not-allowed;
             }
         }
 
