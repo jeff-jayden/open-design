@@ -151,6 +151,38 @@
       />
     </div>
     
+    <div>
+      如何实现的校验
+      OpenForm
+      <OpenForm :model="formInput">
+        <open-form-item label="Activity name" error="error" show-message>
+          <OpenInput id="hello" v-model="formInput.input"/>
+        </open-form-item>
+      </OpenForm>
+      ----------------------------------------
+      el-form
+      <el-form
+          :rules="rules"
+          :model="form"
+          label-width="auto"
+          style="max-width: 600px"
+          show-message
+      >
+        <el-form-item
+            label="Activity name"
+            prop="name"
+        >
+          <el-input v-model="form.name" />
+        </el-form-item>
+        <el-form-item label="Activity zone">
+          <el-select v-model="form.region" placeholder="please select your zone">
+            <el-option label="Zone one" value="shanghai" />
+            <el-option label="Zone two" value="beijing" />
+          </el-select>
+        </el-form-item>
+      </el-form>
+    </div>
+    
   </div>
 
 </template>
@@ -160,7 +192,7 @@ import {ElInput, ElTooltip} from "element-plus";
 import OpenButton from '@/components/button/button.vue'
 import Icon from '@/components/icon/icon.vue'
 // import {Button} from "@jeff-jayden/open-design";
-import {onMounted, ref} from "vue";
+import {onMounted, reactive, ref} from "vue";
 import Collapse from "@/components/collapse/collapse.vue";
 import CollapseItem from "@/components/collapse/collapse-item.vue";
 import tooltip from '@/components/tooltip/tooltip.vue'
@@ -178,12 +210,36 @@ import OpenSelect from "@/components/select/select.vue";
 import button from "@/components/button";
 import {Calendar} from "@element-plus/icons-vue";
 import OpenToolTip from "@/components/tooltip";
+import OpenForm from "@/components/form/form.vue";
+import OpenFormItem from "@/components/form/form-item.vue";
 
 const switchvalue = ref(true)
 const value = ref('')
 const value1 = ref('')
 const value2 = ref('')
 const selectValue = ref('')
+
+const formInput = reactive({
+  input: ''
+})
+
+const rules = reactive({
+  name: [
+    { required: true, message: 'Please input Activity name', trigger: 'blur' },
+    { min: 3, max: 5, message: 'Length should be 3 to 5', trigger: 'blur' },
+  ]
+})
+
+const form = reactive({
+  name: '',
+  region: '',
+  date1: '',
+  date2: '',
+  delivery: false,
+  type: [],
+  resource: '',
+  desc: '',
+})
 
 const opinput = (val) => {
   console.log(value1.value)

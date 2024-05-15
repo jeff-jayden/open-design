@@ -1,0 +1,32 @@
+.open-form {
+    max-width: 600px;
+
+    .open-form-item {
+        display: flex;
+        font-size: 14px;
+
+        .open-form-label {
+            align-items: flex-start;
+            box-sizing: border-box;
+            color: #606266;
+            display: inline-flex;
+            flex: 0 0 auto;
+            font-size: 14px;
+            height: 32px;
+            justify-content: flex-end;
+            line-height: 32px;
+            padding: 0 12px 0 0;
+        }
+
+        .open-form-content {
+            align-items: center;
+            display: flex;
+            flex: 1;
+            flex-wrap: wrap;
+            font-size: 14px;
+            line-height: 32px;
+            min-width: 0;
+            position: relative;
+        }
+    }
+}
