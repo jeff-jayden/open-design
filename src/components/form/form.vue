@@ -6,9 +6,13 @@
 
 <script setup lang="ts">
 
+import {FormProps} from "@/components/form/types";
+
 defineOptions({
   name: 'OpenForm'
 })
+
+const props = defineProps<FormProps>()
 
 </script>
 
