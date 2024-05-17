@@ -154,9 +154,16 @@
     <div>
       如何实现的校验
       OpenForm
-      <OpenForm :model="formInput">
-        <open-form-item label="Activity name" error="error" show-message>
-          <OpenInput id="hello" v-model="formInput.input"/>
+      <OpenForm
+          :model="form"
+          :rules="rules"
+      >
+        <open-form-item
+            label="Activity name"
+            show-message
+            prop="name"
+        >
+          <OpenInput id="hello" v-model="form.name"/>
         </open-form-item>
       </OpenForm>
       ----------------------------------------
@@ -181,6 +188,20 @@
           </el-select>
         </el-form-item>
       </el-form>
+      ----------------------------------------
+      snow-form
+      <Form
+          :rules="rules"
+          :model="form"
+          
+      >
+        <FormItem
+            label="Activity name"
+            prop="name"
+        >
+          <Input id="hello" v-model="form.name"/>
+        </FormItem>
+      </Form>
     </div>
     
   </div>
@@ -199,9 +220,8 @@ import tooltip from '@/components/tooltip/tooltip.vue'
 // import {Dropdown} from "@qinloong/snow-sky";
 import OpenDropDown from "@/components/dropdown/dropdown.vue";
 import {createMessage} from "@/components/message/methods";
-import sonwMessage, {Form, Input} from '@qinloong/snow-sky'
 // import {Tooltip} from "@qinloong/snow-sky";
-// import {Collapse, CollapseItem} from '@qinloong/snow-sky'
+import {Form, FormItem,Input} from '@qinloong/snow-sky'
 // import OpenMessage from '@/components/message/message.vue'
 import OpenSwitch from '@/components/switch/switch.vue'
 import Switch from '@qinloong/snow-sky'
