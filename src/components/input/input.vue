@@ -3,7 +3,8 @@
   <div
       class="open-input"
       :class="{
-        [`open-input-${type}`]: type
+        [`open-input-${type}`]: type,
+        'is-focus': isFocus
       }"
   >
     <!--    template默认不显示-->
@@ -97,7 +98,7 @@
 <script lang="ts" setup>
 
 import {InputEmits, InputProps} from "@/components/input/types";
-import {computed, nextTick, ref, shallowRef, useSlots} from "vue";
+import {computed, inject, nextTick, ref, shallowRef, useSlots} from "vue";
 import {UPDATE_MODEL_EVENT} from "@/constants";
 import {
   CircleClose,
@@ -105,6 +106,7 @@ import {
   View as IconView,
 } from '@element-plus/icons-vue'
 import {isNil} from "lodash-unified";
+import {formItemContextKey} from "@/components/form/constant";
 
 
 const props = withDefaults(defineProps<InputProps>(), {
@@ -123,8 +125,12 @@ const textarea = shallowRef<HTMLTextAreaElement>()
 const innerValue = ref(props.modelValue)
 const isFocus = ref(false)
 const passwordVisible = ref(false)
+const formItemContext = inject(formItemContextKey)
 const _ref = computed(() => input.value || textarea.value)
 
+const runValidation = (trigger?: string) => {
+  formItemContext?.validate(trigger).catch((e) => console.log(e.errors))
+}
 
 const handlePasswordVisible = () => {
   passwordVisible.value = !passwordVisible.value
@@ -191,10 +197,12 @@ const handleBlur = (event: FocusEvent) => {
   console.log('blur triggered')
   isFocus.value = false
   emit('blur', event)
+  runValidation('blur')
 }
 
 const handleChange = () => {
   emit('change', innerValue.value)
+  runValidation('change')
 }
 
 const handleKeydown = (evt: KeyboardEvent) => {

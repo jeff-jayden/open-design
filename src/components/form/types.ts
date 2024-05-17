@@ -1,5 +1,50 @@
-import {RuleItem} from "async-validator";
+import {RuleItem, type ValidateError, ValidateFieldsError} from "async-validator";
+import {Arrayable} from "@/types";
 
+
+export interface FormValidateFailure {
+    errors: ValidateError[] | null;
+    fields: ValidateFieldsError;
+}
+
+/**
+ 上下文用到的东西
+ */
+export type FormValidationResult = Promise<boolean>
+export type FormValidateCallback = (
+    isValid: boolean,
+    invalidFields?: ValidateFieldsError
+) => void
+
+export interface FormItemContext extends FormItemProps {
+    $el: HTMLDivElement | undefined
+    validateState: FormItemValidateState
+    hasLabel: boolean
+    fieldValue: any
+    validate: (
+        trigger: string,
+        callback?: FormValidateCallback
+    ) => FormValidationResult
+    resetField(): void
+    clearValidate(): void
+}
+
+
+export type FormContext = FormProps & {
+    addField: (field: FormItemContext) => void
+    removeField: (field: FormItemContext) => void
+    resetFields: (props?: Arrayable<FormItemProps>) => void
+    clearValidate: (props?: Arrayable<FormItemProps>) => void
+    validateField: (
+        props?: Arrayable<FormItemProps>,
+        callback?: FormValidateCallback
+    ) => FormValidationResult
+}
+
+
+/**
+ * 规则类型
+ */
 export interface FormItemRule extends RuleItem {
     trigger?: string;
 }
@@ -7,27 +52,24 @@ export interface FormItemRule extends RuleItem {
 export type FormRules = Record<string, FormItemRule[]>;
 
 export interface FormProps {
-    /**
-     * @description Data of form component.
-     */
     model: Object;
     rules?: FormRules;
 }
 
+export interface FormEmits {
+    (e: 'validate', prop: FormItemProps, isValid: boolean, message: string): boolean;
+}
+
+
 export interface FormItemProps {
-    /**
-     * @description Control the size of components in this form.
-     */
     size?: string;
-    /**
-     * @description Whether to disable all components in this form. If set to `true`, it will override the `disabled` prop of the inner component.
-     */
     disabled?: boolean;
     for?: string;
     label?: string;
     error?: string;
+    required?: boolean;
     showMessage?: boolean;
-    prop?: string;
+    prop: string;
 }
 
 
