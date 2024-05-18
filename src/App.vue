@@ -99,8 +99,6 @@
           v-model="selectValue"
           @change="selectChange"
           style="width: 240px"
-          clearable
-          filterable
       >
       
       </OpenSelect>

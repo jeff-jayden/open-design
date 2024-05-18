@@ -2,7 +2,7 @@ import type {VNode, ComponentInternalInstance} from "vue";
 
 export interface MessageProps {
     message?: string | VNode | Function;
-    type?: 'success' | 'info' | 'warning' | 'error';
+    type?: 'success' | 'info' | 'warning' | 'danger';
     showClose?: boolean;
     duration?: number;
     center?: boolean;

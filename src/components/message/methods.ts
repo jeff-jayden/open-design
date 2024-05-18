@@ -55,3 +55,5 @@ export function closeAll(type?: messageType): void {
         }
     }
 }
+
+export default createMessage
