@@ -100,6 +100,58 @@ export default defineConfig({
                             text: '组件总览', link: '/components/index'
                         }
                     ]
+                },
+                {
+                    text: '基本组件',
+                    items: [
+                        {
+                            text: 'Button', link: '/components/Button'
+                        }
+                    ]
+                },
+                {
+                    text: '表单组件',
+                    items: [
+                        {
+                            text: 'Input', link: '/components/Input'
+                        },
+                        {
+                            text: 'Form', link: '/components/Form'
+                        },
+                        {
+                            text: 'Switch', link: '/components/Switch'
+                        },
+                        {
+                            text: 'Select', link: '/components/Select'
+                        }
+                    ]
+                },
+                {
+                    text: '数据展示',
+                    items: [
+                        {
+                            text: 'Collapse',link: '/components/Collapse'
+                        }
+                    ]
+                },
+                {
+                    text: '导航组件',
+                    items: [
+                        {
+                            text: 'DropDown',link: '/components/DropDown'
+                        }
+                    ]
+                },
+                {
+                    text: '反馈组件',
+                    items: [
+                        {
+                            text: 'Message', link: '/components/Message'
+                        },
+                        {
+                            text: 'Tooltip', link: '/components/Tooltip'
+                        }
+                    ]
                 }
             ]
         },
