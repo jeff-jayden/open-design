@@ -6,6 +6,7 @@
         [`open-input-${type}`]: type,
         'is-focus': isFocus
       }"
+      v-bind="$attrs"
   >
     <!--    template默认不显示-->
     <template v-if="type!=='textarea'">

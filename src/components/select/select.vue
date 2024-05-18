@@ -112,9 +112,9 @@
 <script setup lang="ts">
 
 import OpenToolTip from "@/components/tooltip/tooltip.vue";
-import {computed, reactive, ref, watch} from "vue";
+import {computed, reactive, ref} from "vue";
 import type {Ref} from 'vue';
-import {SelectEmits, SelectProps, SelectOption, SelectStates} from "@/components/select/type";
+import {SelectEmits, SelectProps, SelectOption, SelectStates} from "@/components/select/types";
 import RenderVnode from "@/util/RenderVnode";
 import {TooltipInstance} from "@/components/tooltip/types";
 import {ArrowDown, CircleClose} from "@element-plus/icons-vue";

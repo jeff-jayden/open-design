@@ -12,7 +12,9 @@
         }"
     >
       <slot name="title">{{ title }}</slot>
-      <Icon icon="angle-right" class="header-angle"/>
+      <open-icon class="header-angle">
+        <ArrowRight />
+      </open-icon>
     </div>
     <Transition name="slide" v-on="transitionEvents">
       <div class="open-collapse-item__wrapper" v-show="isActive">
@@ -25,9 +27,10 @@
 </template>
 
 <script setup lang="ts">
-import Icon from "@/components/icon";
 import {computed, inject, ref} from "vue";
 import {collapseContextKey, CollapseItemProps} from "@/components/collapse/types";
+import OpenIcon from "@/components/icon";
+import {ArrowRight} from '@element-plus/icons-vue';
 
 const props = defineProps<CollapseItemProps>()
 const collapseContext = inject(collapseContextKey)
