@@ -65,6 +65,7 @@
     }
     /*circle*/
     &.is-circle {
+        width: 32px;
         border-radius: 50%;
         padding: 8px;
     }
@@ -78,34 +79,31 @@
         background-color: var(--open-button-disabled-bg-color);
         border-color: var(--open-button-disabled-border-color);
     }
-    [class*=open-icon] {
-        margin-left: 5px;
-    }
 }
 @each $val in primary,success,warning,info,danger {
     .open-button--$(val) {
-    --open-button-text-color: var(--open-color-white);
-    --open-button-bg-color: var(--open-color-$(val));
-    --open-button-border-color: var(--open-color-$(val));
-    --open-button-outline-color: var(--open-color-$(val)-light-5);
-    --open-button-active-color: var(--open-color-$(val)-dark-2);
-    --open-button-hover-text-color: var(--open-color-white);
-    --open-button-hover-bg-color: var(--open-color-$(val)-light-3);
-    --open-button-hover-border-color: var(--open-color-$(val)-light-3);
-    --open-button-active-bg-color: var(--open-color-$(val)-dark-2);
-    --open-button-active-border-color: var(--open-color-$(val)-dark-2);
-    --open-button-disabled-text-color: var(--open-color-white);
-    --open-button-disabled-bg-color: var(--open-color-$(val)-light-5);
-    --open-button-disabled-border-color: var(--open-color-$(val)-light-5);
-}
-    .open-button--$(val).is-plain {
-    --open-button-text-color: var(--open-color-$(val));
-    --open-button-bg-color: var(--open-color-$(val)-light-9);
-    --open-button-border-color: var(--open-color-$(val)-light-5);
-    --open-button-hover-text-color: var(--open-color-white);
-    --open-button-hover-bg-color: var(--open-color-$(val));
-    --open-button-hover-border-color: var(--open-color-$(val));
-    --open-button-active-text-color: var(--open-color-white);
+        --open-button-text-color: var(--open-color-white);
+        --open-button-bg-color: var(--open-color-$(val));
+        --open-button-border-color: var(--open-color-$(val));
+        --open-button-outline-color: var(--open-color-$(val)-light-5);
+        --open-button-active-color: var(--open-color-$(val)-dark-2);
+        --open-button-hover-text-color: var(--open-color-white);
+        --open-button-hover-bg-color: var(--open-color-$(val)-light-3);
+        --open-button-hover-border-color: var(--open-color-$(val)-light-3);
+        --open-button-active-bg-color: var(--open-color-$(val)-dark-2);
+        --open-button-active-border-color: var(--open-color-$(val)-dark-2);
+        --open-button-disabled-text-color: var(--open-color-white);
+        --open-button-disabled-bg-color: var(--open-color-$(val)-light-5);
+        --open-button-disabled-border-color: var(--open-color-$(val)-light-5);
+        &.is-plain {
+            --open-button-text-color: var(--open-color-$(val));
+            --open-button-bg-color: var(--open-color-$(val)-light-9);
+            --open-button-border-color: var(--open-color-$(val)-light-5);
+            --open-button-hover-text-color: var(--open-color-white);
+            --open-button-hover-bg-color: var(--open-color-$(val));
+            --open-button-hover-border-color: var(--open-color-$(val));
+            --open-button-active-text-color: var(--open-color-white);
+        }
     }
 }
 .open-button--large {

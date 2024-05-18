@@ -21,7 +21,7 @@ export interface MessageContext {
     destory: () => void;
 }
 
-// export const messageTypes = ['success', 'info', 'warning', 'error'] as const
-// export type messageType = typeof messageTypes[number]
+export const messageTypes = ['success', 'info', 'warning', 'error'] as const
+export type messageType = typeof messageTypes[number]
 
 export type CreateMessageProps = Omit<MessageProps, 'onDestory' | 'id' | 'zIndex'>

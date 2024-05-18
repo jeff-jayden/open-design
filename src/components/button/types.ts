@@ -5,6 +5,7 @@ export type ButtonSize = 'large' | 'small'
 export type NativeType = 'button' | 'submit' | 'reset'
 
 export interface ButtonProps {
+    tag?: string;
     type?: ButtonType;
     size?: ButtonSize;
     plain?: boolean;
@@ -13,8 +14,9 @@ export interface ButtonProps {
     disabled?: boolean;
     nativeType?: NativeType;
     autofocus?: boolean;
-    icon?: string;
+    icon?: any;
     loading?: boolean;
+    loadingIcon?: any;
 }
 
 export interface ButtonGroupContext {
