@@ -1,11 +1,12 @@
 import type {App} from "vue";
-import {library} from "@fortawesome/fontawesome-svg-core";
-import {fas} from "@fortawesome/free-solid-svg-icons";
 import "./styles/index.css";
 import OpButton from "@/components/button";
+import OpenCollapse from '@/components/collapse'
+import OpenDropDown from '@/components/dropdown'
 import OpIcon from '@/components/icon'
+import OpenInput from '@/components/input'
+import OpenForm from '@/components/form'
 
-library.add(fas)
 
 const components = [
     OpButton,

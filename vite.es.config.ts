@@ -46,6 +46,7 @@ export default defineConfig({
       ],
       output: {
         assetFileNames: (chunkInfo) => {
+          // console.log(chunkInfo)
           if (chunkInfo.name === "style.css") {
             return "index.css";
           }

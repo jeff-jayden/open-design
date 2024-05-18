@@ -1,5 +1,6 @@
 <template>
-  <button
+  <component
+    is="button"
     ref="_ref"
     class="open-button"
     :class="{
@@ -15,25 +16,39 @@
     :autofocus="autofocus"
     :type="nativeType"
   >
-    <OpenIcon icon="spinner" spin v-if="loading"></OpenIcon>
-    <span>
-      <slot/>
+    <template v-if="loading">
+      <!--      如果loading插槽被填充才显示-->
+      <slot v-if="$slots.loading" name="loading" />
+      <open-icon v-else class="open-is-loading">
+        <component :is="loadingIcon" />
+      </open-icon>
+    </template>
+    <open-icon v-else-if="icon || $slots.icon">
+      <component :is="icon" v-if="icon" />
+      <slot v-else name="icon" />
+    </open-icon>
+    <span
+        v-if="$slots.default"
+    >
+      <slot />
     </span>
-    <OpenIcon :icon="icon" v-if="icon"></OpenIcon>
-  </button>
+  </component>
 </template>
 
 <script setup lang="ts">
 import OpenIcon from '../icon/icon.vue'
 import type {ButtonProps} from "@/components/button/types";
 import {ref} from "vue";
+import {Loading} from "@element-plus/icons-vue";
 
 defineOptions({
   name: 'OpenButton'
 })
 
-withDefaults(defineProps<ButtonProps>(), {
-  nativeType:'button'
+const props = withDefaults(defineProps<ButtonProps>(), {
+  nativeType:'button',
+  loadingIcon: Loading,
+  tag: 'button'
 })
 
 const _ref = ref<HTMLButtonElement>()

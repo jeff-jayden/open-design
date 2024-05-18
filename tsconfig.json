@@ -1,12 +1,18 @@
 {
   "include": ["env.d.ts", "src/**/*", "src/**/*.vue"],
+//  这是TypeScript编译器的主要配置选项
   "compilerOptions": {
+    //为了解决import React from 'react'这类语句找react从项目根目录找依赖
     "baseUrl": ".",
+    //路径替换
+//    这个配置主要用于开发阶段，影响TypeScript到JavaScript的转译过程
     "paths": {
       "@/*": ["./src/*"]
     },
+//    "vue/global"可以在项目中的任何TypeScript文件里直接使用Vue的类型
     "types": ["unplugin-vue-macros/macros-global", "vue/global" /* ... */],
   },
+//  这是针对Vue文件的编译选项，用于配置Vue宏
   "vueCompilerOptions": {
     "plugins": [
       "@vue-macros/volar/define-options",
@@ -25,6 +31,7 @@
     ]
   },
   "files": [],
+//  这个数组指定了项目中的其他TypeScript配置文件，它们可以是独立的项目或库。
   "references": [
     {
       "path": "./tsconfig.node.json"

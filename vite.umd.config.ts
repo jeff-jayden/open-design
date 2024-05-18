@@ -37,6 +37,7 @@ export default defineConfig({
           vue: "Vue",
         },
         assetFileNames: (chunkInfo) => {
+          // console.log(chunkInfo)
           if (chunkInfo.name === "style.css") {
             return "index.css";
           }
