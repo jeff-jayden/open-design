@@ -6,6 +6,8 @@
 )
 ![language](https://img.shields.io/github/languages/top/jeff-jayden/open-design
 )
+![download](https://img.shields.io/npm/dw/%40jeff-jayden%2Fopen-design
+)
 
 # 笔记
 
