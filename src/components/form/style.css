@@ -1,12 +1,21 @@
 .open-form {
-    max-width: 600px;
+    display: flex;
 
-    &.is-error .open-input__wrapper{
+    &.is-required {
+        .open-form-label:before {
+            color: #f56c6c;
+            content: "*";
+            margin-right: 4px;
+        }
+    }
+
+    &.is-error .open-input__wrapper {
         box-shadow: 0 0 0 1px #f56c6c inset;
     }
 
     .open-form-item {
         display: flex;
+        flex: 1;
         font-size: 14px;
         margin-bottom: 18px;
 
@@ -22,22 +31,21 @@
             line-height: 32px;
             padding: 0 12px 0 0;
 
-            &:before {
-                color: #f56c6c;
-                content: "*";
-                margin-right: 4px;
-            }
         }
 
         .open-form-content {
             align-items: center;
             display: flex;
-            flex: 1;
+            width: 100%;
             flex-wrap: wrap;
             font-size: 14px;
             line-height: 32px;
             min-width: 0;
             position: relative;
+
+            .open-input__wrapper {
+                width: 500px;
+            }
 
             .open-form-error {
                 color: #f56c6c;

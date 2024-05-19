@@ -24,7 +24,7 @@
           v-if="isOpen"
       >
         <slot name="content">
-          <span v-if="rawContent" v-html="content" />
+          <span v-if="rawContent" v-html="content"/>
           <span v-else>{{ content }}</span>
         </slot>
         <div id="arrow" data-popper-arrow></div>
@@ -49,7 +49,6 @@ const props = withDefaults(defineProps<tooltipProps>(), {
   effect: 'light',
   placement: "bottom",
   trigger: "hover",
-  transitionName: 'slide-fade'
 })
 const emits = defineEmits<TooltipEmits>()
 
@@ -99,16 +98,17 @@ watch(() => props.trigger, (newTrigger, oldTrigger) => {
   }
 })
 
-// 用于实现创建的popperNode位置在哪 ？？？？ 用ref引用得
-watch(isOpen, (newValue) => {
+// 参考https://www.jiyik.com/w/popperjs/popper-modifiers-offset
+watch(() => isOpen.value, (newValue) => {
   if (newValue) {
+    console.log('isOpen.value' + isOpen.value)
     if (triggerNode.value && popperNode.value) {
       popperInstance = createPopper(triggerNode.value, popperNode.value, popperOptions.value)
     } else {
       popperInstance.destroy()
     }
   }
-}, {flush: "post"})
+}, {flush: "post", immediate: true})
 
 
 const open = () => {

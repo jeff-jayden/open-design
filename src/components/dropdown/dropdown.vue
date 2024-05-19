@@ -82,7 +82,7 @@ watch(() => tooltipRef.value?.isOpen, () => {
   console.log(tooltipRef.value?.isOpen)
 }, {immediate: true})
 
-const visible = ref(tooltipRef.value?.isOpen)
+const visible = ref(false)
 
 const toggleTooltip = () => {
   console.log('tooltipRef.value?.isOpen' + tooltipRef.value?.isOpen)
