@@ -67,7 +67,7 @@
   --open-disabled-border-color: var(--open-border-color-light);
 
   /*animation*/
-  --open-transition-duration: .3s;
+  --open-transition-duration: .1s;
   --open-transition-duration-fast: .2s;
   --open-transition-box-shadow: .2s;
 

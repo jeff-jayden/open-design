@@ -39,7 +39,7 @@
             role="button"
             @click="handlerMainButtonClick"
         >
-          <slot name="default"/>
+          <slot/>
         </open-button>
         <open-button
             :type="type"
@@ -48,7 +48,9 @@
             class="caret-button"
             v-on="events"
         >
-          <open-icon icon="arrow-down"/>
+          <open-icon>
+            <ArrowDown/>
+          </open-icon>
         </open-button>
       </open-button-group>
     </template>
@@ -56,7 +58,7 @@
 </template>
 
 <script setup lang="ts">
-
+import {ArrowDown} from '@element-plus/icons-vue'
 import OpenIcon from '@/components/icon'
 import OpenButton from "@/components/button";
 import type {DropdownProps, DropdownEmits, DropdownInstance, MenuOption} from '@/components/dropdown/types'
@@ -95,8 +97,8 @@ const toggleTooltip = () => {
 
 const handleEvent = () => {
   if (props.trigger === 'hover') {
-    events['mouseenter'] = tooltipRef.value?.show
-    events['mouseleave'] = tooltipRef.value?.hide
+    events['mouseenter'] = tooltipRef.value?.show()
+    events['mouseleave'] = tooltipRef.value?.hide()
   } else {
     events['click'] = toggleTooltip
   }
@@ -107,7 +109,7 @@ onMounted(() => {
   handleEvent()
 })
 
-//tooltip抛出的事件给外面的人使用
+//tooltip抛出的事件给外面的组件使用
 const visibleChange = (val: any) => {
   console.log('dropVal' + val)
   emits('visible-change', val)
@@ -127,6 +129,11 @@ const handleClickItem = (item: MenuOption) => {
     tooltipRef?.value.hide()
   }
 }
+
+defineExpose<DropdownInstance>({
+  show: () => tooltipRef.value?.show(),
+  hide: () => tooltipRef.value?.hide()
+})
 
 
 </script>

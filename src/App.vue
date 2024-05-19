@@ -32,7 +32,7 @@
     </tooltip>
     
     <open-drop-down :menu-options="menuOptions" trigger="hover" effect="light" hide-after-click>
-      <open-button icon="arrow-down">无分割线</open-button>
+      <open-button :icon="ArrowDown">无分割线</open-button>
     </open-drop-down>
     
     <open-drop-down type="primary" :menu-options="menuOptions" trigger="click" hide-after-click
@@ -226,7 +226,7 @@ import Switch from '@qinloong/snow-sky'
 import OpenInput from "@/components/input/input.vue";
 import OpenSelect from "@/components/select/select.vue";
 import button from "@/components/button";
-import {Calendar} from "@element-plus/icons-vue";
+import {ArrowDown, Calendar} from "@element-plus/icons-vue";
 import OpenToolTip from "@/components/tooltip";
 import OpenForm from "@/components/form/form.vue";
 import OpenFormItem from "@/components/form/form-item.vue";

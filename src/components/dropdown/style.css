@@ -6,13 +6,12 @@
 }
 .open-dropdown {
     display: inline-block;
-    position: relative;
     .open-tooltip {
         --open-popover-padding: 5px 0;
     }
 }
-.open-dropdown__menu {
-    list-style-type: none;
+.open-dropdown .open-dropdown__menu {
+    list-style: none;
     margin: 0;
     padding: 0;
     .open-dropdown__item {

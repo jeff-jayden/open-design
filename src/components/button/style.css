@@ -63,6 +63,9 @@
     &.is-round {
         border-radius: var(--open-border-radius-round);
     }
+    & .has-right {
+        margin-right: 5px;
+    }
     /*circle*/
     &.is-circle {
         width: 32px;
