@@ -1,3 +1,11 @@
+一个vue3组件库
+
+助力开发者「更灵活」地搭建出「更美」的产品
+
+![last](https://img.shields.io/github/last-commit/jeff-jayden/open-design
+)
+
+
 # 笔记
 
 1. 通过css更改样式 用类名选择器指定 css基础要扎实
