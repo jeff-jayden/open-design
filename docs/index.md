@@ -10,7 +10,7 @@ hero:
   text: "一个vue3组件库"
   tagline: 助力开发者「更灵活」地搭建出「更美」的产品
   image:
-    src: /snowflake.png
+    src: /openDesign.png
     alt: YYG Admin UI
   actions:
     - theme: brand

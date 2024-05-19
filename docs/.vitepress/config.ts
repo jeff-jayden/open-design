@@ -19,7 +19,7 @@ export default defineConfig({
     description: opDescription,
     lastUpdated: true,
 
-    head: [['link', {rel: "icon", href: "/snowflake.png"}]],
+    head: [['link', {rel: "icon", href: "/openDesign.png"}]],
 
     vite: {
         plugins: [],
@@ -38,7 +38,7 @@ export default defineConfig({
     },
     themeConfig: {
         // https://vitepress.dev/reference/default-theme-config
-        logo: '/snowflake.png',
+        logo: '/openDesign.png',
         search: {
             provider: "local",
             options: {
