@@ -1,7 +1,11 @@
 # 安装
 
-## 环境支持
+### NPM
+```` shell
+npm i @jeff-jayden/open-design --save
+````
 
+## 环境支持
 - Typescript: 4.7.4
 - node: >=18.0.0
 
@@ -11,7 +15,3 @@ Open Design 1.0.5
 ## 使用包管理器
 请您使用包管理器 (npm) 安装 Snow-Sky, 然后您就可以使用打包工具，例如 Webpack
 
-### NPM 
-```` shell
-npm i @jeff-jayden/open-design --save
-````
