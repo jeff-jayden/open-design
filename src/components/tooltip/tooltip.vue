@@ -13,7 +13,7 @@
         <slot></slot>
       </div>
     </div>
-    <Transition :name="transitionName" mode="out-in">
+    <Transition name="slide-fade">
       <div
           class="open-tooltip__popper"
           :class="{
@@ -99,7 +99,7 @@ watch(() => props.trigger, (newTrigger, oldTrigger) => {
   }
 })
 
-// 用于实现创建的popperNode位置在哪 ？？？？
+// 用于实现创建的popperNode位置在哪 ？？？？ 用ref引用得
 watch(isOpen, (newValue) => {
   if (newValue) {
     if (triggerNode.value && popperNode.value) {

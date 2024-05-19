@@ -12,7 +12,7 @@
 
 .open-tooltip {
     .open-tooltip__popper {
-
+        position: relative;
         &.light {
             background: var(--open-popover-bg-color);
             color: var(--open-text-color-regular);
@@ -91,13 +91,13 @@
             border-bottom: 1px solid var(--open-popover-border-color);
         }
     }
-    /*.slide-fade-enter-active,*/
-    /*.slide-fade-leave-active {*/
-    /*    transition: opacity var(--open-transition-duration);*/
-    /*}*/
+    .slide-fade-enter-active,
+    .slide-fade-leave-active {
+        transition: opacity var(--open-transition-duration);
+    }
 
-    /*.slide-fade-enter-from,*/
-    /*.slide-fade-enter-to {*/
-    /*    opacity: 0;*/
-    /*}*/
+    .slide-fade-enter-from,
+    .slide-fade-enter-to {
+        opacity: 0;
+    }
 }

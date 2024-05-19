@@ -9,7 +9,9 @@
 }
 
 .open-select {
-
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 32px;
     .open-tooltip{
         .open-tooltip__popper {
             padding: 0;

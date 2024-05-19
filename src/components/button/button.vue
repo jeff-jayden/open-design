@@ -16,6 +16,15 @@
     :autofocus="autofocus"
     :type="nativeType"
   >
+    <span
+        v-if="$slots.default"
+        :class="{
+          'has-right': $slots.default && (loading || icon)
+        }"
+        class="default-slot"
+    >
+      <slot />
+    </span>
     <template v-if="loading">
       <!--      如果loading插槽被填充才显示-->
       <slot v-if="$slots.loading" name="loading" />
@@ -27,11 +36,6 @@
       <component :is="icon" v-if="icon" />
       <slot v-else name="icon" />
     </open-icon>
-    <span
-        v-if="$slots.default"
-    >
-      <slot />
-    </span>
   </component>
 </template>
 

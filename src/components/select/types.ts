@@ -1,5 +1,19 @@
 import {UPDATE_MODEL_EVENT} from '@/constants'
 
+export type placementType =
+    'top'
+    | 'top-start'
+    | 'top-end'
+    | 'bottom'
+    | 'bottom-start'
+    | 'bottom-end'
+    | 'left'
+    | 'left-start'
+    | 'left-end'
+    | 'right'
+    | 'right-start'
+    | 'right-end'
+
 export interface SelectOption {
     label: string;
     value: string;
@@ -33,6 +47,7 @@ export interface SelectProps {
     filterMethod?: Function;
     remoteMethod?: Function;
     multiple?: boolean;
+    placement?: placementType;
 }
 
 export interface SelectEmits {

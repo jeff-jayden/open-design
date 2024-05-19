@@ -5,6 +5,7 @@
       @click="toggleDropdown"
   >
     <OpenToolTip
+        :placement="placement"
         ref="tooltipRef"
         content="open-select"
         :effect="effect"
@@ -62,7 +63,7 @@
           <div
               class="suffix"
           >
-            <el-icon
+            <open-icon
                 v-if="iconComponent && !showClose"
                 :class="['caret', 'icon', {
                   'is-reverse': isDropdownShow,
@@ -70,14 +71,14 @@
                 }]"
             >
               <component :is="iconComponent"/>
-            </el-icon>
-            <el-icon
+            </open-icon>
+            <open-icon
                 v-if="showClose && clearIcon"
                 :class="['caret','icon']"
                 @click.stop="handleClearClick"
             >
               <component :is="clearIcon"/>
-            </el-icon>
+            </open-icon>
           </div>
         </div>
       </template>
@@ -96,6 +97,7 @@
                 class="open-select__menu-item"
                 :class="{
                 'is-disabled': item.disabled,
+                'is-selected': states.selectedOption?.value === item.value,
                 'is-highlighted': states.highlightIndex === index,
               }"
                 @click.stop="selectItem(item)"
@@ -119,12 +121,14 @@ import RenderVnode from "@/util/RenderVnode";
 import {TooltipInstance} from "@/components/tooltip/types";
 import {ArrowDown, CircleClose} from "@element-plus/icons-vue";
 import {isArray, isFunction} from "lodash-es";
+import OpenIcon from "@/components/icon";
 
 defineOptions({
   name: 'OpenSelect'
 })
 
 const props = withDefaults(defineProps<SelectProps>(), {
+  placement: 'bottom',
   disabled: false,
   suffixIcon: ArrowDown,
   options: () => [],
@@ -360,7 +364,6 @@ const controlDropdown = (show: boolean) => {
 
 const selectItem = (e: SelectOption) => {
   if (e.disabled) return;
-  states.selectedLabel = e.label;
   states.inputValue = e.label;
   states.selectedOption = e;
   emit("change", e.value);
