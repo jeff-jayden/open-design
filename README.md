@@ -6,10 +6,11 @@
 )
 ![language](https://img.shields.io/github/languages/top/jeff-jayden/open-design
 )
+![download](https://img.shields.io/npm/dw/%40jeff-jayden%2Fopen-design
+)
 
 # 笔记
 
 1. 通过css更改样式 用类名选择器指定 css基础要扎实
 2. 动态绑定类名 使用js控制类名的true或false
 3. 用js编写功能，比如事件，属性 各种钩子函数
-4. 
