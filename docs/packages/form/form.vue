@@ -1,7 +1,8 @@
 <template>
-  <OpenForm
+  <open-form
       :model="form"
       :rules="rules"
+      style="width: 600px"
   >
     <open-form-item
         label="Activity name"
@@ -10,7 +11,7 @@
     >
       <OpenInput id="hello" v-model="form.name"/>
     </open-form-item>
-  </OpenForm>
+  </open-form>
 </template>
 
 <script setup lang="ts">

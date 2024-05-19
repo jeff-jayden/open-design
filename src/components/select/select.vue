@@ -4,7 +4,7 @@
       ref="selectRef"
       @click="toggleDropdown"
   >
-    <OpenToolTip
+    <open-tool-tip
         :placement="placement"
         ref="tooltipRef"
         content="open-select"
@@ -64,11 +64,11 @@
               class="suffix"
           >
             <open-icon
-                v-if="iconComponent && !showClose"
-                :class="['caret', 'icon', {
-                  'is-reverse': isDropdownShow,
-                  'disabled': selectDisabled
-                }]"
+              v-if="iconComponent && !showClose"
+              :class="['caret', 'icon', {
+                'is-reverse': isDropdownShow,
+                'disabled': selectDisabled
+              }]"
             >
               <component :is="iconComponent"/>
             </open-icon>
@@ -107,7 +107,7 @@
           </template>
         </ul>
       </template>
-    </OpenToolTip>
+    </open-tool-tip>
   </div>
 </template>
 
@@ -318,13 +318,13 @@ const popperOptions: any = {
     {
       name: "offset",
       options: {
-        offset: [0, 9],
+        offset: [0, 9]
       },
     },
     {
       name: "sameWidth",
       enabled: true,
-      fn: ({state}: { state: any }) => {
+      fn: ({state,instance,options,name}) => {
         state.styles.popper.width = `${state.rects.reference.width}px`;
       },
       phase: "beforeWrite",

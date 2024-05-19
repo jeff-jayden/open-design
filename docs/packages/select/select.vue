@@ -4,6 +4,8 @@
       :options="options"
       v-model="selectValue"
       :suffix-icon="ArrowDown"
+      clearable
+      placement="bottom"
   />
 </template>
 
@@ -18,7 +20,6 @@ const options = [
   {
     value: 'Option1',
     label: 'Option1',
-    disabled: true
   },
   {
     value: 'Option2',
@@ -31,6 +32,7 @@ const options = [
   {
     value: 'Option4',
     label: 'Option4',
+    disabled: true
   },
   {
     value: 'Option5',

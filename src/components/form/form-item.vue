@@ -4,6 +4,7 @@
       class="open-form"
       :class="{
         'is-error': validateState === 'error',
+        'is-required': isRequired
       }"
   >
     <div
@@ -24,7 +25,10 @@
         <slot/>
         <transition name="open-form-zoom-in-top">
           <slot v-if="shouldShowError" name="error" :error="validateMessage">
-            <div class="open-form-error">
+            <div
+                class="open-form-error"
+                v-if="validateState === 'error'"
+            >
               {{ validateMessage }}
             </div>
           </slot>
@@ -75,6 +79,10 @@ const props = withDefaults(defineProps<FormItemProps>(), {});
 const formItemRef = ref<HTMLDivElement>()
 let initialValue: any = undefined
 let isResettingField = false
+
+const isRequired = computed(() => {
+  return normalizedRules.value.some(rule => rule.required)
+})
 
 //获取父表单绑定得model值 字段值
 const fieldValue = computed(() => {
