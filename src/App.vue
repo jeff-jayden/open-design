@@ -201,7 +201,13 @@
         </FormItem>
       </Form>
     </div>
-    
+    <div class="demo-progress">
+      <el-progress :percentage="percentage" />
+      <el-progress :percentage="percentage" :format="format" />
+      <el-progress :percentage="percentage" status="success" />
+      <el-progress :percentage="percentage" status="warning" />
+      <el-progress :percentage="percentage" status="exception" />
+    </div>
   </div>
 
 </template>
@@ -236,6 +242,14 @@ const value = ref('')
 const value1 = ref('')
 const value2 = ref('')
 const selectValue = ref('')
+const format = (percentage) => (percentage === 100 ? 'Full' : `${percentage}%`)
+const percentage = ref(0)
+const timer = setInterval(()=>{
+  percentage.value++
+  if(percentage.value === 100){
+    clearInterval(timer)
+  }
+},100)
 
 const formInput = reactive({
   input: ''
