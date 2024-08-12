@@ -1,30 +1,30 @@
-import {tooltipProps} from "@/components/tooltip";
-import {VNode} from "vue";
+import { VNode } from 'vue';
+import { tooltipProps } from '@/components/tooltip';
 
-export type DropDownType = 'primary' | 'success' | 'warning' | 'danger' | 'info'
+export type DropDownType = 'primary' | 'success' | 'warning' | 'danger' | 'info';
 
 export interface MenuOption {
-    label: string | VNode;
-    key: string | number;
-    disabled?: boolean;
-    divided?: boolean;
+  label: string | VNode;
+  key: string | number;
+  disabled?: boolean;
+  divided?: boolean;
 }
 
 export interface DropdownProps extends tooltipProps {
-    menuOptions?: MenuOption[];
-    hideAfterClick?: boolean;
-    splitButton?: boolean;
-    type?: DropDownType;
-    disabled?: boolean;
+  menuOptions?: MenuOption[];
+  hideAfterClick?: boolean;
+  splitButton?: boolean;
+  type?: DropDownType;
+  disabled?: boolean;
 }
 
 export interface DropdownEmits {
-    (e:'visible-change', value: boolean) : void;
-    (e:'select', value: MenuOption) : void;
-    (e:'click', value: any) : void;
+  (e: 'visible-change', value: boolean): void;
+  (e: 'select', value: MenuOption): void;
+  (e: 'click', value: any): void;
 }
 
 export interface DropdownInstance {
-    show: () => void;
-    hide: () => void;
+  show: () => void;
+  hide: () => void;
 }

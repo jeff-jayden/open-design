@@ -1,5 +1,6 @@
-import {  onMounted, onBeforeUnmount, isRef, watch, unref } from 'vue'
-import type { Ref } from 'vue'
+import { onMounted, onBeforeUnmount, isRef, watch, unref } from 'vue';
+import type { Ref } from 'vue';
+
 export default function useEventListener(
   target: Ref<EventTarget | null> | EventTarget,
   event: string,
@@ -7,16 +8,16 @@ export default function useEventListener(
 ) {
   if (isRef(target)) {
     watch(target, (value, oldValue) => {
-      oldValue?.removeEventListener(event, handler)
-      value?.addEventListener(event, handler)
-    })
+      oldValue?.removeEventListener(event, handler);
+      value?.addEventListener(event, handler);
+    });
   } else {
     onMounted(() => {
-      target.addEventListener(event, handler)
-    })
+      target.addEventListener(event, handler);
+    });
   }
 
   onBeforeUnmount(() => {
-    unref(target)?.removeEventListener(event, handler)
-  })
+    unref(target)?.removeEventListener(event, handler);
+  });
 }

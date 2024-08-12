@@ -10,7 +10,7 @@
 // 引入所有组件
 import openDesign from @jeff-jayden/open-design
 // 引入样式
-import '@jeff-jayden/open-design/dist/style.css'
+import '@jeff-jayden/open-design/dist/index.css'
 
 import App from './App.vue'
 // 全局使用
