@@ -1,1 +1,1 @@
-echo "hello world"
+npm run lint-staged

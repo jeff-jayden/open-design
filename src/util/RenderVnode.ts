@@ -1,4 +1,5 @@
-import { defineComponent } from 'vue'
+import { defineComponent } from 'vue';
+
 const RenderVnode = defineComponent({
   props: {
     vNode: {
@@ -7,8 +8,8 @@ const RenderVnode = defineComponent({
     }
   },
   setup(props) {
-    return () => props.vNode
+    return () => props.vNode;
   }
-})
+});
 
-export default RenderVnode  
+export default RenderVnode;
