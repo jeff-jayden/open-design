@@ -1,123 +1,106 @@
 <template>
-  <Transition
-      name="fade-up"
-      @enter="updateHeight"
-      @after-leave="destroyComponent"
-  >
+  <Transition name="fade-up" @enter="updateHeight" @after-leave="destroyComponent">
     <div
-        ref="messageRef"
-        :id="id"
-        v-show="visible"
-        @mouseenter="clearTimer"
-        @mouseleave="startTimer"
-        :class="
-            {
-              [`open-message--${type}`]:type,
-              'is-close':showClose,
-              'center': center
-            }
-        "
-        :style="customStyle"
-        class="open-message"
+      ref="messageRef"
+      :id="id"
+      v-show="visible"
+      @mouseenter="clearTimer"
+      @mouseleave="startTimer"
+      :class="{
+        [`open-message--${type}`]: type,
+        'is-close': showClose,
+        center: center
+      }"
+      :style="customStyle"
+      class="open-message"
     >
       <div class="open-message__content">
-        <RenderVnode :vNode="message" v-if="message"/>
+        <RenderVnode :vNode="message" v-if="message" />
       </div>
       <div class="open-message__close" v-if="showClose">
-        <open-icon icon="xmark" @click.stop="visible = false"/>
+        <open-icon icon="xmark" @click.stop="visible = false" />
       </div>
     </div>
   </Transition>
 </template>
 
 <script setup lang="ts">
-
-import OpenIcon from '@/components/icon/icon.vue'
-import type {MessageProps} from "@/components/message/types";
-import RenderVnode from "@/util/RenderVnode";
-import {computed, onMounted, ref} from "vue";
-import {getLastOffset, getOffsetOrSpace} from "@/components/message/instance";
-import useZIndex from '@/hooks/useZIndex'
-
+import { computed, onMounted, ref } from 'vue';
+import OpenIcon from '@/components/icon/icon.vue';
+import type { MessageProps } from '@/components/message/types';
+import RenderVnode from '@/util/RenderVnode';
+import { getLastOffset, getOffsetOrSpace } from '@/components/message/instance';
+import useZIndex from '@/hooks/useZIndex';
 
 const props = withDefaults(defineProps<MessageProps>(), {
   type: 'info',
   duration: 3000,
-  offset: 16,
-})
+  offset: 16
+});
 
 defineOptions({
   name: 'OpenMessage'
-})
+});
 
-const messageRef = ref<HTMLDivElement>()
-const height = ref(0)
-const visible = ref(false)
+const messageRef = ref<HTMLDivElement>();
+const height = ref(0);
+const visible = ref(false);
 
+// 鼠标移入 让其一直显示
+// 鼠标移出 让其过会关闭
+let timer: any;
 
-//鼠标移入 让其一直显示
-//鼠标移出 让其过会关闭
-let timer: any
+const close = () => {
+  visible.value = false;
+};
 
 function startTimer() {
-  if (props.duration === 0) return
+  if (props.duration === 0) return;
   timer = setTimeout(() => {
-    close()
-  }, props.duration)
+    close();
+  }, props.duration);
 }
 
 function clearTimer() {
-  clearTimeout(timer)
+  clearTimeout(timer);
 }
 
 function updateHeight() {
-  height.value = messageRef.value!.getBoundingClientRect().height
+  height.value = messageRef.value!.getBoundingClientRect().height;
 }
 
-const close = () => {
-  visible.value = false
-}
-
-
-const lastOffset = computed(() => getLastOffset(props.id))
+const lastOffset = computed(() => getLastOffset(props.id));
 // const lastOffset = getLastOffset(props.id)
 // console.log('lastOffset' + JSON.stringify(lastOffset))
 
-const offset = computed(
-    () => getOffsetOrSpace(props.id, props.offset) + lastOffset.value
-)
+const offset = computed(() => getOffsetOrSpace(props.id, props.offset) + lastOffset.value);
 
-console.log('offset' + offset.value + ' ' + lastOffset.value)
+console.log(`offset${offset.value} ${lastOffset.value}`);
 
-const {currentZIndex, nextZIndex} = useZIndex()
+const { currentZIndex, nextZIndex } = useZIndex();
 
 const customStyle = computed(() => ({
   top: `${offset.value}px`,
   zIndex: currentZIndex.value
-}))
+}));
 
-//用于导出给外界用的 用于在多次点击出现时 给外界一个底部值
-const bottom = computed((): number => height.value + offset.value)
-
+// 用于导出给外界用的 用于在多次点击出现时 给外界一个底部值
+const bottom = computed((): number => height.value + offset.value);
 
 function destroyComponent() {
-  props.onDestory()
+  props.onDestory();
 }
 
 onMounted(() => {
-  startTimer()
-  visible.value = true
-})
-
+  startTimer();
+  visible.value = true;
+});
 
 defineExpose({
   visible,
   bottom,
-  close,
-})
-
+  close
+});
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

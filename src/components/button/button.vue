@@ -6,22 +6,22 @@
     :class="{
       [`open-button--${type}`]: type,
       [`open-button--${size}`]: size,
-        'is-plain':plain,
-        'is-round':round,
-        'is-circle':circle,
-        'is-disabled':disabled,
-        'is-loading': loading
+      'is-plain': plain,
+      'is-round': round,
+      'is-circle': circle,
+      'is-disabled': disabled,
+      'is-loading': loading
     }"
     :disabled="disabled || loading"
     :autofocus="autofocus"
     :type="nativeType"
   >
     <span
-        v-if="$slots.default"
-        :class="{
-          'has-right': $slots.default && (loading || icon)
-        }"
-        class="default-slot"
+      v-if="$slots.default"
+      :class="{
+        'has-right': $slots.default && (loading || icon)
+      }"
+      class="default-slot"
     >
       <slot />
     </span>
@@ -40,29 +40,26 @@
 </template>
 
 <script setup lang="ts">
-import OpenIcon from '../icon/icon.vue'
-import type {ButtonProps} from "@/components/button/types";
-import {ref} from "vue";
-import {Loading} from "@element-plus/icons-vue";
+import { ref } from 'vue';
+import { Loading } from '@element-plus/icons-vue';
+import OpenIcon from '../icon/icon.vue';
+import type { ButtonProps } from '@/components/button/types';
 
 defineOptions({
   name: 'OpenButton'
-})
+});
 
 const props = withDefaults(defineProps<ButtonProps>(), {
-  nativeType:'button',
+  nativeType: 'button',
   loadingIcon: Loading,
   tag: 'button'
-})
+});
 
-const _ref = ref<HTMLButtonElement>()
+const _ref = ref<HTMLButtonElement>();
 
 defineExpose({
   ref: _ref
-})
-
+});
 </script>
 
-<style>
-
-</style>
+<style></style>
