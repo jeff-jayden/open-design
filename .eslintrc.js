@@ -2,6 +2,7 @@
 
 module.exports = {
   root: true,
+  parser: 'vue-eslint-parser',
   env: {
     browser: true,
     es6: true
@@ -14,6 +15,7 @@ module.exports = {
     'plugin:prettier/recommended'
   ],
   parserOptions: {
+    parser: '@typescript-eslint/parser',
     sourceType: 'module',
     ecmaVersion: '6'
   },
@@ -27,6 +29,11 @@ module.exports = {
         }
       }
     ],
+    'no-shadow': 'off',
+    'no-await-in-loop': 'off',
+    'consistent-return': 'off',
+    'no-param-reassign': 'off',
+    'no-underscore-dangle': 'off',
     'no-restricted-syntax': 'off',
     'no-plusplus': 'off',
     '@typescript-eslint/no-non-null-assertion': 'off',
