@@ -25,7 +25,7 @@ export default defineConfig({
   // 这个配置主要用于开发阶段和生产构建阶段，影响Vite的模块解析和打包过程。
   resolve: {
     alias: {
-      '@': resolve(__dirname, './src')
+      '@/*': resolve(__dirname, './src/*')
     }
   },
   build: {

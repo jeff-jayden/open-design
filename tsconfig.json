@@ -1,37 +1,12 @@
 {
-  "include": ["env.d.ts", "src/**/*", "src/**/*.vue"],
-  "exclude": [],
-  "extends": [],
-  "files": [],
-  //  这是TypeScript编译器的主要配置选项
+  "include": ["env.d.ts", "src/**/*.ts", "src/**/*.vue"],
   "compilerOptions": {
-    //为了解决import React from 'react'这类语句找react从项目根目录找依赖
-    "baseUrl": ".",
-    //路径替换
-//    这个配置主要用于开发阶段，影响TypeScript到JavaScript的转译过程
+    "baseUrl": "./",
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": ["./src/*"]
     },
 //    "vue/global"可以在项目中的任何TypeScript文件里直接使用Vue的类型
     "types": ["unplugin-vue-macros/macros-global", "vue/global" /* ... */]
-  },
-//  这是针对Vue文件的编译选项，用于配置Vue宏
-  "vueCompilerOptions": {
-    "plugins": [
-      "@vue-macros/volar/define-options",
-      "@vue-macros/volar/define-models",
-      "@vue-macros/volar/define-props",
-      "@vue-macros/volar/define-props-refs",
-      "@vue-macros/volar/short-vmodel",
-      "@vue-macros/volar/define-slots",
-      "@vue-macros/volar/jsx-directive",
-      "@vue-macros/volar/setup-jsdoc",
-
-      // 选择以下其中一个
-      // "@vue-macros/volar/export-expose",
-       "@vue-macros/volar/export-props"
-      // "@vue-macros/volar/export-render",
-    ]
   },
 //  这个数组指定了项目中的其他TypeScript配置文件，它们可以是独立的项目或库。
   "references": [

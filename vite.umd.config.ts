@@ -1,10 +1,10 @@
-import { fileURLToPath, URL } from "node:url";
+import { fileURLToPath, URL } from 'node:url';
 
-import { defineConfig } from "vite";
-import vue from "@vitejs/plugin-vue";
-import vueJsx from "@vitejs/plugin-vue-jsx";
-import VueMacros from "unplugin-vue-macros";
-import { resolve } from "node:path";
+import { defineConfig } from 'vite';
+import vue from '@vitejs/plugin-vue';
+import vueJsx from '@vitejs/plugin-vue-jsx';
+import VueMacros from 'unplugin-vue-macros';
+import { resolve } from 'node:path';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -12,38 +12,38 @@ export default defineConfig({
     VueMacros.vite({
       plugins: {
         vue: vue(),
-        vueJsx: vueJsx(), // if needed
-      },
-    }),
+        vueJsx: vueJsx() // if needed
+      }
+    })
   ],
   resolve: {
     alias: {
-      "@": fileURLToPath(new URL("./src", import.meta.url)),
-    },
+      '@': fileURLToPath(new URL('./src', import.meta.url))
+    }
   },
   build: {
-    outDir: "dist/umd",
+    outDir: 'dist/umd',
     lib: {
-      entry: resolve(__dirname, "src/index.ts"),
-      name: "open-design",
-      fileName: "open-design",
-      formats: ["umd"],
+      entry: resolve(__dirname, 'src/index.ts'),
+      name: 'open-design',
+      fileName: 'open-design',
+      formats: ['umd']
     },
     rollupOptions: {
-      external: ["vue"],
+      external: ['vue'],
       output: {
-        exports: "named",
+        exports: 'named',
         globals: {
-          vue: "Vue",
+          vue: 'Vue'
         },
         assetFileNames: (chunkInfo) => {
           // console.log(chunkInfo)
-          if (chunkInfo.name === "style.css") {
-            return "index.css";
+          if (chunkInfo.name === 'style.css') {
+            return 'index.css';
           }
           return chunkInfo.name as string;
-        },
-      },
-    },
-  },
+        }
+      }
+    }
+  }
 });
