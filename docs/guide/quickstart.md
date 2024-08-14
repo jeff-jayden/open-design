@@ -33,9 +33,7 @@ Open Design 提供了基于 ES Module 的开箱即用的 Tree Shaking 功能。
   <Button>我是 Button</Button>
 </template>
 <script>
-  import { Button } from '@jeff-jayden/open-design'
-  export default {
-    components: { Button },
-  }
+  import { open-button } from '@jeff-jayden/open-design'
+  // ...
 </script>
 ````
