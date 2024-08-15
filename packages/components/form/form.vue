@@ -14,7 +14,7 @@ import {
   FormItemProps,
   FormProps,
   FormValidateCallback
-} from '@/components/form/types';
+} from './types';
 import { formContextKey } from '@/components/form/constant';
 import { Arrayable } from '@/types';
 import { ensureArray } from '@/util';
