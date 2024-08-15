@@ -1,17 +1,7 @@
 {
-  "name": "@jeff-jayden/open-design",
-  "version": "1.0.5",
+  "private": true,
+  "packageManager": "pnpm@8.11.0",
   "type": "module",
-  "author": "jeff-jayden",
-  "license": "MIT",
-  "workspaces": [
-    "packages/*"
-  ],
-  "keywords": [
-    "Component",
-    "Vue3",
-    "typescript"
-  ],
   "scripts": {
     "preview": "vite preview",
     "prepare": "husky",
@@ -29,33 +19,6 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
     "lint-staged": "lint-staged"
   },
-  "lint-staged": {
-    "src/**/*.{ts,js,json,vue}": [
-      "prettier --write",
-      "eslint --fix"
-    ]
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/jeff-jayden/open-design"
-  },
-  "files": [
-    "dist"
-  ],
-  "main": "./dist/umd/open-design.umd.cjs",
-  "module": "./dist/es/open-design.js",
-  "types": "./dist/types/index.d.ts",
-  "exports": {
-    ".": {
-      "import": "./dist/es/open-design.js",
-      "require": "./dist/umd/open-design.umd.cjs",
-      "types": "./dist/types/index.d.ts"
-    },
-    "./dist/": {
-      "import": "./dist/",
-      "require": "./dist/"
-    }
-  },
   "dependencies": {
     "@element-plus/icons-vue": "^2.3.1",
     "@popperjs/core": "^2.11.8",
@@ -71,6 +34,8 @@
   },
   "devDependencies": {
     "@open-design/components": "workspace:*",
+    "@open-design/utils": "workspace:*",
+    "@open-design/hooks": "workspace:*",
     "@rollup/plugin-json": "^6.1.0",
     "@rushstack/eslint-patch": "^1.1.4",
     "@types/lodash-es": "^4.17.12",
@@ -111,5 +76,32 @@
     "vitepress": "^1.0.1",
     "vue-eslint-parser": "^9.4.3",
     "vue-tsc": "^1.0.12"
+  },
+  "engines": {
+    "node": ">= 18",
+    "pnpm": ">= 8"
+  },
+  "lint-staged": {
+    "*.{vue,ts,md,json}": [
+      "prettier --write",
+      "eslint --fix"
+    ]
+  },
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/umd/open-design.umd.cjs",
+  "module": "./dist/es/open-design.js",
+  "types": "./dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/es/open-design.js",
+      "require": "./dist/umd/open-design.umd.cjs",
+      "types": "./dist/types/index.d.ts"
+    },
+    "./dist/": {
+      "import": "./dist/",
+      "require": "./dist/"
+    }
   }
 }

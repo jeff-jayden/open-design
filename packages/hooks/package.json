@@ -1,7 +1,7 @@
 {
-  "name": "@open-design/components",
+  "name": "@open-design/hooks",
   "version": "1.0.0",
-  "description": "all open-design components",
+  "description": "",
   "main": "index.ts",
   "module": "index.ts",
   "scripts": {

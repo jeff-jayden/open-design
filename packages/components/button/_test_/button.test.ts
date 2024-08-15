@@ -1,6 +1,6 @@
 import { describe, expect, test, it } from 'vitest';
 import { mount } from '@vue/test-utils';
-import Button from './button.vue';
+import Button from '../src/button.vue';
 
 describe('测试按钮', () => {
   test('class test', () => {

@@ -100,7 +100,7 @@ import { ArrowDown, CircleClose } from '@element-plus/icons-vue';
 import { isArray, isFunction } from 'lodash-es';
 import OpenToolTip from '@/components/tooltip/tooltip.vue';
 import { SelectEmits, SelectProps, SelectOption, SelectStates } from '@/components/select/types';
-import RenderVnode from '@/util/RenderVnode';
+import RenderVnode from '../../util/src/RenderVnode';
 import { TooltipInstance } from '@/components/tooltip/types';
 import OpenIcon from '@/components/icon';
 

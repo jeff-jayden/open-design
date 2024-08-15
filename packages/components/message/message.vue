@@ -28,9 +28,9 @@
 import { computed, onMounted, ref } from 'vue';
 import OpenIcon from '@/components/icon/icon.vue';
 import type { MessageProps } from '@/components/message/types';
-import RenderVnode from '@/util/RenderVnode';
+import RenderVnode from '../../util/src/RenderVnode';
 import { getLastOffset, getOffsetOrSpace } from '@/components/message/instance';
-import useZIndex from '@/hooks/useZIndex';
+import useZIndex from '../../hooks/src/useZIndex';
 
 const props = withDefaults(defineProps<MessageProps>(), {
   type: 'info',

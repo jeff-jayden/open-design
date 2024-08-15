@@ -1,4 +1,4 @@
-import { UPDATE_MODEL_EVENT } from '@/constants';
+import { UPDATE_MODEL_EVENT } from 'src/constants';
 
 export type placementType =
   | 'top'
