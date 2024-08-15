@@ -1,6 +1,6 @@
 import { reactive, render, h } from 'vue';
 import type { CreateMessageProps, MessageContext, messageType } from '@/components/message/types';
-import useZIndex from '@/hooks/useZIndex';
+import useZIndex from '../../hooks/src/useZIndex';
 import MessageConstructor from './message.vue';
 import { instances } from './instance';
 

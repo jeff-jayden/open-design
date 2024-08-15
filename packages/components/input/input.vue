@@ -87,7 +87,7 @@
 import { computed, inject, nextTick, ref, shallowRef, useSlots } from 'vue';
 import { CircleClose, Hide as IconHide, View as IconView } from '@element-plus/icons-vue';
 import { isNil } from 'lodash-unified';
-import { UPDATE_MODEL_EVENT } from '@/constants';
+import { UPDATE_MODEL_EVENT } from 'src/constants';
 import { InputEmits, InputProps } from '@/components/input/types';
 import { formItemContextKey } from '@/components/form/constant';
 

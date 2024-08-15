@@ -64,7 +64,7 @@ import type {
   DropdownInstance,
   MenuOption
 } from '@/components/dropdown/types';
-import RenderVnode from '@/util/RenderVnode';
+import RenderVnode from '../../util/src/RenderVnode';
 import OpenToolTip, { TooltipInstance } from '@/components/tooltip';
 import OpenButtonGroup from '@/components/button/button-group.vue';
 

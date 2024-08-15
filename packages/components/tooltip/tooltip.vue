@@ -30,7 +30,7 @@ import { computed, reactive, ref, watch } from 'vue';
 import { debounce } from 'lodash-es';
 import { createPopper, Instance } from '@popperjs/core';
 import type { TooltipEmits, TooltipInstance, tooltipProps } from '@/components/tooltip/types';
-import useClickOutside from '@/hooks/useClickOutside';
+import useClickOutside from '../../hooks/src/useClickOutside';
 
 defineOptions({
   name: 'OpenToolTip'

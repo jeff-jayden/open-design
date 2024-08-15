@@ -1,6 +1,6 @@
 import type { App } from 'vue';
-import OpenButton from '@/components/button/button.vue';
-import OpenButtonGroup from '@/components/button/button-group.vue';
+import OpenButton from './src/button.vue';
+import OpenButtonGroup from './src/button-group.vue';
 
 OpenButton.install = (app: App) => {
   app.component(OpenButton.name, OpenButton);
@@ -12,4 +12,4 @@ OpenButtonGroup.install = (app: App) => {
 
 export default OpenButton;
 export { OpenButton, OpenButtonGroup };
-export * from './types';
+export * from './src/types';

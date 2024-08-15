@@ -17,7 +17,7 @@ import {
 } from './types';
 import { formContextKey } from '@/components/form/constant';
 import { Arrayable } from '@/types';
-import { ensureArray } from '@/util';
+import { ensureArray } from '../../util/src';
 
 defineOptions({
   name: 'OpenForm'

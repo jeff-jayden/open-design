@@ -6,13 +6,13 @@
 
 <script setup lang="ts">
 import { provide, reactive, toRef } from 'vue';
-import { buttonGroupContextKey, ButtonGroupProps } from '@/components/button/types';
+import { buttonGroupContextKey, IButtonGroupProps } from './types';
 
 defineOptions({
   name: 'OpenButtonGroup'
 });
 
-const props = defineProps<ButtonGroupProps>();
+const props = defineProps<IButtonGroupProps>();
 
 provide(
   buttonGroupContextKey,

@@ -1,5 +1,5 @@
 import type { App } from 'vue';
-import './styles/index.css';
+import '../packages/styles/src/index.css';
 import OpButton from '@/components/button';
 import OpenCollapse from '@/components/collapse';
 import OpenDropDown from '@/components/dropdown';
