@@ -4,6 +4,9 @@
   "type": "module",
   "author": "jeff-jayden",
   "license": "MIT",
+  "workspaces": [
+    "packages/*"
+  ],
   "keywords": [
     "Component",
     "Vue3",
@@ -67,6 +70,7 @@
     "vue": "^3.4.26"
   },
   "devDependencies": {
+    "@open-design/components": "workspace:*",
     "@rollup/plugin-json": "^6.1.0",
     "@rushstack/eslint-patch": "^1.1.4",
     "@types/lodash-es": "^4.17.12",
@@ -78,7 +82,7 @@
     "@vitepress-demo-preview/plugin": "^1.2.3",
     "@vue/eslint-config-typescript": "^11.0.0",
     "@vue/tsconfig": "^0.1.3",
-    "babel-eslint": "^10.1.0",
+    "@babel/eslint-parser": "^7.25.1",
     "eslint": "^8.22.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^9.1.0",
