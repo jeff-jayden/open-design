@@ -2,13 +2,6 @@
   "name": "@jeff-jayden/open-design",
   "version": "1.0.5",
   "type": "module",
-  "author": "jeff-jayden",
-  "license": "MIT",
-  "keywords": [
-    "Component",
-    "Vue3",
-    "typescript"
-  ],
   "scripts": {
     "preview": "vite preview",
     "prepare": "husky",
