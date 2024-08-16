@@ -29,6 +29,7 @@ export default defineConfig({
     }
   },
   build: {
+    // 构建为库
     lib: {
       entry: resolve(__dirname, 'src/index.ts'),
       name: 'open-design',
