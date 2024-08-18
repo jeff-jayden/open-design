@@ -1,9 +1,9 @@
 @import './vars.css';
 @import './reset.css';
-@import '../../components/button/src/style.css';
-@import '../../components/collapse/style.css';
-@import '../../components/icon/style.css';
-@import '../../components/tooltip/style.css';
+@import '@open-design/components/button/src/style.css';
+@import '@open-design/components/button/src/style.css';
+@import '@open-design/components/button/src/style.css';
+@import '@open-design/components/button/src/style.css';
 @import '../../components/dropdown/style.css';
 @import '../../components/message/style.css';
 @import '../../components/input/style.css';

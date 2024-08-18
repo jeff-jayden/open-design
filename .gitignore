@@ -5,4 +5,3 @@ dist
 .vscode
 cache
 vite.config.ts.timestamp-*
-app/*
