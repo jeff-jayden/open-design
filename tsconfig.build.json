@@ -1,14 +1,12 @@
 {
   "extends": "@vue/tsconfig/tsconfig.web.json",
-  "include": ["src/index.ts", "src/components/**/*",
-    "packages/hooks/**/*"
-  ],
+  "include": ["src/index.ts", "src/components/**/*", "packages/hooks/**/*"],
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
     },
-    "types": ["unplugin-vue-macros/macros-global" /* ... */]
+    "types": ["unplugin-vue-macros/macros-global"]
   },
   "vueCompilerOptions": {
     "plugins": [

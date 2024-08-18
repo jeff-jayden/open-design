@@ -1,14 +1,15 @@
 {
   "include": ["env.d.ts", "src/**/*.ts", "src/**/*.vue"],
   "compilerOptions": {
-    "baseUrl": "./",
+    "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
     },
-//    "vue/global"可以在项目中的任何TypeScript文件里直接使用Vue的类型
-    "types": ["unplugin-vue-macros/macros-global", "vue/global" /* ... */]
+    //    "vue/global"可以在项目中的任何TypeScript文件里直接使用Vue的类型不用引入
+    //    "unplugin-vue-macros/macros-global"为了在开发时可以不用引入宏函数直接使用
+    "types": ["unplugin-vue-macros/macros-global", "vue/global"]
   },
-//  这个数组指定了项目中的其他TypeScript配置文件，它们可以是独立的项目或库。
+  //  这个数组指定了项目中的其他TypeScript配置文件，它们可以是独立的项目或库。
   "references": [
     {
       "path": "./tsconfig.node.json"

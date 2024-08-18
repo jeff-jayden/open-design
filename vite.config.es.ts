@@ -7,7 +7,6 @@ import VueMacros from 'unplugin-vue-macros';
 import { resolve } from 'node:path';
 import dts from 'vite-plugin-dts';
 
-// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     VueMacros.vite({
