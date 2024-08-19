@@ -1,5 +1,5 @@
 import { VNode } from 'vue';
-import { tooltipProps } from '@/components/tooltip';
+import { tooltipProps } from '../../tooltip';
 
 export type DropDownType = 'primary' | 'success' | 'warning' | 'danger' | 'info';
 

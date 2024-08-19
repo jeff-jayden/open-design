@@ -4,11 +4,11 @@
 @import '@open-design/components/button/src/style.css';
 @import '@open-design/components/button/src/style.css';
 @import '@open-design/components/button/src/style.css';
-@import '../../components/dropdown/style.css';
-@import '../../components/message/style.css';
-@import '../../components/input/style.css';
-@import '../../components/switch/style.css';
-@import '../../components/select/style.css';
-@import '../../components/form/style.css';
+@import '../../components/dropdown/src/style.css';
+@import '../../components/message/src/style.css';
+@import '../../components/input/src/style.css';
+@import '../../components/switch/src/style.css';
+@import '../../components/select/src/style.css';
+@import '../../components/form/src/style.css';
 
 

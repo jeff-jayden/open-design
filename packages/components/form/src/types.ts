@@ -1,5 +1,5 @@
 import { RuleItem, type ValidateError, ValidateFieldsError } from 'async-validator';
-import { Arrayable } from '@/types';
+import { Arrayable } from '../../../../src/types';
 
 export interface FormValidateFailure {
   errors: ValidateError[] | null;

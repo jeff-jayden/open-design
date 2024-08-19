@@ -35,13 +35,13 @@
 <script setup lang="ts">
 import { computed, onMounted, ref } from 'vue';
 
-import { switchEmits, switchProps } from './types';
+import { ISwitchEmits, ISwitchProps } from './types';
 
-const props = withDefaults(defineProps<switchProps>(), {
+const props = withDefaults(defineProps<ISwitchProps>(), {
   activeValue: true,
   inactiveValue: false
 });
-const emits = defineEmits<switchEmits>();
+const emits = defineEmits<ISwitchEmits>();
 const input = ref<HTMLInputElement>(null);
 // 实际值
 const actualValue = ref(props.modelValue);

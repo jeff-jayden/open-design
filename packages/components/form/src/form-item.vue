@@ -56,9 +56,9 @@ import {
   FormItemRule,
   FormItemValidateState,
   FormValidateFailure
-} from '@/components/form/types';
-import { formContextKey, formItemContextKey } from '@/components/form/constant';
-import { ensureArray, getProp } from '../../util/src';
+} from './types';
+import { formContextKey, formItemContextKey } from './constant';
+import { ensureArray, getProp } from '../../../util';
 import { Arrayable } from '@/types';
 
 defineOptions({

@@ -29,19 +29,19 @@
 import { computed, reactive, ref, watch } from 'vue';
 import { debounce } from 'lodash-es';
 import { createPopper, Instance } from '@popperjs/core';
-import type { TooltipEmits, TooltipInstance, tooltipProps } from '@/components/tooltip/types';
-import useClickOutside from '../../hooks/src/useClickOutside';
+import type { ITooltipEmits, ITooltipInstance, ITooltipProps } from './types';
+import useClickOutside from '../../../hooks/src/useClickOutside';
 
 defineOptions({
   name: 'OpenToolTip'
 });
 
-const props = withDefaults(defineProps<tooltipProps>(), {
+const props = withDefaults(defineProps<ITooltipProps>(), {
   effect: 'light',
   placement: 'bottom',
   trigger: 'hover'
 });
-const emits = defineEmits<TooltipEmits>();
+const emits = defineEmits<ITooltipEmits>();
 
 const popperContainerNode = ref<HTMLElement>();
 const triggerNode = ref<HTMLElement>();
@@ -178,7 +178,7 @@ watch(
   }
 );
 
-defineExpose<TooltipInstance>({
+defineExpose<ITooltipInstance>({
   show: openFinal,
   hide: closeFinal,
   isOpen: isOpen.value

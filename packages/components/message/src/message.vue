@@ -27,10 +27,10 @@
 <script setup lang="ts">
 import { computed, onMounted, ref } from 'vue';
 import OpenIcon from '@/components/icon/icon.vue';
-import type { MessageProps } from '@/components/message/types';
-import RenderVnode from '../../util/src/RenderVnode';
-import { getLastOffset, getOffsetOrSpace } from '@/components/message/instance';
-import useZIndex from '../../hooks/src/useZIndex';
+import type { MessageProps } from './types';
+import RenderVnode from '../../../util/src/RenderVnode';
+import { getLastOffset, getOffsetOrSpace } from '../../message';
+import useZIndex from '../../../hooks/src/useZIndex';
 
 const props = withDefaults(defineProps<MessageProps>(), {
   type: 'info',

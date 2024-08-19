@@ -15,9 +15,9 @@ import {
   FormProps,
   FormValidateCallback
 } from './types';
-import { formContextKey } from '@/components/form/constant';
+import { formContextKey } from './constant';
 import { Arrayable } from '@/types';
-import { ensureArray } from '../../util/src';
+import { ensureArray } from '../../../util';
 
 defineOptions({
   name: 'OpenForm'

@@ -6,4 +6,4 @@ OpenInput.install = (app: App) => {
 };
 
 export default OpenInput;
-export * from './types';
+export * from './src/types';

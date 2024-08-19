@@ -1,6 +1,6 @@
 import type { Options } from '@popperjs/core';
 
-export type placementType =
+export type TPlacementType =
   | 'top'
   | 'top-start'
   | 'top-end'
@@ -14,23 +14,23 @@ export type placementType =
   | 'right-start'
   | 'right-end';
 
-export interface tooltipProps {
+export interface ITooltipProps {
   rawContent?: boolean;
   effect?: 'dark' | 'light';
   content?: string;
-  placement?: placementType;
+  placement?: TPlacementType;
   trigger?: 'hover' | 'click';
   popperOptions?: Partial<Options>;
   transitionName?: string;
   manual?: boolean;
 }
 
-export interface TooltipEmits {
+export interface ITooltipEmits {
   (e: 'visible-change', value: boolean): void;
   (e: 'click-outside', value: boolean): void;
 }
 
-export interface TooltipInstance {
+export interface ITooltipInstance {
   show: () => void;
   hide: () => void;
   isOpen: boolean;

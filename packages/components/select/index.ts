@@ -1,9 +1,9 @@
 import type { App } from 'vue';
-import Select from './select.vue';
+import Select from './src/select.vue';
 
 Select.install = (app: App) => {
   app.component(Select.name, Select);
 };
 
 export default Select;
-export * from './types';
+export * from './src/types';

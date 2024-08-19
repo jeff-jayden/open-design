@@ -1,18 +1,4 @@
-import { UPDATE_MODEL_EVENT } from 'src/constants';
-
-export type placementType =
-  | 'top'
-  | 'top-start'
-  | 'top-end'
-  | 'bottom'
-  | 'bottom-start'
-  | 'bottom-end'
-  | 'left'
-  | 'left-start'
-  | 'left-end'
-  | 'right'
-  | 'right-start'
-  | 'right-end';
+import { placementType } from '../../tooltip'
 
 export interface SelectOption {
   label: string;

@@ -99,10 +99,10 @@ import type { Ref } from 'vue';
 import { ArrowDown, CircleClose } from '@element-plus/icons-vue';
 import { isArray, isFunction } from 'lodash-es';
 import OpenToolTip from '@/components/tooltip/tooltip.vue';
-import { SelectEmits, SelectProps, SelectOption, SelectStates } from '@/components/select/types';
-import RenderVnode from '../../util/src/RenderVnode';
-import { TooltipInstance } from '@/components/tooltip/types';
-import OpenIcon from '@/components/icon';
+import { SelectEmits, SelectProps, SelectOption, SelectStates } from './types';
+import RenderVnode from '../../../util/src/RenderVnode';
+import { TooltipInstance } from '../../tooltip';
+import OpenIcon from '../../icon';
 
 defineOptions({
   name: 'OpenSelect'
