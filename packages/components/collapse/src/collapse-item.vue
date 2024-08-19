@@ -27,8 +27,8 @@
 <script setup lang="ts">
 import { computed, inject, ref } from 'vue';
 import { ArrowRight } from '@element-plus/icons-vue';
-import { collapseContextKey, CollapseItemProps } from '@/components/collapse/types';
-import OpenIcon from '@/components/icon';
+import { collapseContextKey, CollapseItemProps } from './types';
+import OpenIcon from '../../icon';
 
 const props = defineProps<CollapseItemProps>();
 const collapseContext = inject(collapseContextKey);

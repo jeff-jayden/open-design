@@ -56,16 +56,16 @@
 <script setup lang="ts">
 import { ArrowDown } from '@element-plus/icons-vue';
 import { onMounted, reactive, ref, watch } from 'vue';
-import OpenIcon from '@/components/icon';
-import OpenButton from '@/components/button';
+import OpenIcon from '../../icon';
+import OpenButton from '../../button';
 import type {
   DropdownProps,
   DropdownEmits,
   DropdownInstance,
   MenuOption
-} from '@/components/dropdown/types';
-import RenderVnode from '../../util/src/RenderVnode';
-import OpenToolTip, { TooltipInstance } from '@/components/tooltip';
+} from './types';
+import RenderVnode from '../../../util/src/RenderVnode';
+import OpenToolTip, { TooltipInstance } from '../../tooltip';
 import OpenButtonGroup from '@/components/button/button-group.vue';
 
 defineOptions({
