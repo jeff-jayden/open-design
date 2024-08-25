@@ -7,6 +7,7 @@
     "prepare": "husky",
     "prepublishOnly": "npm run build",
     "dev": "vite",
+    "build:component": "pnpm -C packages/components build",
     "build": "npm run build-only && npm run move-style",
     "build-only": "run-p build-es build-umd",
     "build-umd": "vite build --config vite.config.umd.ts",

@@ -64,7 +64,7 @@ export default defineConfig({
 //   build: {
 //     outDir: "dist/es",
 //     lib: {
-//       entry: resolve(__dirname, "src/index.ts"),
+//       entry: resolve(__dirname, "src/index.js"),
 //       fileName: 'open-design',
 //       formats: ["es"]
 //     }
@@ -99,7 +99,7 @@ export default defineConfig({
  *   build: {
  *     outDir: "dist/es",
  *     lib: {
- *       entry: resolve(__dirname, "src/index.ts"),
+ *       entry: resolve(__dirname, "src/index.js"),
  *       name: "open-design",
  *       fileName: "open-design",
  *       formats: ["es"],
