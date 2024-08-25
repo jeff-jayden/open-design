@@ -1,0 +1,10 @@
+{
+  "extends": "@vue/tsconfig/tsconfig.web.json",
+  "include": ["*.ts", "**/*.vue", "**/*.ts"],
+  "compilerOptions": {
+    "paths": {
+      "baseUrl": ["."]
+    },
+    "types": ["unplugin-vue-macros/macros-global"]
+  }
+}

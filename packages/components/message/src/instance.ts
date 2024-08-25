@@ -1,5 +1,5 @@
 import { reactive } from 'vue';
-import { MessageContext } from '@/components/message/types';
+import type { MessageContext } from './types';
 
 export const instances: MessageContext[] = reactive([]);
 
