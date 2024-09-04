@@ -27,6 +27,7 @@ export default defineConfig({
     }
   },
   build: {
+    sourcemap: true,
     outDir: 'dist/es',
     lib: {
       entry: resolve(__dirname, 'src/index.ts'),
@@ -37,13 +38,15 @@ export default defineConfig({
     rollupOptions: {
       external: ['vue', 'async-validator', '@popperjs/core', 'axios'],
       output: {
-        assetFileNames: (chunkInfo) => {
-          // console.log(chunkInfo)
-          if (chunkInfo.name === 'style.css') {
+        assetFileNames: ({ name }) => {
+          if (name === 'style.css') {
             return 'index.css';
           }
-          return chunkInfo.name as string;
-        }
+          return name;
+        },
+        dir: fileURLToPath(new URL('dist/es', import.meta.url)),
+        entryFileNames: `[name].js`,
+        preserveModules: true
       }
     }
   }
