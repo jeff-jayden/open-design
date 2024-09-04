@@ -4,7 +4,7 @@ export type ButtonType = 'primary' | 'success' | 'warning' | 'danger' | 'info';
 export type ButtonSize = 'large' | 'small';
 export type NativeType = 'button' | 'submit' | 'reset';
 
-export interface ButtonProps {
+export interface IButtonProps {
   tag?: string;
   type?: ButtonType;
   size?: ButtonSize;
@@ -20,14 +20,14 @@ export interface ButtonProps {
 }
 
 export interface ButtonGroupContext {
-  size?: ButtonProps['size'];
-  type?: ButtonProps['type'];
+  size?: IButtonProps['size'];
+  type?: IButtonProps['type'];
 }
 
 export const buttonGroupContextKey: InjectionKey<ButtonGroupContext> =
   Symbol('buttonGroupContextKey');
 
-export interface ButtonGroupProps {
+export interface IButtonGroupProps {
   type?: ButtonType;
   size?: ButtonSize;
 }
@@ -35,24 +35,3 @@ export interface ButtonGroupProps {
 export interface ButtonInstance {
   ref: HTMLButtonElement;
 }
-
-export const buttonProps = {
-  type: {
-    type: String as PropType<ButtonType>
-  },
-  size: {
-    type: String as PropType<ButtonSize>
-  },
-  plain: {
-    type: Boolean
-  },
-  round: {
-    type: Boolean
-  },
-  circle: {
-    type: Boolean
-  },
-  disabled: {
-    type: Boolean
-  }
-};

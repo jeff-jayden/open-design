@@ -42,14 +42,14 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import { Loading } from '@element-plus/icons-vue';
-import OpenIcon from '../icon/icon.vue';
-import type { ButtonProps } from '@/components/button/types';
+import OpenIcon from '@/components/icon/icon.vue';
+import { IButtonProps } from '@/components/button/types';
 
 defineOptions({
   name: 'OpenButton'
 });
 
-const props = withDefaults(defineProps<ButtonProps>(), {
+const props = withDefaults(defineProps<IButtonProps>(), {
   nativeType: 'button',
   loadingIcon: Loading,
   tag: 'button'
