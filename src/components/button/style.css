@@ -63,8 +63,8 @@
     &.is-round {
         border-radius: var(--open-border-radius-round);
     }
-    & .has-right {
-        margin-right: 5px;
+    & .has-left {
+        margin-left: 5px;
     }
     /*circle*/
     &.is-circle {
@@ -81,6 +81,10 @@
         background-image: none;
         background-color: var(--open-button-disabled-bg-color);
         border-color: var(--open-button-disabled-border-color);
+    }
+
+    & .open-is-loading {
+        animation: rotating 2s linear infinite;
     }
 }
 @each $val in primary,success,warning,info,danger {

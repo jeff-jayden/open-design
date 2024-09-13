@@ -7,13 +7,13 @@
     </div>
     <Transition name="slide-fade">
       <div
+        v-if="isOpen"
         class="open-tooltip__popper"
         :class="{
           light: effect === 'light',
           dark: effect === 'dark'
         }"
         ref="popperNode"
-        v-if="isOpen"
       >
         <slot name="content">
           <span v-if="rawContent" v-html="content" />
