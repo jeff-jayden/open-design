@@ -55,7 +55,7 @@ const props = withDefaults(defineProps<ButtonProps>(), {
   tag: 'button'
 });
 
-const _ref = ref<HTMLButtonElement>();
+const _ref = ref<HTMLButtonElement>(null);
 
 defineExpose({
   ref: _ref
