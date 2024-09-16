@@ -17,23 +17,17 @@ import App from './App.vue'
 createApp(App).use(openDesign).mount('#app')
 ````
 
-```` vue
-<template>
-  <open-button>我是 Button</open-button>
-</template>
-````
-
 
 #### 单个导入
 
-Open Design 提供了基于 ES Module 的开箱即用的 Tree Shaking 功能。
+Open Design 按需加载的功能。
 
 ```` vue
 <template>
   <Button>我是 Button</Button>
 </template>
 <script>
-  import { open-button } from '@jeff-jayden/open-design'
+  import { OpenButton } from '@jeff-jayden/open-design'
   // ...
 </script>
 ````

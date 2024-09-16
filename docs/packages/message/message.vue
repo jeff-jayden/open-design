@@ -6,34 +6,32 @@
 </template>
 
 <script setup lang="ts">
-
-import createMessage from "@/components/message/methods";
-import OpenButton from "@/components/button";
+import createMessage from '@/components/message/methods';
+import OpenButton from '@/components/button';
 
 const open1 = () => {
   createMessage({
     message: 'This is a message.',
-    type: "success"
-  })
-}
+    type: 'success'
+  });
+};
 
 const open2 = () => {
   createMessage({
     message: 'This is a message.',
-    type: "warning"
-  })
-}
+    type: 'warning'
+  });
+};
 const open3 = () => {
   createMessage({
     message: 'This is a message.',
-    type: "info"
-  })
-}
+    type: 'info'
+  });
+};
 const open4 = () => {
   createMessage({
     message: 'This is a message.',
-    type: "danger"
-  })
-}
-
+    type: 'danger'
+  });
+};
 </script>
