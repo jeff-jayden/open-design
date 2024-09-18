@@ -20,7 +20,7 @@ createApp(App).use(openDesign).mount('#app')
 
 #### 单个导入
 
-Open Design 按需加载的功能。
+Open Design 提供按需加载的功能。
 
 ```` vue
 <template>

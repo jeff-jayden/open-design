@@ -1,5 +1,5 @@
 <template>
-  <form class="open-form">
+  <form class="open-form" model="">
     <slot />
   </form>
 </template>
@@ -27,16 +27,21 @@ const props = defineProps<FormProps>();
 const emit = defineEmits<FormEmits>();
 const fields: FormItemContext[] = [];
 
+// 增加字段
 const addField: FormContext['addField'] = (field) => {
   fields.push(field);
 };
 
+// 删除字段
 const removeField: FormContext['removeField'] = (field) => {
-  if (field.prop) {
-    fields.splice(fields.indexOf(field), 1);
+  if (!field.prop) {
+    return;
   }
+
+  fields.splice(fields.indexOf(field), 1);
 };
 
+// 过滤字段
 const filterFields = (fields: FormItemContext[], props: Arrayable<FormItemProps>) => {
   const normalized = ensureArray(props);
   return normalized.length > 0
@@ -55,6 +60,7 @@ const obtainValidateFields = (props: Arrayable<FormItemProps>) => {
   return filteredFields;
 };
 
+// 校验字段
 const doValidateField = async (props: Arrayable<FormItemProps> = []): Promise<boolean> => {
   const fields = obtainValidateFields(props);
   let validationErrors: ValidateFieldsError = {};
@@ -75,13 +81,11 @@ const doValidateField = async (props: Arrayable<FormItemProps> = []): Promise<bo
 
 const validateField: FormContext['validateField'] = async (callback, modelProps = []) => {
   const res = await doValidateField(modelProps);
-  if (res === true) {
-    callback?.(res);
-  }
-  return res;
+
+  return res ? callback?.(res) : res;
 };
 
-const validate = async (callback?: FormValidateCallback) => validateField(undefined, callback);
+const validate = (callback?: FormValidateCallback) => validateField(undefined, callback);
 
 const resetFields: FormContext['resetFields'] = (properties = []) => {
   if (!props.model) {
