@@ -1,64 +1,62 @@
 .open-form {
-    &.is-required {
-        .open-form-label:before {
-            color: #f56c6c;
-            content: "*";
-            margin-right: 4px;
-        }
+  &.is-error .open-input__wrapper {
+    box-shadow: 0 0 0 1px #f56c6c inset;
+  }
+
+  .open-form-item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: 14px;
+    margin-bottom: 18px;
+
+    .open-tooltip {
+      padding: 0;
     }
 
-    &.is-error .open-input__wrapper {
-        box-shadow: 0 0 0 1px #f56c6c inset;
+    .open-form-item_lable {
+      width: 150px;
+      justify-content: flex-end;
+      align-items: flex-start;
+      box-sizing: border-box;
+      color: #606266;
+      display: inline-flex;
+      flex: 0 0 auto;
+      font-size: 14px;
+      height: 32px;
+      line-height: 32px;
+      padding: 0 12px 0 0;
+
+      & .is-required:before {
+        color: #f56c6c;
+        content: '*';
+        margin-right: 4px;
+      }
     }
 
-    .open-form-item {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 14px;
-        margin-bottom: 18px;
+    .open-form-content {
+      align-items: center;
+      display: flex;
+      width: 100%;
+      flex-wrap: wrap;
+      font-size: 14px;
+      line-height: 32px;
+      min-width: 0;
+      position: relative;
 
-        .open-tooltip {
-            padding: 0;
-        }
+      .open-input__wrapper {
+        width: 450px;
+      }
 
-        .open-form-label {
-            align-items: flex-start;
-            box-sizing: border-box;
-            color: #606266;
-            display: inline-flex;
-            flex: 0 0 auto;
-            font-size: 14px;
-            height: 32px;
-            justify-content: flex-end;
-            line-height: 32px;
-            padding: 0 12px 0 0;
-
-        }
-
-        .open-form-content {
-            align-items: center;
-            display: flex;
-            width: 100%;
-            flex-wrap: wrap;
-            font-size: 14px;
-            line-height: 32px;
-            min-width: 0;
-            position: relative;
-
-            .open-input__wrapper {
-                width: 500px;
-            }
-
-            .open-form-error {
-                color: #f56c6c;
-                font-size: 12px;
-                left: 0;
-                line-height: 1;
-                padding-top: 2px;
-                position: absolute;
-                top: 100%;
-            }
-        }
+      .open-form-error {
+        color: #f56c6c;
+        font-size: 12px;
+        left: 0;
+        line-height: 1;
+        padding-top: 2px;
+        position: absolute;
+        top: 100%;
+      }
     }
+  }
 }

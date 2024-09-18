@@ -1,34 +1,35 @@
 <template>
   <div
     ref="formItemRef"
-    class="open-form"
+    class="open-form-item"
     :class="{
-      'is-error': validateState === 'error',
-      'is-required': isRequired
+      'is-error': validateState === 'error'
     }"
   >
-    <div class="open-form-item">
+    <div class="open-form-item_lable">
       <component
         :is="labelFor ? 'label' : 'div'"
         v-if="hasLabel"
         class="open-form-label"
+        :class="{
+          'is-required': isRequired
+        }"
         :for="labelFor"
       >
         <slot name="label" :label="currentLabel">
           {{ currentLabel }}
         </slot>
       </component>
-
-      <div class="open-form-content">
-        <slot />
-        <transition name="open-form-zoom-in-top">
-          <slot v-if="shouldShowError" name="error" :error="validateMessage">
-            <div class="open-form-error" v-if="validateState === 'error'">
-              {{ validateMessage }}
-            </div>
-          </slot>
-        </transition>
-      </div>
+    </div>
+    <div class="open-form-content">
+      <slot />
+      <transition name="open-form-zoom-in-top">
+        <slot v-if="shouldShowError" name="error" :error="validateMessage">
+          <div class="open-form-error" v-if="validateState === 'error'">
+            {{ validateMessage }}
+          </div>
+        </slot>
+      </transition>
     </div>
   </div>
 </template>
@@ -49,8 +50,8 @@ import {
 } from 'vue';
 import Schema, { RuleItem } from 'async-validator';
 import { clone, isFunction, isString } from 'lodash-es';
-import { isNil } from 'lodash-unified';
 import {
+  FormContext,
   FormItemContext,
   FormItemProps,
   FormItemRule,
@@ -65,14 +66,15 @@ defineOptions({
   name: 'OpenFormItem'
 });
 
+const props = withDefaults(defineProps<FormItemProps>(), {});
+const slots = useSlots();
 const formContext = inject(formContextKey, undefined);
+
 const validateState = ref<FormItemValidateState>('');
 const validateMessage = ref('');
-const slots = useSlots();
-const props = withDefaults(defineProps<FormItemProps>(), {});
-const formItemRef = ref<HTMLDivElement>();
-let initialValue: any;
-let isResettingField = false;
+const formItemRef = ref<HTMLDivElement>(null);
+const initialValue: any = ref();
+const isResettingField = ref(false);
 
 // 获取校验规则
 const normalizedRules = computed(() => {
@@ -88,7 +90,6 @@ const normalizedRules = computed(() => {
       rules.push(...ensureArray(_rules));
     }
   }
-  console.log(`@@@@1${rules}`);
   return rules;
 });
 
@@ -105,15 +106,7 @@ const fieldValue = computed(() => {
     return;
   }
   // 获取从父表单传入得绑定对象与当前组件对应得属性得值
-  return getProp(model, props.prop).value;
-  // -----玄学 一样得上面得代码在尝试下面得之后又行了？？？--------------------
-  // isNil检验是否为null或undefined
-  // if (model && props.prop && !isNil(model[props.prop])) {
-  //   return getProp(model, props.prop).value;
-  // } else {
-  //   console.log('没通过')
-  //   return null;
-  // }
+  return getProp(model, props.prop).value || '';
 });
 
 const setValidationState = (state: FormItemValidateState) => {
@@ -147,11 +140,7 @@ const onValidationSucceeded = () => {
 
 const onValidationFailed = (error: FormValidateFailure) => {
   const { errors, fields } = error;
-  console.log(`error${JSON.stringify(error)}`);
   console.log(`errors${JSON.stringify(errors)}   fields${JSON.stringify(fields)}`);
-  if (!errors || !fields) {
-    console.error(`${error}@@@@@@22222`);
-  }
 
   setValidationState('error');
 
@@ -161,8 +150,7 @@ const onValidationFailed = (error: FormValidateFailure) => {
    * 则会返回右侧的表达式结果。
    */
 
-  validateMessage.value = errors ? (errors?.[0]?.message ?? `${props.prop} is required`) : '';
-  console.log(`error.errors${error.errors}`);
+  validateMessage.value = errors ? (errors[0]?.message ?? `${props.prop} is required`) : '';
   formContext?.emit('validate', props.prop!, false, validateMessage.value);
 };
 
@@ -187,20 +175,19 @@ const doValidate = async (rules: RuleItem[]): Promise<true> => {
         return true as const;
       })
       .catch((err: FormValidateFailure) => {
-        console.log(`fieldValue${fieldValue.value}`);
-        console.log(JSON.stringify(`err@@@@@${JSON.stringify(err)}`));
+        console.log(JSON.stringify(`err@@@@@${JSON.stringify(err, null, 2)}`));
         onValidationFailed(err as FormValidateFailure);
         return Promise.reject(err);
       })
   );
 };
 
+// 暴露给外部使用的
 const validate: FormItemContext['validate'] = async (trigger, callback) => {
   const hasCallback = isFunction(callback);
 
   // 获取指定属性得指定触发得trigger规则
   const rules = getRulesByTrigger(trigger);
-  console.log(`${JSON.stringify(rules)}@@@@@2`);
   // 如果没有规则直接返回true 就不会有后面得检验了
   if (rules.length === 0) {
     callback?.(true);
@@ -245,7 +232,7 @@ watch(
 const clearValidate: FormItemContext['clearValidate'] = () => {
   setValidationState('');
   validateMessage.value = '';
-  isResettingField = false;
+  isResettingField.value = false;
 };
 
 const resetField: FormItemContext['resetField'] = async () => {
@@ -255,14 +242,14 @@ const resetField: FormItemContext['resetField'] = async () => {
   const computedValue = getProp(model, props.prop);
 
   // prevent validation from being triggered
-  isResettingField = true;
+  isResettingField.value = true;
 
   computedValue.value = clone(initialValue);
 
   await nextTick();
   clearValidate();
 
-  isResettingField = false;
+  isResettingField.value = false;
 };
 
 const context: FormItemContext = reactive({
@@ -276,20 +263,19 @@ const context: FormItemContext = reactive({
   resetField
 });
 
-provide(formItemContextKey, context);
-
 onMounted(() => {
-  console.log('mouted了@@@@');
-  if (props.prop) {
-    console.log(`${props.prop}props.prop`);
-    formContext?.addField(context);
-    initialValue = clone(fieldValue.value);
+  if (!props.prop) {
+    return;
   }
+  formContext?.addField(context);
+  initialValue.value = clone(fieldValue.value);
 });
 
 onBeforeUnmount(() => {
   formContext?.removeField(context);
 });
+
+provide(formItemContextKey, context);
 
 defineExpose({
   validate,

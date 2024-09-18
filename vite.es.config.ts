@@ -45,7 +45,7 @@ export default defineConfig({
           return name;
         },
         dir: fileURLToPath(new URL('dist/es', import.meta.url)),
-        entryFileNames: `[name].js`,
+        entryFileNames: '[name].js',
         preserveModules: true
       }
     }

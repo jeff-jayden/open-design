@@ -109,7 +109,7 @@ defineOptions({
 });
 
 const props = withDefaults(defineProps<SelectProps>(), {
-  placement: 'bottom',
+  placement: 'bottom-start',
   disabled: false,
   suffixIcon: ArrowDown,
   options: () => [],
@@ -326,10 +326,11 @@ const popperOptions: any = {
     {
       name: 'sameWidth',
       enabled: true,
+      phase: 'main',
       fn: ({ state, instance, options, name }) => {
         state.styles.popper.width = `${state.rects.reference.width}px`;
+        console.log(JSON.stringify(state.styles.popper));
       },
-      phase: 'beforeWrite',
       requires: ['computeStyles']
     }
   ]

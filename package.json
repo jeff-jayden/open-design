@@ -61,6 +61,8 @@
     "vue": "^3.4.26"
   },
   "devDependencies": {
+    "@commitlint/cli": "^19.5.0",
+    "@commitlint/config-conventional": "^19.5.0",
     "@rollup/plugin-json": "^6.1.0",
     "@rushstack/eslint-patch": "^1.1.4",
     "@types/lodash-es": "^4.17.12",
