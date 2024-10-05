@@ -26,7 +26,7 @@
 
 <script setup lang="ts">
 import { computed, onMounted, ref } from 'vue';
-import OpenIcon from '@/components/icon/icon.vue';
+import OpenIcon from '@open-design/components/icon';
 import type { MessageProps } from './types';
 import RenderVnode from '../../../util/src/RenderVnode';
 import { getLastOffset, getOffsetOrSpace } from '../../message';

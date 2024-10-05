@@ -1,5 +1,5 @@
 import { reactive, render, h } from 'vue';
-import type { CreateMessageProps, MessageContext, messageType } from '@/components/message/types';
+import type { CreateMessageProps, MessageContext, messageType } from '@open-design/components/message';
 import useZIndex from '../../../hooks/src/useZIndex';
 import MessageConstructor from './message.vue';
 import { instances } from './instance';

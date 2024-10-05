@@ -1,11 +1,10 @@
-<script setup lang="ts">
-import {OpenButton} from "@open-design/components/button";
-</script>
-
 <template>
-  <OpenButton type="primary">提交</OpenButton>
+  <OpenButton type="success">提交</OpenButton>
+  aaaaaa
 </template>
 
-<style scoped>
+<script setup lang="ts">
+import { OpenButton } from '@open-design/components/button';
+</script>
 
-</style>
+<style scoped></style>

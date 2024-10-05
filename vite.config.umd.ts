@@ -24,7 +24,7 @@ export default defineConfig({
   build: {
     outDir: 'dist/umd',
     lib: {
-      entry: resolve(__dirname, 'src/index.ts'),
+      entry: resolve(__dirname, 'src/enum.ts'),
       name: 'open-design',
       fileName: 'open-design',
       formats: ['umd']

@@ -16,7 +16,7 @@ export default defineConfig({
       }
     }),
     dts({
-      tsconfigPath: './tsconfig.build.json',
+      tsconfigPath: './tsconfig.web.json',
       outDir: 'dist/types'
     })
   ],
@@ -28,7 +28,7 @@ export default defineConfig({
   build: {
     outDir: 'dist/es',
     lib: {
-      entry: resolve(__dirname, 'src/index.ts'),
+      entry: resolve(__dirname, 'packages/components/index.ts'),
       name: 'open-design',
       fileName: 'open-design',
       formats: ['es']

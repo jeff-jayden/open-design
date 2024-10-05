@@ -1,5 +1,5 @@
-import { RuleItem, type ValidateError, ValidateFieldsError } from 'async-validator';
-import { Arrayable } from '../../../../src/types';
+import type { RuleItem, ValidateError, ValidateFieldsError } from 'async-validator';
+import type { Arrayable } from '@open-design/utils';
 
 export interface FormValidateFailure {
   errors: ValidateError[] | null;
@@ -20,7 +20,7 @@ export interface FormItemProps {
   error?: string;
   required?: boolean;
   showMessage?: boolean;
-  prop: string;
+  prop: Arrayable<string>;
 }
 
 export const formItemValidateStates = ['', 'error', 'validating', 'success'] as const;
@@ -51,7 +51,12 @@ export interface FormProps {
   rules?: FormRules;
 }
 
+export interface FormEmits {
+  (e: 'validate', prop: Arrayable<string>, isValid: boolean, message: string): boolean;
+}
+
 export type FormContext = FormProps & {
+  emit: (e: 'validate', prop: Arrayable<string>, isValid: boolean, message: string) => boolean;
   addField: (field: FormItemContext) => void;
   removeField: (field: FormItemContext) => void;
   resetFields: (props?: Arrayable<FormItemProps>) => void;
@@ -61,7 +66,3 @@ export type FormContext = FormProps & {
     callback?: FormValidateCallback
   ) => FormValidationResult;
 };
-
-export interface FormEmits {
-  (e: 'validate', prop: FormItemProps, isValid: boolean, message: string): boolean;
-}

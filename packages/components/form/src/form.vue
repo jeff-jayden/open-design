@@ -1,12 +1,14 @@
 <template>
-  <form class="open-form">
+  <form class="open-form" model="">
     <slot />
   </form>
 </template>
 
 <script setup lang="ts">
 import { provide, reactive, toRefs, watch } from 'vue';
-import { ValidateFieldsError } from 'async-validator';
+import type ValidateFieldsError from 'async-validator';
+import type { Arrayable } from '@open-design/utils';
+import { ensureArray } from '@open-design/utils';
 import {
   FormContext,
   FormEmits,
@@ -16,8 +18,6 @@ import {
   FormValidateCallback
 } from './types';
 import { formContextKey } from './constant';
-import { Arrayable } from '@/types';
-import { ensureArray } from '../../../util';
 
 defineOptions({
   name: 'OpenForm'
@@ -25,6 +25,7 @@ defineOptions({
 
 const props = defineProps<FormProps>();
 const emit = defineEmits<FormEmits>();
+
 const fields: FormItemContext[] = [];
 
 const addField: FormContext['addField'] = (field) => {
@@ -57,7 +58,7 @@ const obtainValidateFields = (props: Arrayable<FormItemProps>) => {
 
 const doValidateField = async (props: Arrayable<FormItemProps> = []): Promise<boolean> => {
   const fields = obtainValidateFields(props);
-  let validationErrors: ValidateFieldsError = {};
+  let validationErrors = {};
 
   for (const field of fields) {
     try {
@@ -107,6 +108,7 @@ provide(
   formContextKey,
   reactive({
     ...toRefs(props),
+
     emit,
     addField,
     removeField,

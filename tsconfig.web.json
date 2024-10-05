@@ -1,0 +1,9 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "composite": true,
+    "skipLibCheck": true,
+    "types": ["unplugin-vue-macros/macros-global"]
+  },
+  "include": ["packages", "env.d.ts", "vue-shims.d.ts"]
+}

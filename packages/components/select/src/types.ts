@@ -1,4 +1,4 @@
-import { placementType } from '../../tooltip'
+import { TPlacementType } from '@open-design/components/tooltip'
 
 export interface SelectOption {
   label: string;
@@ -33,7 +33,7 @@ export interface SelectProps {
   filterMethod?: Function;
   remoteMethod?: Function;
   multiple?: boolean;
-  placement?: placementType;
+  placement?: TPlacementType;
 }
 
 export interface SelectEmits {

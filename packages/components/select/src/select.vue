@@ -98,10 +98,10 @@ import { computed, reactive, ref } from 'vue';
 import type { Ref } from 'vue';
 import { ArrowDown, CircleClose } from '@element-plus/icons-vue';
 import { isArray, isFunction } from 'lodash-es';
-import OpenToolTip from '@/components/tooltip/tooltip.vue';
+import OpenToolTip from '@open-design/components/tooltip';
 import { SelectEmits, SelectProps, SelectOption, SelectStates } from './types';
-import RenderVnode from '../../../util/src/RenderVnode';
-import { TooltipInstance } from '../../tooltip';
+import RenderVnode from '@open-design/utils/src/RenderVnode';
+import type TooltipInstance from '@open-design/components/tooltip';
 import OpenIcon from '../../icon';
 
 defineOptions({
@@ -145,7 +145,7 @@ const focus = () => {
 };
 
 const isDropdownShow = ref(false);
-const tooltipRef = ref() as Ref<TooltipInstance>;
+const tooltipRef = ref() as Ref<typeof TooltipInstance>;
 
 const currentPlaceholder = computed(() => {
   const _placeholder = props.placeholder ?? 'please select';

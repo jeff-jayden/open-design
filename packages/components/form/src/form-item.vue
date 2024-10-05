@@ -49,7 +49,7 @@ import {
 } from 'vue';
 import Schema, { RuleItem } from 'async-validator';
 import { clone, isFunction, isString } from 'lodash-es';
-import { isNil } from 'lodash-unified';
+import { Arrayable, ensureArray, getProp } from '@open-design/utils';
 import {
   FormItemContext,
   FormItemProps,
@@ -58,18 +58,18 @@ import {
   FormValidateFailure
 } from './types';
 import { formContextKey, formItemContextKey } from './constant';
-import { ensureArray, getProp } from '../../../util';
-import { Arrayable } from '@/types';
 
 defineOptions({
   name: 'OpenFormItem'
 });
 
+const props = defineProps<FormItemProps>();
+
+const slots = useSlots();
 const formContext = inject(formContextKey, undefined);
+
 const validateState = ref<FormItemValidateState>('');
 const validateMessage = ref('');
-const slots = useSlots();
-const props = withDefaults(defineProps<FormItemProps>(), {});
 const formItemRef = ref<HTMLDivElement>();
 let initialValue: any;
 let isResettingField = false;
@@ -147,8 +147,8 @@ const onValidationSucceeded = () => {
 
 const onValidationFailed = (error: FormValidateFailure) => {
   const { errors, fields } = error;
-  console.log(`error${JSON.stringify(error)}`);
-  console.log(`errors${JSON.stringify(errors)}   fields${JSON.stringify(fields)}`);
+  // console.log(`error${JSON.stringify(error)}`);
+  // console.log(`errors${JSON.stringify(errors)}   fields${JSON.stringify(fields)}`);
   if (!errors || !fields) {
     console.error(`${error}@@@@@@22222`);
   }
