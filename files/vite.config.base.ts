@@ -15,13 +15,13 @@ export default defineConfig(({ command, mode }: ConfigEnv): UserConfig => {
         }
       }),
       dts({
-        tsconfigPath: './tsconfig.build.json',
+        tsconfigPath: 'tsconfig.build.json',
         outDir: 'dist/types'
       })
     ],
     build: {
       lib: {
-        entry: resolve(__dirname, 'index.js'),
+        entry: resolve(__dirname, 'enum.ts'),
         name: 'open-design',
         fileName: 'open-design'
       },

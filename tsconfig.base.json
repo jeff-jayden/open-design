@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "outDir": "dist",
+    "target": "es2018",
+    "module": "esnext",
+    "baseUrl": ".",
+    "sourceMap": false,
+    "moduleResolution": "node",
+    "allowJs": false,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "removeComments": false,
+    "types": ["unplugin-vue-macros/macros-global","vue/global"],
+    "paths": {
+      "@open-design/*": ["packages/*"]
+    },
+    "preserveSymlinks": false
+  }
+}

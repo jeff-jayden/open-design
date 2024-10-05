@@ -1,6 +1,7 @@
 import type { App } from 'vue';
 import OpenButton from './src/button.vue';
 import OpenButtonGroup from './src/button-group.vue';
+import './src/style.css';
 
 OpenButton.install = (app: App) => {
   app.component(OpenButton.name, OpenButton);

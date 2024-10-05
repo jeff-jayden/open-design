@@ -2,8 +2,9 @@
   "extends": "@vue/tsconfig/tsconfig.web.json",
   "include": ["*.ts", "**/*.vue", "**/*.ts"],
   "compilerOptions": {
+    "baseUrl": "../../",
     "paths": {
-      "baseUrl": ["."]
+      "@open-design/*": ["packages/*"]
     },
     "types": ["unplugin-vue-macros/macros-global"]
   }

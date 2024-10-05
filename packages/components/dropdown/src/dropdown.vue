@@ -56,17 +56,11 @@
 <script setup lang="ts">
 import { ArrowDown } from '@element-plus/icons-vue';
 import { onMounted, reactive, ref, watch } from 'vue';
-import OpenIcon from '../../icon';
-import OpenButton from '../../button';
-import type {
-  DropdownProps,
-  DropdownEmits,
-  DropdownInstance,
-  MenuOption
-} from './types';
-import RenderVnode from '../../../util/src/RenderVnode';
-import OpenToolTip, { TooltipInstance } from '../../tooltip';
-import OpenButtonGroup from '@/components/button/button-group.vue';
+import { OpenButtonGroup, OpenButton } from '@open-design/components/button';
+import OpenToolTip, { ITooltipInstance } from '@open-design/components/tooltip';
+import OpenIcon from '@open-design/components/icon';
+import RenderVnode from '@open-design/utils/src/RenderVnode';
+import type { DropdownProps, DropdownEmits, DropdownInstance, MenuOption } from './types';
 
 defineOptions({
   name: 'OpenDropDown'
@@ -74,7 +68,7 @@ defineOptions({
 
 const props = defineProps<DropdownProps>();
 const emits = defineEmits<DropdownEmits>();
-const tooltipRef = ref<TooltipInstance | null>(null);
+const tooltipRef = ref<ITooltipInstance | null>(null);
 const events: Record<string, any> = reactive({});
 
 watch(

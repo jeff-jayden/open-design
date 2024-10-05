@@ -1,5 +1,5 @@
 import { VNode } from 'vue';
-import { tooltipProps } from '../../tooltip';
+import { ITooltipProps } from '@open-design/components/tooltip';
 
 export type DropDownType = 'primary' | 'success' | 'warning' | 'danger' | 'info';
 
@@ -10,7 +10,7 @@ export interface MenuOption {
   divided?: boolean;
 }
 
-export interface DropdownProps extends tooltipProps {
+export interface DropdownProps extends ITooltipProps {
   menuOptions?: MenuOption[];
   hideAfterClick?: boolean;
   splitButton?: boolean;
