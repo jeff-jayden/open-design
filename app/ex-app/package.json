@@ -14,6 +14,13 @@
     "vue": "^3.4.29"
   },
   "devDependencies": {
+    "postcss-color-mix": "^1.1.0",
+    "postcss-each": "^1.1.0",
+    "postcss-each-variables": "^0.3.0",
+    "postcss-for": "^2.1.1",
+    "postcss-import": "^16.1.0",
+    "postcss-nested": "^6.2.0",
+    "postcss": "^8.4.47",
     "@open-design/components": "workspace:*",
     "@tsconfig/node20": "^20.1.4",
     "@types/node": "^20.14.5",
