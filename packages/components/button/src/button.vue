@@ -42,7 +42,7 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import { Loading } from '@element-plus/icons-vue';
-import OpenIcon from '../../icon';
+import OpenIcon from '@open-design/components/icon';
 import type { IProps } from './types';
 
 defineOptions({
@@ -61,5 +61,3 @@ defineExpose({
   ref: _ref
 });
 </script>
-
-<style></style>

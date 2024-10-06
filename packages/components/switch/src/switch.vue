@@ -42,7 +42,7 @@ const props = withDefaults(defineProps<ISwitchProps>(), {
   inactiveValue: false
 });
 const emits = defineEmits<ISwitchEmits>();
-const input = ref<HTMLInputElement>(null);
+const input = ref<HTMLInputElement>();
 // 实际值
 const actualValue = ref(props.modelValue);
 
