@@ -1,3 +1,5 @@
+@use "./vars" as *;
+
 .open-switch {
     --open-switch-on-color: var(--open-color-primary);
     --open-switch-off-color: var(--open-border-color);

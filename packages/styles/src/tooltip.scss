@@ -1,3 +1,5 @@
+@use "./vars" as *;
+
 .open-tooltip {
     --open-popover-bg-color: var(--open-bg-color-overlay);
     --open-popover-bg-color-dark: var(--open-color-black);

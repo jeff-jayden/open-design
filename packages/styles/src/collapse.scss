@@ -1,3 +1,5 @@
+@use "./vars" as *;
+
 .open-collapse {
     --open-collapse-border-color: var(--open-border-color-light);
     --open-collapse-header-height: 48px;

@@ -1,3 +1,5 @@
+@use "./vars" as *;
+
 .open-input {
     --open-input-bg-color: var(--open-color-white);
     --open-fill-color-blank: var(--open-color-white);

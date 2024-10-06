@@ -1,3 +1,5 @@
+@use "./vars" as *;
+
 .open-select {
     --open-select-item-hover-bg-color: var(--open-fill-color-light);
     --open-select-item-font-size: var(--open-font-size-base);
