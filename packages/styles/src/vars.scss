@@ -1,22 +1,24 @@
+@use 'sass:math';
+
 :root {
   /* colors */
   --open-color-white: #ffffff;
   --open-color-black: #000000;
-  --colors: (
+  $colors: (
     primary: #409eff,
     success: #67c23a,
     warning: #e6a23c,
     danger: #f56c6c,
-    info: #909399,
+    info: #909399
   );
 
-  @each $val, $color in var(--colors) {
-    --open-color-$(val): $(color);
-    @for $i from 3 to 9 by 2 {
-      --open-color-$(val)-light-$(i): mix(#fff, $(color), .$(i))
+  @each $key, $color in $colors {
+    --open-color-#{$key}: #{$color};
+    @for $i from 1 through 9 {
+      $percentage: math.div($i, 10);
+      --open-color-#{$key}-light-#{$i}: mix(#fff, #{$color}, #{$percentage});
     }
-    --open-color-$(val)-light-8: mix(#fff, $(color), .8);
-    --open-color-$(val)-dark-2: mix(#000, $(color), .2);
+    --open-color-#{$key}-dark-2: mix(#000, #{$color}, 0.2);
   }
 
   --open-bg-color: #ffffff;
@@ -58,7 +60,8 @@
   --open-font-size-base: 14px;
   --open-font-size-small: 13px;
   --open-font-size-extra-small: 12px;
-  --open-font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "\5fae\8f6f\96c5\9ed1", Arial, sans-serif;
+  --open-font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB',
+    'Microsoft YaHei', '\5fae\8f6f\96c5\9ed1', Arial, sans-serif;
   --open-font-weight-primary: 500;
 
   /*disabled*/
@@ -67,10 +70,10 @@
   --open-disabled-border-color: var(--open-border-color-light);
 
   /*animation*/
-  --open-transition-duration: .1s;
-  --open-transition-duration-fast: .2s;
-  --open-transition-box-shadow: .2s;
+  --open-transition-duration: 0.1s;
+  --open-transition-duration-fast: 0.2s;
+  --open-transition-box-shadow: 0.2s;
 
   /*box-shadow*/
-  --open-box-shadow-color: rgba(228, 231, 237)
+  --open-box-shadow-color: rgba(228, 231, 237);
 }

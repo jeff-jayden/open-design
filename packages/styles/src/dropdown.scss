@@ -1,3 +1,5 @@
+@use "./vars" as *;
+
 .open-dropdown .open-dropdown__menu {
     --open-dropdown-menuItem-hover-fill: var(--open-color-primary-light-9);
     --open-dropdown-menuItem-hover-color: var(--open-color-primary);

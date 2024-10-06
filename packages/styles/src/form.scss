@@ -1,3 +1,5 @@
+@use "./vars" as *;
+
 .open-form {
     &.is-required {
         .open-form-label:before {
