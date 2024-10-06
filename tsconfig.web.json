@@ -7,7 +7,7 @@
     "types": ["unplugin-vue-macros/macros-global"],
     "skipLibCheck": true
   },
-  "include": ["packages", "typings/*"],
+  "include": ["packages", "typings/*.ts"],
   "exclude": [
     "node_modules",
     "**/dist",
