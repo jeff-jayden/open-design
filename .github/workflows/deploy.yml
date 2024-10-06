@@ -26,8 +26,8 @@ jobs:
           cache: npm # 或 pnpm / yarn
       - name: Setup Pages
         uses: actions/configure-pages@v4
-      - name: Run npm ci
-        run: npm ci # 或 pnpm install / yarn install / bun install
+      - name: Run npm i
+        run: npm i # 或 pnpm install / yarn install / bun install
       - name: Build with VitePress
         run: |
           npm run docs:build
