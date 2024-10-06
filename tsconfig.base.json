@@ -7,13 +7,16 @@
     "sourceMap": false,
     "moduleResolution": "node",
     "allowJs": false,
+    "strict": true,
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "removeComments": false,
-    "types": ["unplugin-vue-macros/macros-global","vue/global"],
+    "rootDir": ".",
+    "types": [],
     "paths": {
-      "@open-design/*": ["packages/*"]
+      "@open-design/*": ["packages/*"],
+      "open-design": ["packages/open-design"]
     },
-    "preserveSymlinks": false
+    "preserveSymlinks": true
   }
 }

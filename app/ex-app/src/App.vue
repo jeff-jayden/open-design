@@ -1,6 +1,5 @@
 <template>
-  <OpenButton type="success">提交</OpenButton>
-  aaaaaa
+  <OpenButton type="success" plain>提交</OpenButton>
 </template>
 
 <script setup lang="ts">
