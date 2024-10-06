@@ -8,7 +8,7 @@
     "prepublishOnly": "npm run build",
     "dev": "vite",
     "dev:app": "pnpm -C app/ex-app dev",
-    "build": "run-p build:cjs build:es build:umd build:theme ",
+    "build": "pnpm run build:cjs && pnpm run build:es && pnpm run build:umd && pnpm run build:theme",
     "build:cjs": "vite build --config vite.config.cjs.ts",
     "build:es": "vite build --config vite.config.es.mts",
     "build:umd": "vite build --config vite.config.umd.ts",

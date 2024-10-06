@@ -14,7 +14,7 @@ export default defineConfig({
   build: {
     outDir: 'dist/umd',
     lib: {
-      entry: resolve(__dirname, 'packages/components/index.ts'),
+      entry: resolve(__dirname, 'packages/index.ts'),
       name: 'open-design',
       fileName: 'open-design',
       formats: ['umd']
