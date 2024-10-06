@@ -3,8 +3,11 @@
 <h5 align="center">助力开发者「更灵活」地搭建出「更美」的产品</h5>
 
 <div align="center">
+
 ![last](https://img.shields.io/github/last-commit/jeff-jayden/open-design)
+
 ![language](https://img.shields.io/github/languages/top/jeff-jayden/open-design)
+
 ![download](https://img.shields.io/npm/dw/%40jeff-jayden%2Fopen-design)
 </div>
 
