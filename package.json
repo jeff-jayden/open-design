@@ -19,7 +19,8 @@
     "docs:preview": "vitepress preview docs --port 8080",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
     "lint-staged": "lint-staged",
-    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s"
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
+    "relese": "npx standard-version --release-as patch"
   },
   "lint-staged": {
     "src/**/*.{ts,js,json,vue}": [
