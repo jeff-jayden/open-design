@@ -13,5 +13,5 @@ FormItem.install = (app: App) => {
 export default Form;
 export { Form, FormItem };
 
-export * from './src/constant'
+export * from './src/constant';
 export * from './src/types';

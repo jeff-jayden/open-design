@@ -17,9 +17,6 @@ importers:
       '@popperjs/core':
         specifier: ^2.11.8
         version: 2.11.8
-      '@qinloong/snow-sky':
-        specifier: ^1.0.0
-        version: 1.0.0(vue@3.5.11(typescript@4.7.4))
       '@vue/runtime-core':
         specifier: ^3.5.11
         version: 3.5.11
@@ -32,9 +29,6 @@ importers:
       async-validator:
         specifier: ^4.2.5
         version: 4.2.5
-      axios:
-        specifier: ^1.3.4
-        version: 1.7.7
       element-plus:
         specifier: ^2.7.1
         version: 2.8.4(vue@3.5.11(typescript@4.7.4))
@@ -864,24 +858,6 @@ packages:
   '@flypeng/tool@5.5.4':
     resolution: {integrity: sha512-lf8DY5DraZbomVZqwMBs9RWNoPO2K3Oo3ZFDyWDasZt6avCqFQVrFp3U61bibTpkQyFjzE5h3CfTN9h1bUB8EQ==}
 
-  '@fortawesome/fontawesome-common-types@6.6.0':
-    resolution: {integrity: sha512-xyX0X9mc0kyz9plIyryrRbl7ngsA9jz77mCZJsUkLl+ZKs0KWObgaEBoSgQiYWAsSmjz/yjl0F++Got0Mdp4Rw==}
-    engines: {node: '>=6'}
-
-  '@fortawesome/fontawesome-svg-core@6.6.0':
-    resolution: {integrity: sha512-KHwPkCk6oRT4HADE7smhfsKudt9N/9lm6EJ5BVg0tD1yPA5hht837fB87F8pn15D8JfTqQOjhKTktwmLMiD7Kg==}
-    engines: {node: '>=6'}
-
-  '@fortawesome/free-solid-svg-icons@6.6.0':
-    resolution: {integrity: sha512-IYv/2skhEDFc2WGUcqvFJkeK39Q+HyPf5GHUrT/l2pKbtgEIv1al1TKd6qStR5OIwQdN1GZP54ci3y4mroJWjA==}
-    engines: {node: '>=6'}
-
-  '@fortawesome/vue-fontawesome@3.0.8':
-    resolution: {integrity: sha512-yyHHAj4G8pQIDfaIsMvQpwKMboIZtcHTUvPqXjOHyldh1O1vZfH4W03VDPv5RvI9P6DLTzJQlmVgj9wCf7c2Fw==}
-    peerDependencies:
-      '@fortawesome/fontawesome-svg-core': ~1 || ~6
-      vue: '>= 3.0.0 < 4'
-
   '@humanwhocodes/config-array@0.13.0':
     resolution: {integrity: sha512-DZLEEqFWQFiyK6h5YIeynKx7JlvCYWL0cImfSRXZ9l4Sg2efkFGTuFf6vzXjK1cq6IYkU+Eg/JizXw+TD2vRNw==}
     engines: {node: '>=10.10.0'}
@@ -961,11 +937,6 @@ packages:
 
   '@popperjs/core@2.11.8':
     resolution: {integrity: sha512-P1st0aksCrn9sGZhp8GMYwBnQsbvAWsZAX44oXNNvLHGqAOcoVxmjZiohstwQ7SqKnbR47akdNi+uleWD8+g6A==}
-
-  '@qinloong/snow-sky@1.0.0':
-    resolution: {integrity: sha512-fH/zEvHSnwIqHIu+pCs0153iUlD7rRKsCytuHTY1o/Vqs3c1COzzWrAsQ+V+E67ryj1IcSm2nFt7pFCsLTcWxQ==}
-    peerDependencies:
-      vue: ^3.2.45
 
   '@rollup/plugin-json@6.1.0':
     resolution: {integrity: sha512-EGI2te5ENk1coGeADSIwZ7G2Q8CJS2sF120T7jLw4xFw9n7wIOXHo+kIYRAoVpJAN+kmqZSoO3Fp4JtoNF4ReA==}
@@ -5916,21 +5887,6 @@ snapshots:
     dependencies:
       dayjs: 1.11.13
 
-  '@fortawesome/fontawesome-common-types@6.6.0': {}
-
-  '@fortawesome/fontawesome-svg-core@6.6.0':
-    dependencies:
-      '@fortawesome/fontawesome-common-types': 6.6.0
-
-  '@fortawesome/free-solid-svg-icons@6.6.0':
-    dependencies:
-      '@fortawesome/fontawesome-common-types': 6.6.0
-
-  '@fortawesome/vue-fontawesome@3.0.8(@fortawesome/fontawesome-svg-core@6.6.0)(vue@3.5.11(typescript@4.7.4))':
-    dependencies:
-      '@fortawesome/fontawesome-svg-core': 6.6.0
-      vue: 3.5.11(typescript@4.7.4)
-
   '@humanwhocodes/config-array@0.13.0':
     dependencies:
       '@humanwhocodes/object-schema': 2.0.3
@@ -6030,19 +5986,6 @@ snapshots:
   '@polka/url@1.0.0-next.28': {}
 
   '@popperjs/core@2.11.8': {}
-
-  '@qinloong/snow-sky@1.0.0(vue@3.5.11(typescript@4.7.4))':
-    dependencies:
-      '@fortawesome/fontawesome-svg-core': 6.6.0
-      '@fortawesome/free-solid-svg-icons': 6.6.0
-      '@fortawesome/vue-fontawesome': 3.0.8(@fortawesome/fontawesome-svg-core@6.6.0)(vue@3.5.11(typescript@4.7.4))
-      '@popperjs/core': 2.11.8
-      async-validator: 4.2.5
-      axios: 1.7.7
-      lodash-es: 4.17.21
-      vue: 3.5.11(typescript@4.7.4)
-    transitivePeerDependencies:
-      - debug
 
   '@rollup/plugin-json@6.1.0(rollup@3.29.5)':
     dependencies:
@@ -7157,6 +7100,7 @@ snapshots:
       proxy-from-env: 1.1.0
     transitivePeerDependencies:
       - debug
+    optional: true
 
   axobject-query@4.1.0: {}
 
@@ -8336,7 +8280,8 @@ snapshots:
     dependencies:
       tabbable: 6.2.0
 
-  follow-redirects@1.15.9: {}
+  follow-redirects@1.15.9:
+    optional: true
 
   for-each@0.3.3:
     dependencies:
@@ -9880,7 +9825,8 @@ snapshots:
 
   proto-list@1.2.4: {}
 
-  proxy-from-env@1.1.0: {}
+  proxy-from-env@1.1.0:
+    optional: true
 
   psl@1.9.0: {}
 
