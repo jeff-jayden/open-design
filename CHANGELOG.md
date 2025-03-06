@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.13](https://github.com/jeff-jayden/open-design/compare/v1.0.11...v1.0.13) (2025-03-06)
+
+
+### Features
+
+* 再更改一次信息 ([2d5e2fb](https://github.com/jeff-jayden/open-design/commit/2d5e2fb0c091d8648d1e513495428184fca7f7c3))
+* 提交更改的信息 ([eff9bf4](https://github.com/jeff-jayden/open-design/commit/eff9bf4d6ab4bb6e78b92bfffdaee3ab71aa0c35))
+* 添加standard-version原子化提交，自动合并版本号升级、生成 Changelog、创建 Git Tag 到 单个 Commit ([5a3893c](https://github.com/jeff-jayden/open-design/commit/5a3893c2903023a42adf4ae67cdabee7ced0224e))
+
 ### [1.0.12](https://github.com/jeff-jayden/open-design/compare/v1.0.11...v1.0.12) (2025-03-06)
 
 
