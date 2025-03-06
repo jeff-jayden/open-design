@@ -1,0 +1,1 @@
+import{d as r,h as t,c as a,r as l,K as c,o as p}from"./framework.CZn7xbYL.js";const d=r({name:"OpenIcon",inheritAttrs:!1,__name:"icon",props:{size:{},color:{},loading:{type:Boolean}},setup(s){const e=s,n=t(()=>e.color?{color:e.color}:{});return(o,i)=>(p(),a("i",c({class:["open-icon",{loading:o.loading}],style:n.value},o.$attrs),[l(o.$slots,"default")],16))}});export{d as _};
