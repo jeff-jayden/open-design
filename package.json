@@ -1,6 +1,6 @@
 {
   "name": "@jeff-jayden/open-design",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "type": "module",
   "scripts": {
     "preview": "vite preview",

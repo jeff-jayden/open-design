@@ -1,3 +1,15 @@
+# Changelog
+
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+### [1.0.12](https://github.com/jeff-jayden/open-design/compare/v1.0.11...v1.0.12) (2025-03-06)
+
+
+### Features
+
+* 再更改一次信息 ([2d5e2fb](https://github.com/jeff-jayden/open-design/commit/2d5e2fb0c091d8648d1e513495428184fca7f7c3))
+* 提交更改的信息 ([eff9bf4](https://github.com/jeff-jayden/open-design/commit/eff9bf4d6ab4bb6e78b92bfffdaee3ab71aa0c35))
+
 ## [1.0.11](https://github.com/jeff-jayden/open-design/compare/v1.0.10...v1.0.11) (2025-03-06)
 
 
@@ -127,6 +139,3 @@
 * 部署open-design上github ([92297b5](https://github.com/jeff-jayden/open-design/commit/92297b576c4ea6a9fd276f120e3a095e06152a69))
 * 部署open-design上github ([d7bd3e5](https://github.com/jeff-jayden/open-design/commit/d7bd3e5be32c7db1d376739b8e827a58ce3def5f))
 * 部署文件npm i ([5ac9287](https://github.com/jeff-jayden/open-design/commit/5ac92872c554148f3d1fd1fe00c24ccc0ef5b6b7))
-
-
-
