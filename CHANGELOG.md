@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.14](https://github.com/jeff-jayden/open-design/compare/v1.0.13...v1.0.14) (2025-03-06)
+
+
+### Bug Fixes
+
+* 修改个单词 ([e5a7635](https://github.com/jeff-jayden/open-design/commit/e5a763580bf2cadf51262300c935d5033eceb4c1))
+
 ### [1.0.13](https://github.com/jeff-jayden/open-design/compare/v1.0.11...v1.0.13) (2025-03-06)
 
 
