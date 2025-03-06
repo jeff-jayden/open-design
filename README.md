@@ -22,4 +22,9 @@
 
 步骤
 1. 制定提交规范eslint
-2. 配置文件详细(工作流，ts, vite) -->
+2. 配置文件详细(工作流，ts, vite)
+3. 发版使用命令
+    npm version major  # 主版本号+1（破坏性变更）
+    npm version minor  # 次版本号+1（新功能）
+    npm version patch  # 修订号+1（问题修复）
+-->
