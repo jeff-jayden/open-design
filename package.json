@@ -1,6 +1,7 @@
 {
   "private": true,
   "packageManager": "pnpm@8.11.0",
+  "version": "1.0.14",
   "type": "module",
   "scripts": {
     "preview": "vite preview",
@@ -98,6 +99,5 @@
   "engines": {
     "node": ">= 18",
     "pnpm": ">= 8"
-  },
-  "version": null
+  }
 }
