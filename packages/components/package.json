@@ -1,0 +1,7 @@
+{
+  "name": "@open-design/components",
+  "version": "1.0.0",
+  "description": "all components",
+  "main": "index.ts",
+  "module": "index.ts"
+}

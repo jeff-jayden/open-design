@@ -1,0 +1,27 @@
+{
+  "name": "@open-design/styles",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "index.css",
+  "style": "index.css",
+  "scripts": {
+    "build": "gulp --require @esbuild-kit/cjs-loader",
+    "list": "gulp --tasks"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "@types/gulp-sass": "^5.0.0",
+    "gulp-sass": "^5.1.0",
+    "@esbuild-kit/cjs-loader": "^2.4.4",
+    "@types/gulp": "^4.0.17",
+    "@types/gulp-postcss": "^8.0.6",
+    "gulp": "^4.0.2",
+    "gulp-postcss": "^10.0.0",
+    "postcss-color-mix": "^1.1.0",
+    "postcss-each": "^1.1.0",
+    "postcss-each-variables": "^0.3.0",
+    "postcss-for": "^2.1.1",
+    "postcss-import": "^16.1.0",
+    "postcss-nested": "^6.2.0"
+  }
+}

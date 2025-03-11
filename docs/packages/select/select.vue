@@ -9,9 +9,9 @@
 </template>
 
 <script setup lang="ts">
+import OpenSelect from '@open-design/components/select';
 import { ref } from 'vue';
 import { ArrowDown } from '@element-plus/icons-vue';
-import OpenSelect from '@/components/select';
 
 const selectValue = ref('');
 

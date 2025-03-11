@@ -3,8 +3,8 @@
 </template>
 
 <script setup lang="ts">
+import OpenInput from '@open-design/components/input';
 import { ref } from 'vue';
-import OpenInput from '@/components/input';
 
 const input = ref('');
 </script>

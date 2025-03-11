@@ -16,8 +16,8 @@
 </template>
 
 <script setup lang="ts">
+import OpenCollapse, { CollapseItem as OpenCollapseItem } from '@open-design/components/collapse';
 import { ref } from 'vue';
-import OpenCollapse, { CollapseItem as OpenCollapseItem } from '@/components/collapse';
 
 const activeNames = ref(['1']);
 const handleChange = (val: string[]) => {

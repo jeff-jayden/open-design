@@ -4,8 +4,8 @@
 </template>
 
 <script setup lang="ts">
+import OpenSwitch from '@open-design/components/switch';
 import { ref } from 'vue';
-import OpenSwitch from '@/components/switch';
 
 const value1 = ref(true);
 </script>

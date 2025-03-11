@@ -1,0 +1,79 @@
+@use 'sass:math';
+
+:root {
+  /* colors */
+  --open-color-white: #ffffff;
+  --open-color-black: #000000;
+  $colors: (
+    primary: #409eff,
+    success: #67c23a,
+    warning: #e6a23c,
+    danger: #f56c6c,
+    info: #909399
+  );
+
+  @each $key, $color in $colors {
+    --open-color-#{$key}: #{$color};
+    @for $i from 1 through 9 {
+      $percentage: math.div($i, 10);
+      --open-color-#{$key}-light-#{$i}: mix(#fff, #{$color}, #{$percentage});
+    }
+    --open-color-#{$key}-dark-2: mix(#000, #{$color}, 0.2);
+  }
+
+  --open-bg-color: #ffffff;
+  --open-bg-color-page: #f2f3f5;
+  --open-bg-color-overlay: #ffffff;
+  --open-text-color-primary: #303133;
+  --open-text-color-regular: #606266;
+  --open-text-color-secondary: #909399;
+  --open-text-color-placeholder: #a8abb2;
+  --open-text-color-disabled: #c0c4cc;
+  --open-border-color: #dcdfe6;
+  --open-border-color-light: #e4e7ed;
+  --open-border-color-lighter: #ebeef5;
+  --open-border-color-extra-light: #f2f6fc;
+  --open-border-color-dark: #d4d7de;
+  --open-border-color-darker: #cdd0d6;
+  --open-fill-color: #f0f2f5;
+  --open-fill-color-light: #f5f7fa;
+  --open-fill-color-lighter: #fafafa;
+  --open-fill-color-extra-light: #fafcff;
+  --open-fill-color-dark: #ebedf0;
+  --open-fill-color-darker: #e6e8eb;
+  --open-fill-color-blank: #ffffff;
+
+  /* border */
+  --open-border-width: 1px;
+  --open-border-style: solid;
+  --open-border-color-hover: var(--open-text-color-disabled);
+  --open-border: var(--open-border-width) var(--open-border-style) var(--open-border-color);
+  --open-border-radius-base: 4px;
+  --open-border-radius-small: 2px;
+  --open-border-radius-round: 20px;
+  --open-border-radius-circle: 100%;
+
+  /*font*/
+  --open-font-size-extra-large: 20px;
+  --open-font-size-large: 18px;
+  --open-font-size-medium: 16px;
+  --open-font-size-base: 14px;
+  --open-font-size-small: 13px;
+  --open-font-size-extra-small: 12px;
+  --open-font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB',
+    'Microsoft YaHei', '\5fae\8f6f\96c5\9ed1', Arial, sans-serif;
+  --open-font-weight-primary: 500;
+
+  /*disabled*/
+  --open-disabled-bg-color: var(--open-fill-color-light);
+  --open-disabled-text-color: var(--open-text-color-placeholder);
+  --open-disabled-border-color: var(--open-border-color-light);
+
+  /*animation*/
+  --open-transition-duration: 0.1s;
+  --open-transition-duration-fast: 0.2s;
+  --open-transition-box-shadow: 0.2s;
+
+  /*box-shadow*/
+  --open-box-shadow-color: rgba(228, 231, 237);
+}

@@ -1,0 +1,93 @@
+@use "./vars" as *;
+
+.open-switch {
+    --open-switch-on-color: var(--open-color-primary);
+    --open-switch-off-color: var(--open-border-color);
+    --open-switch-off-border-color: var(--open-border-color);
+    --open-switch-font-size-large: 14px;
+    --open-switch-font-size-default: 14px;
+    --open-switch-font-size-small: 12px;
+    --open-switch-core-height-large: 24px;
+    --open-switch-core-height-default: 20px;
+    --open-switch-core-height-small: 16px;
+    --open-switch-height-large: 40px;
+    --open-switch-height-default: 32px;
+    --open-switch-height-small: 24px;
+    --open-switch-width-default: 40px;
+    --open-switch-core-border-radius: 20px;
+    --open-transition-duration: .3s;
+    --open-border-radius-circle: 100%;
+    --open-switch-button-size-default: 16px;
+}
+
+.open-switch {
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    font-size: var(--open-switch-font-size-default);
+    line-height: var(--open-switch-core-height-default);
+    height: var(--open-switch-height-default);
+    vertical-align: middle;
+
+    .input {
+        position: absolute;
+        width: 0;
+        height: 0;
+        opacity: 0;
+        margin: 0;
+
+        &:focus-visible {
+            & ~ .open-switch__core {
+                outline: 2px solid var(--open-switch-on-color);
+                outline-offset: 1px;
+            }
+        }
+    }
+
+    &.is-disabled {
+        opacity: 0.6;
+    }
+
+    &.is-checked {
+        .open-switch__core {
+            background-color: var(--open-switch-on-color);
+
+            .open-switch-core__action {
+                left: calc(100% - 19px);
+                color: var(--open-switch-on-color);
+            }
+        }
+    }
+
+    .open-switch__core {
+        display: inline-flex;
+        position: relative;
+        align-items: center;
+        min-width: var(--open-switch-width-default);
+        height: var(--open-switch-height-small);
+        border: 1px solid var(--open-switch-off-border-color);
+        outline: none;
+        border-radius: var(--open-switch-core-border-radius);
+        box-sizing: border-box;
+        background: var(--open-switch-off-color);
+        cursor: pointer;
+        transition: border-color var(--open-transition-duration),
+        background-color var(--open-transition-duration);
+
+        .open-switch-core__action {
+            position: absolute;
+            left: 3px;
+            border-radius: var(--open-border-radius-circle);
+            transition: all var(--open-transition-duration);
+            width: var(--open-switch-button-size-default);
+            height: var(--open-switch-button-size-default);
+            background-color: var(--open-bg-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--open-switch-off-color);
+        }
+    }
+
+
+}

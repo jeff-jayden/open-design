@@ -2,77 +2,7 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-### [1.0.14](https://github.com/jeff-jayden/open-design/compare/v1.0.13...v1.0.14) (2025-03-06)
-
-
-### Bug Fixes
-
-* 修改个单词 ([e5a7635](https://github.com/jeff-jayden/open-design/commit/e5a763580bf2cadf51262300c935d5033eceb4c1))
-
-### [1.0.13](https://github.com/jeff-jayden/open-design/compare/v1.0.11...v1.0.13) (2025-03-06)
-
-
-### Features
-
-* 再更改一次信息 ([2d5e2fb](https://github.com/jeff-jayden/open-design/commit/2d5e2fb0c091d8648d1e513495428184fca7f7c3))
-* 提交更改的信息 ([eff9bf4](https://github.com/jeff-jayden/open-design/commit/eff9bf4d6ab4bb6e78b92bfffdaee3ab71aa0c35))
-* 添加standard-version原子化提交，自动合并版本号升级、生成 Changelog、创建 Git Tag 到 单个 Commit ([5a3893c](https://github.com/jeff-jayden/open-design/commit/5a3893c2903023a42adf4ae67cdabee7ced0224e))
-
-### [1.0.12](https://github.com/jeff-jayden/open-design/compare/v1.0.11...v1.0.12) (2025-03-06)
-
-
-### Features
-
-* 再更改一次信息 ([2d5e2fb](https://github.com/jeff-jayden/open-design/commit/2d5e2fb0c091d8648d1e513495428184fca7f7c3))
-* 提交更改的信息 ([eff9bf4](https://github.com/jeff-jayden/open-design/commit/eff9bf4d6ab4bb6e78b92bfffdaee3ab71aa0c35))
-
-## [1.0.11](https://github.com/jeff-jayden/open-design/compare/v1.0.10...v1.0.11) (2025-03-06)
-
-
-### Features
-
-* 再提交一次信息 ([8bb7a63](https://github.com/jeff-jayden/open-design/commit/8bb7a633363eb2433e3fab8ed369c59d5f98cb91))
-* 提交一次信息 ([7859c1c](https://github.com/jeff-jayden/open-design/commit/7859c1cbdff71f1da3520136748220fd2ab2ee6d))
-
-
-
-## [1.0.10](https://github.com/jeff-jayden/open-design/compare/v1.0.9...v1.0.10) (2025-03-06)
-
-
-### Features
-
-* 更新 changelog ([c7b36e7](https://github.com/jeff-jayden/open-design/commit/c7b36e7c728200cc4ef7755a3026b3d44208a862))
-* 更新版本信息 ([2a19c37](https://github.com/jeff-jayden/open-design/commit/2a19c371b0836290467db2fd24097937275c1296))
-
-
-
-## [1.0.9](https://github.com/jeff-jayden/open-design/compare/v1.0.8...v1.0.9) (2025-03-06)
-
-
-### Features
-
-* 取消每次提交更新 changelog ([35fead4](https://github.com/jeff-jayden/open-design/commit/35fead475e0fae58f0d989a7aeae4ce13890e8cc))
-
-
-
-## [1.0.8](https://github.com/jeff-jayden/open-design/compare/v1.0.6...v1.0.8) (2025-03-06)
-
-
-### Features
-
-* test ([1fc5014](https://github.com/jeff-jayden/open-design/commit/1fc50144d535585b51966b519a813419d37aae81))
-* test1 ([4162e63](https://github.com/jeff-jayden/open-design/commit/4162e637e02135932792f8a6bac01677815bb672))
-* 测试 changelog 文件命令 ([1528c5b](https://github.com/jeff-jayden/open-design/commit/1528c5bb8f55af03e480d41be302fc9b9b2bcb18))
-
-
-
-## [1.0.6](https://github.com/jeff-jayden/open-design/compare/58a5822c706365c0c5c6cac6b522f910658f845b...v1.0.6) (2025-03-06)
-
-
-### Bug Fixes
-
-* pk-log文件 ([aff46ac](https://github.com/jeff-jayden/open-design/commit/aff46ac5cc12d82c046bd384a893c1b6dfd12fa2))
-* 修改 changelog 文件命令 ([fb7b11c](https://github.com/jeff-jayden/open-design/commit/fb7b11c640d97010f34d59582beb05eefc584995))
+### 1.0.15 (2025-03-07)
 
 
 ### Features
@@ -96,9 +26,16 @@ All notable changes to this project will be documented in this file. See [standa
 * input组件 ([a1fda52](https://github.com/jeff-jayden/open-design/commit/a1fda524de12ced88d9161bc0fd3ef60ba44f201))
 * input组件基本得功能 ([89aa7e0](https://github.com/jeff-jayden/open-design/commit/89aa7e03df182abb995170d00eea5f2862982506))
 * message组件 ([1ec6cd3](https://github.com/jeff-jayden/open-design/commit/1ec6cd307193d9cde51f978fcc6cd1036426b281))
+* monorepo构建 ([cdd9af5](https://github.com/jeff-jayden/open-design/commit/cdd9af5f8273dd202408ae91eb2a2992089709e2))
+* mr改造 ([be3c397](https://github.com/jeff-jayden/open-design/commit/be3c397f260772b29b1bd19e035ef5e155dd0760))
 * package-lock ([5b99e16](https://github.com/jeff-jayden/open-design/commit/5b99e16bb7095c3a51298aff6f56d80fb0ea60f8))
 * packagelock ([4301878](https://github.com/jeff-jayden/open-design/commit/4301878e3973bb5f9ee7c2ec594a65d6b61aa682))
 * pnpm-lock ([7ddeb1d](https://github.com/jeff-jayden/open-design/commit/7ddeb1dda891a6bdeda20da2283a7e6b52f42ad7))
+* pnpm改造 ([d1681eb](https://github.com/jeff-jayden/open-design/commit/d1681eba4136cf02ce472304dedb2b5a04a053a3))
+* postcss ([c071c85](https://github.com/jeff-jayden/open-design/commit/c071c8561198c150d4c4cede90ba7df11ab41d77))
+* readme ([cce885d](https://github.com/jeff-jayden/open-design/commit/cce885d759297311d702a72f2020eddd17625003))
+* readme ([28ac849](https://github.com/jeff-jayden/open-design/commit/28ac8497b7e880d8d28dd42e397deb8741d48ed1))
+* readme ([4a03865](https://github.com/jeff-jayden/open-design/commit/4a0386521c5cf83fd23acf4182fb719eaac120f1))
 * select placeholder ([7845a7c](https://github.com/jeff-jayden/open-design/commit/7845a7cc1bf45fe35f8a20b647840239bd22fb8b))
 * select Placeholder部分TODO ([90a6fb2](https://github.com/jeff-jayden/open-design/commit/90a6fb237f103f1e65257d56769849835dc1587b))
 * select监听上下键 enter事件 ([3b04147](https://github.com/jeff-jayden/open-design/commit/3b0414739599d25ab6de8299b498dd23c1fcff2d))
@@ -125,15 +62,17 @@ All notable changes to this project will be documented in this file. See [standa
 * 修改文件 ([26ae113](https://github.com/jeff-jayden/open-design/commit/26ae113db2587562cfd168e21ed73295788f4662))
 * 修改文件 ([156dfb0](https://github.com/jeff-jayden/open-design/commit/156dfb019218f2c45f9087d644d9c1ffb646bfe6))
 * 修改文件 ([b50dc93](https://github.com/jeff-jayden/open-design/commit/b50dc934633d9dc806a8761a867e4f6b3d3841e7))
-* 修改文档 ([79561be](https://github.com/jeff-jayden/open-design/commit/79561be53a31d11f8c914e34636d1696ba6ff7c4))
-* 修改文档 ([3f45a17](https://github.com/jeff-jayden/open-design/commit/3f45a17e997129e5705da541e92e901d676da4ec))
 * 修改文档 ([36358ad](https://github.com/jeff-jayden/open-design/commit/36358ad80a5481a6b3c3f50ec2aee324c8380793))
 * 修改部署文件 ([d83b4c4](https://github.com/jeff-jayden/open-design/commit/d83b4c4263eda96c9a7a279543d2e221110c27d2))
 * 修改部署文件 ([412b537](https://github.com/jeff-jayden/open-design/commit/412b537c67ab94ed49f719eb6801c26f2eae84a8))
 * 修改部署文件 ([a231aae](https://github.com/jeff-jayden/open-design/commit/a231aaeaed112c957938e1c96fb4ae4936036f89))
+* 修改配置文件 ([cd36ddd](https://github.com/jeff-jayden/open-design/commit/cd36ddddd70778c6fe76ac51f987e272d6f0532f))
 * 修改配置文件 ([9be5334](https://github.com/jeff-jayden/open-design/commit/9be53345133367c8cb3966abc58720d5ef6db21b))
 * 修改配置文件 ([0b6ffc4](https://github.com/jeff-jayden/open-design/commit/0b6ffc458164cfad908cb94882819b71e31772b2))
+* 分开打包文件和样式 ([c04bcd7](https://github.com/jeff-jayden/open-design/commit/c04bcd7cf2153d257fb46cfabbbf5339de43caa9))
+* 分开打包文件和样式 ([d2dfce7](https://github.com/jeff-jayden/open-design/commit/d2dfce77b7c39a1cc08af91080f59a553e31eed7))
 * 创建select组件 ([1dcd955](https://github.com/jeff-jayden/open-design/commit/1dcd955f09779d775fa81954dee689669d48110f))
+* 删除 pk 中多余的依赖 ([fe41ac1](https://github.com/jeff-jayden/open-design/commit/fe41ac1e3b6eabf1e4b28d6f0e9f6a4532959ff6))
 * 完成input组件 ([6d8f446](https://github.com/jeff-jayden/open-design/commit/6d8f4466e3252464862d712b46366aaf9ecce6d4))
 * 完成select组件 ([acf7e4a](https://github.com/jeff-jayden/open-design/commit/acf7e4aeaa1a3b74e8bfddb0231b9910d7599208))
 * 展示组件到总览页面 ([21a2ded](https://github.com/jeff-jayden/open-design/commit/21a2ded51e6f51d19ba7de6eb7cd6628f588dca9))
@@ -142,16 +81,22 @@ All notable changes to this project will be documented in this file. See [standa
 * 文档站建设 ([f65b8ed](https://github.com/jeff-jayden/open-design/commit/f65b8ed16f067424e40771ecd4578e072c0acdd6))
 * 文档站建设 ([f31c72b](https://github.com/jeff-jayden/open-design/commit/f31c72bf79e8cf4a20e565b1d7ed1fccbd8d640c))
 * 更换图片 ([c224261](https://github.com/jeff-jayden/open-design/commit/c2242618b5abd3b0a9e6807546ce73e34ac71185))
-* 格式化代码 ([975a2a9](https://github.com/jeff-jayden/open-design/commit/975a2a9dd2b29b981bd3dcaab5854efa8be7b99b))
-* 测试 changelog.md ([dd35918](https://github.com/jeff-jayden/open-design/commit/dd35918275f0d4a8bf9503fc1e8d84187eb64fc3))
-* 测试changelog触发时机 ([11b453f](https://github.com/jeff-jayden/open-design/commit/11b453fce8f36fdb84dd824b77a546084c30777d))
-* 测试自动生成changelog.md ([c1dd709](https://github.com/jeff-jayden/open-design/commit/c1dd709fe25f284c947a97f04a996d8cab6b8997))
-* 测试自动生成changelog.md ([225b10d](https://github.com/jeff-jayden/open-design/commit/225b10d92bf65baa5dbea3d152a82383406913f5))
-* 添加 changelog.md ([1d6a0e4](https://github.com/jeff-jayden/open-design/commit/1d6a0e42f52e81b78cf6ebb09e72e6e60a16aab6))
+* 更改内容&格式化 ([0d8904d](https://github.com/jeff-jayden/open-design/commit/0d8904d824bb610dacf3b0fb589b5b2646fa1859))
+* 添加 index package到 dist ([6033c78](https://github.com/jeff-jayden/open-design/commit/6033c780143cea253df9f745ecada2acadd34d15))
+* 添加commitlint ([f6aeb86](https://github.com/jeff-jayden/open-design/commit/f6aeb86dd16b64397191a0ff68b5f1402970e2c7))
+* 添加commitlint ([b4ca0d7](https://github.com/jeff-jayden/open-design/commit/b4ca0d71755902c670a9163ce2db7a9e823736be))
 * 添加package-lock.json文件 ([5e71733](https://github.com/jeff-jayden/open-design/commit/5e7173393142f98f1678d15913795b45be3727a7))
 * 组件页面 ([76f24bd](https://github.com/jeff-jayden/open-design/commit/76f24bd8485752959a51300f19ebc0c168367d6b))
 * 组件页面左边导航栏设置 ([823b02c](https://github.com/jeff-jayden/open-design/commit/823b02cb2beafd9172b5ea67c8ecb137eb1a50a5))
 * 编写dropdown功能 ([ce320d1](https://github.com/jeff-jayden/open-design/commit/ce320d1fe7c3cd2f7ca19204021397ad6d091ed5))
 * 部署open-design上github ([92297b5](https://github.com/jeff-jayden/open-design/commit/92297b576c4ea6a9fd276f120e3a095e06152a69))
 * 部署open-design上github ([d7bd3e5](https://github.com/jeff-jayden/open-design/commit/d7bd3e5be32c7db1d376739b8e827a58ce3def5f))
-* 部署文件npm i ([5ac9287](https://github.com/jeff-jayden/open-design/commit/5ac92872c554148f3d1fd1fe00c24ccc0ef5b6b7))
+
+
+### Bug Fixes
+
+* 修改pkg.json内容 ([f6df473](https://github.com/jeff-jayden/open-design/commit/f6df47353d6884c2cef1469026c587848a5f44e6))
+* 修改pkg.json内容 ([1c3e391](https://github.com/jeff-jayden/open-design/commit/1c3e391f997f3edb058b94706b4ef855d497c5df))
+* 修改pkg.json内容 ([5012a9a](https://github.com/jeff-jayden/open-design/commit/5012a9a66e6788b51243e66ba66a7a56c87f340a))
+* 修改钩子函数内容 ([08575df](https://github.com/jeff-jayden/open-design/commit/08575dfc80f260529a90fed4b4ee6f38eab6250a))
+* 合并冲突 ([917ebc6](https://github.com/jeff-jayden/open-design/commit/917ebc62ac03bd18356fa9ad50a6f25404479bef))

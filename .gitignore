@@ -7,3 +7,4 @@ cache
 vite.config.ts.timestamp-*
 app
 pnpm-lock.yaml
+coverage

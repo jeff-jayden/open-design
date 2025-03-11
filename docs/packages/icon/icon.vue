@@ -13,7 +13,7 @@
 </template>
 
 <script setup>
-import openIcon from '@/components/icon/icon.vue';
+import openIcon from '@open-design/components/icon/icon.vue';
 </script>
 
 <style>

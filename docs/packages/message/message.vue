@@ -6,8 +6,8 @@
 </template>
 
 <script setup lang="ts">
-import createMessage from '@/components/message/methods';
-import OpenButton from '@/components/button';
+import createMessage from '@open-design/components/message';
+import OpenButton from '@open-design/components/button';
 
 const open1 = () => {
   createMessage({

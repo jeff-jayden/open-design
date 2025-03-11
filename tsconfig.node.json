@@ -1,18 +1,14 @@
 {
-  "include": [
-    "vite.config.*",
-    "vitest.config.*",
-    "cypress.config.*",
-    "nightwatch.conf.*",
-    "playwright.config.*"
-  ],
+  "extends": "./tsconfig.base.json",
   "compilerOptions": {
     "composite": true,
-    "noEmit": true,
-    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.node.tsbuildinfo",
-
-    "module": "ESNext",
-    "moduleResolution": "Bundler",
-    "types": ["node"]
-  }
+    "lib": ["ESNext"],
+    "types": ["node"],
+    "module": "ES6",
+    "skipLibCheck": true
+  },
+  "include": [
+    "packages/styles/*",
+  ],
+  "exclude": ["**/dist"]
 }

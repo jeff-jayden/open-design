@@ -11,10 +11,11 @@
 </template>
 
 <script setup lang="ts">
-import OpenDropdown from '@/components/dropdown';
-import OpenButton from '@/components/button';
+import OpenDropdown from '@open-design/components/dropdown';
+import OpenButton from '@open-design/components/button';
 import { ArrowDown, ArrowRight } from '@element-plus/icons-vue';
-import OpenIcon from '@/components/icon';
+import OpenIcon from '@open-design/components/icon';
+import eldropdown from 'element-plus';
 
 const menuOptions = [
   {

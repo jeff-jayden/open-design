@@ -36,8 +36,8 @@
   </div>
 </template>
 <script setup>
+import OpenButton from '@open-design/components/button';
 import { Close, Delete, Monitor, Search, Share, Star } from '@element-plus/icons-vue';
-import OpenButton from '@/components/button/button.vue';
 </script>
 <style>
 .block {

@@ -29,7 +29,7 @@
   </div>
 </template>
 <script lang="ts" setup>
-import OpenToolTip from '@/components/tooltip';
-import OpenButton from '@/components/button';
+import OpenToolTip from '@open-design/components/tooltip';
+import OpenButton from '@open-design/components/button';
 </script>
 <style scoped></style>
