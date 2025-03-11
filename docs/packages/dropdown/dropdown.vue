@@ -8,10 +8,6 @@
   <open-dropdown :menu-options="menuOptions" trigger="click" split-button type="primary">
     Dropdown List
   </open-dropdown>
-
-  <el-dropdown :popper-options="menuOptions" trigger="click" split-button type="primary">
-    elDropdown List
-  </el-dropdown>
 </template>
 
 <script setup lang="ts">
