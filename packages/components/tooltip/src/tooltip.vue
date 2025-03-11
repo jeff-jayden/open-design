@@ -26,7 +26,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed, onMounted, reactive, ref, shallowRef, unref, watch } from 'vue';
+import { computed, onMounted, onUnmounted, reactive, ref, shallowRef, unref, watch } from 'vue';
 import { createPopper, Instance } from '@popperjs/core';
 import type { ITooltipEmits, ITooltipInstance, ITooltipProps } from './types';
 import useClickOutside from '../../../hooks/src/useClickOutside';
@@ -154,6 +154,13 @@ onMounted(() => {
       immediate: true
     }
   );
+});
+
+// 组件卸载时清理
+onUnmounted(() => {
+  if (popperInstanceRef.value) {
+    popperInstanceRef.value.destroy();
+  }
 });
 
 watch(
