@@ -1,9 +1,10 @@
 import type { App } from 'vue';
-import Select from './src/select.vue';
+import OpenSelect from './src/select.vue';
 
-Select.install = (app: App) => {
-  app.component(Select.name, Select);
+OpenSelect.install = (app: App) => {
+  app.component(OpenSelect.name, OpenSelect);
 };
 
-export default Select;
+export default OpenSelect;
+export { OpenSelect };
 export * from './src/types';

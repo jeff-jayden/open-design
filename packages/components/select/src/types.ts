@@ -1,4 +1,4 @@
-import { TPlacementType } from '@open-design/components/tooltip'
+import { TPlacementType } from '@open-design/components/tooltip';
 
 export interface SelectOption {
   label: string;
@@ -34,6 +34,7 @@ export interface SelectProps {
   remoteMethod?: Function;
   multiple?: boolean;
   placement?: TPlacementType;
+  trigger?: string;
 }
 
 export interface SelectEmits {

@@ -1,12 +1,10 @@
 <template>
   <div class="open-select" ref="selectRef" @click="toggleDropdown">
     <open-tool-tip
-      :placement="placement"
       ref="tooltipRef"
-      content="open-select"
+      :placement="placement"
       :effect="effect"
-      trigger="click"
-      @click-outside="controlDropdown(false)"
+      :trigger="trigger"
       :popper-options="popperOptions"
     >
       <template #default>
@@ -109,12 +107,13 @@ defineOptions({
 });
 
 const props = withDefaults(defineProps<SelectProps>(), {
-  placement: 'bottom',
+  placement: 'bottom-start',
   disabled: false,
   suffixIcon: ArrowDown,
   options: () => [],
   clearIcon: CircleClose,
-  filterable: false
+  filterable: false,
+  trigger: 'click'
 });
 
 const isFocus = ref(false);
