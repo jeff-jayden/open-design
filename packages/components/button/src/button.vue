@@ -1,20 +1,14 @@
 <template>
   <component
-    is="button"
+    :is="tag"
     ref="_ref"
     class="open-button"
-    :class="{
-      [`open-button--${type}`]: type,
-      [`open-button--${size}`]: size,
-      'is-plain': plain,
-      'is-round': round,
-      'is-circle': circle,
-      'is-disabled': disabled,
-      'is-loading': loading
-    }"
+    v-bind="$attrs"
+    :class="buttonKls"
     :disabled="disabled || loading"
     :autofocus="autofocus"
     :type="nativeType"
+    @click="handleClick"
   >
     <span
       v-if="$slots.default"
@@ -40,7 +34,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+import { computed, ref } from 'vue';
 import { Loading } from '@element-plus/icons-vue';
 import OpenIcon from '@open-design/components/icon';
 import type { IProps } from './types';
@@ -55,7 +49,33 @@ const props = withDefaults(defineProps<IProps>(), {
   tag: 'button'
 });
 
+const emit = defineEmits(['click']);
+
 const _ref = ref<HTMLButtonElement>();
+
+const buttonKls = computed(() => {
+  return {
+    [`open-button--${props.type}`]: props.type,
+    [`open-button--${props.size}`]: props.size,
+    'is-plain': props.plain,
+    'is-round': props.round,
+    'is-circle': props.circle,
+    'is-disabled': props.disabled,
+    'is-loading': props.loading
+  };
+});
+
+const handleClick = (e: MouseEvent) => {
+  if (props.disabled || props.loading) {
+    e.stopPropagation();
+    return;
+  }
+  // TODO
+  // if (props.nativeType === 'reset') {
+  //   form?.resetFields()
+  // }
+  emit('click', e);
+};
 
 defineExpose({
   ref: _ref
