@@ -2,6 +2,96 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.16](https://github.com/jeff-jayden/open-design/compare/v1.0.15...v1.0.16) (2025-03-11)
+
+
+### Features
+
+* app 项目保存 ([0308364](https://github.com/jeff-jayden/open-design/commit/0308364765152427564f25d653ac81bee1e50166))
+* doc ([cf27320](https://github.com/jeff-jayden/open-design/commit/cf27320ff98f5c5d399c70312c20f798c153717a))
+* 合并 dev1.0 ([51758aa](https://github.com/jeff-jayden/open-design/commit/51758aa50095e0ce78cbeb8ec82466ead1bd0c0d))
+* 提交用户信息为错误的邮箱，导致github没有提交记录 ([d11bb28](https://github.com/jeff-jayden/open-design/commit/d11bb28f526cf931919ad5ca9965fd6c8d0f9248))
+
+
+### Bug Fixes
+
+* 修复 button 组件 focus 状态的样式 ([03f0b7e](https://github.com/jeff-jayden/open-design/commit/03f0b7ee8ab56bb8d807a3127962bea814ce1b85))
+* 修复 dropdown hover状态不显示 popper,以及更改 trigger监听失效 ([cd80ce7](https://github.com/jeff-jayden/open-design/commit/cd80ce74cc0ac9839ba2a34fb9a7ce5ae0c649f4))
+* 修复 select 组件样式问题 ([bd690b2](https://github.com/jeff-jayden/open-design/commit/bd690b2be72857b3d1c7b539b900de88f7a18d82))
+* 修复 tooltip 组件切屏之后 popper 位置偏移 ([e76fad5](https://github.com/jeff-jayden/open-design/commit/e76fad5cb2d593be0f3c5557c696b886cd4a1541))
+* 修复 tooltip,dropdown 组件 popper 位置偏移 ([0341fa6](https://github.com/jeff-jayden/open-design/commit/0341fa6c7fe42b75f3d9bc8be66002a89f055840))
+* 修改部署文件 ([1b04f1b](https://github.com/jeff-jayden/open-design/commit/1b04f1b6d20e02cbb24f640cb469f4f91b582b58))
+* 暂时修改监听部署分支 ([b9755c5](https://github.com/jeff-jayden/open-design/commit/b9755c52a0e02ddbdc5a08509f599c04df14b0cd))
+
+### [1.0.14](https://github.com/jeff-jayden/open-design/compare/v1.0.13...v1.0.14) (2025-03-06)
+
+
+### Bug Fixes
+
+* 修改个单词 ([9bc94cf](https://github.com/jeff-jayden/open-design/commit/9bc94cf37f22b72b7d000c4d63f1bba3cb6d924a))
+
+### [1.0.13](https://github.com/jeff-jayden/open-design/compare/v1.0.11...v1.0.13) (2025-03-06)
+
+
+### Features
+
+* 再更改一次信息 ([b9e7d6a](https://github.com/jeff-jayden/open-design/commit/b9e7d6a3a5640f221d421fb4a09f1b0681441f3d))
+* 提交更改的信息 ([0f1719d](https://github.com/jeff-jayden/open-design/commit/0f1719dd2eab59998a6e84ffa12f7184604f946d))
+* 添加standard-version原子化提交，自动合并版本号升级、生成 Changelog、创建 Git Tag 到 单个 Commit ([22dd309](https://github.com/jeff-jayden/open-design/commit/22dd309e2eba7a72c339ec278550ad138f16ae9e))
+
+### [1.0.11](https://github.com/jeff-jayden/open-design/compare/v1.0.10...v1.0.11) (2025-03-06)
+
+
+### Features
+
+* 再提交一次信息 ([183d0b0](https://github.com/jeff-jayden/open-design/commit/183d0b0ec04fb7abe639c7bf56d823f98d1a3993))
+* 提交一次信息 ([0a441eb](https://github.com/jeff-jayden/open-design/commit/0a441ebdc8f58af5fd0d825414a413a1b4b91a6a))
+
+### [1.0.10](https://github.com/jeff-jayden/open-design/compare/v1.0.9...v1.0.10) (2025-03-06)
+
+
+### Features
+
+* 更新 changelog ([82c33d6](https://github.com/jeff-jayden/open-design/commit/82c33d64823bdefbe9f10530cca96e5008a8bff5))
+* 更新版本信息 ([7943a13](https://github.com/jeff-jayden/open-design/commit/7943a13fee31ddf8efa11ba7e7a026d99152c6c2))
+
+### [1.0.9](https://github.com/jeff-jayden/open-design/compare/v1.0.8...v1.0.9) (2025-03-06)
+
+
+### Features
+
+* 取消每次提交更新 changelog ([8781b1b](https://github.com/jeff-jayden/open-design/commit/8781b1bd6ef8a61c416d0f3889614c75cd88887a))
+
+### [1.0.8](https://github.com/jeff-jayden/open-design/compare/v1.0.6...v1.0.8) (2025-03-06)
+
+
+### Features
+
+* test ([80f2f07](https://github.com/jeff-jayden/open-design/commit/80f2f07fbd542a2f1ff700ef76351a80aed75c18))
+* test1 ([1f2361f](https://github.com/jeff-jayden/open-design/commit/1f2361f68f2caa11d9d5bdd1df630abc336130d1))
+* 测试 changelog 文件命令 ([07c4851](https://github.com/jeff-jayden/open-design/commit/07c4851faabb2ba8a89219631301e52c1ce60886))
+
+### [1.0.6](https://github.com/jeff-jayden/open-design/compare/e10cccab2bba0cc443d2c38c16b0b6c9a3aa342f...v1.0.6) (2025-03-06)
+
+
+### Features
+
+* 修改文档 ([9d80efb](https://github.com/jeff-jayden/open-design/commit/9d80efb1d0bc1e8471d08375dc89fa3c5f55e8fc))
+* 修改文档 ([e10ccca](https://github.com/jeff-jayden/open-design/commit/e10cccab2bba0cc443d2c38c16b0b6c9a3aa342f))
+* 格式化代码 ([6e53079](https://github.com/jeff-jayden/open-design/commit/6e5307963b365bc67ceda4ab577b2251346fc5be))
+* 测试 changelog.md ([aab7aa1](https://github.com/jeff-jayden/open-design/commit/aab7aa177a648afae36bd2a3baef6f412a1d9a28))
+* 测试changelog触发时机 ([b5a395d](https://github.com/jeff-jayden/open-design/commit/b5a395d942315313d2c68b490b5987198cdf621f))
+* 测试自动生成changelog.md ([f00e8ef](https://github.com/jeff-jayden/open-design/commit/f00e8efbc5e203463e544aeded8e5c899cfcfeb3))
+* 测试自动生成changelog.md ([a42507f](https://github.com/jeff-jayden/open-design/commit/a42507f0e0a833b8e763028c902270da51dbcfec))
+* 添加 changelog.md ([fcfa215](https://github.com/jeff-jayden/open-design/commit/fcfa21543b7d57bccb70ae5466de87d44d6fa72e))
+* 部署文件npm i ([c19d588](https://github.com/jeff-jayden/open-design/commit/c19d588155300f24991db3c254511bfb30073ed7))
+
+
+### Bug Fixes
+
+* pk-log文件 ([814839a](https://github.com/jeff-jayden/open-design/commit/814839af3ea9757ad31e28e99757b0f628bbf720))
+* 修改 changelog 文件命令 ([25e3fd4](https://github.com/jeff-jayden/open-design/commit/25e3fd4ccbaf0e5a828cc1d3eb83a4c8c7332d6e))
+
 ### 1.0.15 (2025-03-07)
 
 
