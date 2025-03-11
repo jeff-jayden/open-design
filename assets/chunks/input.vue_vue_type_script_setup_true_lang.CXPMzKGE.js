@@ -1,0 +1,1 @@
+import{_ as n}from"./index.DOlBxpG9.js";import{d as t,p as l,o as p,b as s,k as r}from"./framework.DDoBidLl.js";const d=t({__name:"input",setup(u){const e=l("");return(m,o)=>(p(),s(r(n),{modelValue:e.value,"onUpdate:modelValue":o[0]||(o[0]=a=>e.value=a),style:{width:"240px"},placeholder:"Please input"},null,8,["modelValue"]))}});export{d as _};
