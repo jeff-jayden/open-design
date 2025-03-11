@@ -57,7 +57,7 @@
 
 <script setup lang="ts">
 import { ArrowDown } from '@element-plus/icons-vue';
-import { onMounted, reactive, ref, unref } from 'vue';
+import { onMounted, reactive, ref, unref, watch } from 'vue';
 import { OpenButtonGroup, OpenButton } from '@open-design/components/button';
 import OpenToolTip, { ITooltipInstance } from '@open-design/components/tooltip';
 import OpenIcon from '@open-design/components/icon';
@@ -71,7 +71,7 @@ defineOptions({
 const props = defineProps<DropdownProps>();
 const emits = defineEmits<DropdownEmits>();
 const tooltipRef = ref<ITooltipInstance | null>(null);
-const events: Record<string, any> = reactive({});
+let events: Record<string, any> = reactive({});
 const triggerRef = ref();
 const virtualTriggerRef = ref();
 
@@ -85,8 +85,8 @@ const toggleTooltip = () => {
 
 const handleEvent = () => {
   if (props.trigger === 'hover') {
-    events.mouseenter = tooltipRef.value?.show();
-    events.mouseleave = tooltipRef.value?.hide();
+    events.mouseenter = tooltipRef.value?.show;
+    events.mouseleave = tooltipRef.value?.hide;
   } else {
     events.click = toggleTooltip;
   }
@@ -118,6 +118,20 @@ const handleClickItem = (item: MenuOption) => {
     tooltipRef?.value.hide();
   }
 };
+
+watch(
+  () => props.trigger,
+  ([newVal, preVal]: [string, string]) => {
+    if (newVal === preVal) return;
+    events = {};
+    if (newVal === 'hover') {
+      events.mouseenter = tooltipRef.value?.show();
+      events.mouseleave = tooltipRef.value?.hide();
+    } else {
+      events.click = toggleTooltip;
+    }
+  }
+);
 
 defineExpose<DropdownInstance>({
   show: () => tooltipRef.value?.show(),
