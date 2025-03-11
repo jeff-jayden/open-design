@@ -57,10 +57,10 @@ import {
   FormItemRule,
   FormItemValidateState,
   FormValidateFailure
-} from '@/components/form/types';
-import { formContextKey, formItemContextKey } from '@/components/form/constant';
-import { ensureArray, getProp } from '@/util';
-import { Arrayable } from '@/types';
+} from '@open-design/components/form';
+import { formContextKey, formItemContextKey } from '@open-design/components/form';
+import { ensureArray, getProp } from '@open-design/utils';
+import { Arrayable } from '@open-design/utils';
 
 defineOptions({
   name: 'OpenFormItem'

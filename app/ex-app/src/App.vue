@@ -11,10 +11,14 @@
       </el-dropdown-menu>
     </template>
   </el-dropdown>
+
+  <open-drop-down :menuOptions="menuOptions" split-button type="primary" trigger="hover"
+    >openDropDown</open-drop-down
+  >
 </template>
 
 <script setup lang="ts">
-import { OpenButton } from '@open-design/components/button';
+import { OpenButton, OpenDropDown } from '@open-design/components';
 
 const menuOptions = [
   {
