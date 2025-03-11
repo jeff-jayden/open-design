@@ -1,6 +1,6 @@
 import './assets/main.css';
 
-import '@open-design/styles/dist/index.css';
+import '@open-design/styles/src/index.scss';
 import { createApp } from 'vue';
 import ElementPlus from 'element-plus';
 import App from './App.vue';
