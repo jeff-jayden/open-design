@@ -23,6 +23,8 @@ export interface ITooltipProps {
   popperOptions?: Partial<Options>;
   transitionName?: string;
   manual?: boolean;
+  virtualRef?: HTMLElement;
+  virtualTriggering?: boolean;
 }
 
 export interface ITooltipEmits {
@@ -34,4 +36,5 @@ export interface ITooltipInstance {
   show: () => void;
   hide: () => void;
   isOpen: boolean;
+  updatePopper: () => void;
 }

@@ -47,8 +47,11 @@
 4. 文档站的建设
    1. 语法，md的使用
 
+后续优化重点：
+1. tooltip组件以及所有以 tooltip 为基础的组件
+
 后续添加组件
 1. modal
 2. 分页加表格
 3. form 使用 schema 实现
-4. 
+4. @qinloong/snow-sky

@@ -1,9 +1,10 @@
 import type { App } from 'vue';
-import Dropdown from './src/dropdown.vue';
+import OpenDropDown from './src/DropDown.vue';
 
-Dropdown.install = (app: App) => {
-  app.component(Dropdown.name, Dropdown);
+OpenDropDown.install = (app: App) => {
+  app.component(OpenDropDown.name, OpenDropDown);
 };
 
-export default Dropdown;
+export default OpenDropDown;
+export { OpenDropDown };
 export * from './src/types';

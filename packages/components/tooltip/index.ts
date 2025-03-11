@@ -1,9 +1,10 @@
 import type { App } from 'vue';
-import Tooltip from './src/tooltip.vue';
+import OpenToolTip from './src/tooltip.vue';
 
-Tooltip.install = (app: App) => {
-  app.component(Tooltip.name, Tooltip);
+OpenToolTip.install = (app: App) => {
+  app.component(OpenToolTip.name, OpenToolTip);
 };
 
-export default Tooltip;
+export default OpenToolTip;
+export { OpenToolTip };
 export * from './src/types';

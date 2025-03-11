@@ -12,6 +12,7 @@
     "esModuleInterop": true,
     "removeComments": false,
     "rootDir": ".",
+    "noImplicitAny": true,
     "types": [],
     "paths": {
       "@open-design/*": ["packages/*"],

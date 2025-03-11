@@ -6,6 +6,7 @@
       :placement="placement"
       @visible-change="visibleChange"
       ref="tooltipRef"
+      :virtual-ref="virtualTriggerRef"
     >
       <template #content>
         <ul class="open-dropdown__menu">
@@ -43,6 +44,7 @@
           role="button"
           class="caret-button"
           v-on="events"
+          ref="triggerRef"
         >
           <open-icon>
             <ArrowDown />
@@ -55,7 +57,7 @@
 
 <script setup lang="ts">
 import { ArrowDown } from '@element-plus/icons-vue';
-import { onMounted, reactive, ref, watch } from 'vue';
+import { onMounted, reactive, ref, unref } from 'vue';
 import { OpenButtonGroup, OpenButton } from '@open-design/components/button';
 import OpenToolTip, { ITooltipInstance } from '@open-design/components/tooltip';
 import OpenIcon from '@open-design/components/icon';
@@ -70,25 +72,14 @@ const props = defineProps<DropdownProps>();
 const emits = defineEmits<DropdownEmits>();
 const tooltipRef = ref<ITooltipInstance | null>(null);
 const events: Record<string, any> = reactive({});
-
-watch(
-  () => tooltipRef.value?.isOpen,
-  () => {
-    console.log(tooltipRef.value?.isOpen);
-  },
-  { immediate: true }
-);
-
-const visible = ref(false);
+const triggerRef = ref();
+const virtualTriggerRef = ref();
 
 const toggleTooltip = () => {
-  console.log(`tooltipRef.value?.isOpen${tooltipRef.value?.isOpen}`);
-  if (visible.value) {
+  if (tooltipRef.value?.isOpen) {
     tooltipRef.value?.hide();
-    visible.value = false;
   } else {
     tooltipRef.value?.show();
-    visible.value = true;
   }
 };
 
@@ -100,20 +91,21 @@ const handleEvent = () => {
     events.click = toggleTooltip;
   }
 };
-// TODO 分割线的时候触发tooltip
 
 onMounted(() => {
   handleEvent();
+  // 当使用 splitButton 时，设置改变triggerRef
+  if (props.splitButton) {
+    virtualTriggerRef.value = unref(triggerRef.value.ref);
+  }
 });
 
 // tooltip抛出的事件给外面的组件使用
 const visibleChange = (val: any) => {
-  console.log(`dropVal${val}`);
   emits('visible-change', val);
 };
 
 const handlerMainButtonClick = (event: MouseEvent) => {
-  console.log('dropdown点击了');
   emits('click', event);
 };
 
