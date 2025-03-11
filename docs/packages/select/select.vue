@@ -5,7 +5,6 @@
     v-model="selectValue"
     :suffix-icon="ArrowDown"
     clearable
-    placement="bottom"
   />
 </template>
 

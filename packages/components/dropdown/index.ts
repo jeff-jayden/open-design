@@ -1,5 +1,5 @@
 import type { App } from 'vue';
-import OpenDropDown from './src/DropDown.vue';
+import OpenDropDown from './src/dropdown.vue';
 
 OpenDropDown.install = (app: App) => {
   app.component(OpenDropDown.name, OpenDropDown);

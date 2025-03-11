@@ -25,15 +25,21 @@ jobs:
           fetch-depth: 0 # 如果未启用 lastUpdated，则不需要
       # - uses: pnpm/action-setup@v2 # 如果使用 pnpm，请取消注释
       # - uses: oven-sh/setup-bun@v1 # 如果使用 Bun，请取消注释
+      # 步骤2：安装指定版本 pnpm
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 9.5.0  # 必须与本地生成 pnpm-lock.yaml 的版本一致
       - name: Use Node.js 18
         uses: actions/setup-node@v4
         with:
           node-version: 18
-          cache: npm # 或 pnpm / yarn
+          cache: pnpm
+          cache-dependency-path: pnpm-lock.yaml
       - name: Setup Pages
         uses: actions/configure-pages@v4
-      - name: Run npm ci
-        run: npm ci # 或 pnpm install / yarn install / bun install
+      - name: Run pnpm i
+        run: pnpm i --no-frozen-lockfile # 或 pnpm install / yarn install / bun install
       - name: Build with VitePress
         run: |
           npm run docs:build
