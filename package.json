@@ -53,6 +53,7 @@
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.25.1",
+    "@changesets/cli": "^2.29.8",
     "@open-design/components": "workspace:*",
     "@open-design/constants": "workspace:*",
     "@open-design/hooks": "workspace:*",
