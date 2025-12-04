@@ -1,0 +1,1 @@
+import{a as n}from"./index.DTioZZYF.js";import{d as t,p as l,b as p,o as s,k as r}from"./framework.DIryMXv6.js";const d=t({__name:"input",setup(u){const e=l("");return(m,a)=>(s(),p(r(n),{modelValue:e.value,"onUpdate:modelValue":a[0]||(a[0]=o=>e.value=o),style:{width:"240px"},placeholder:"Please input"},null,8,["modelValue"]))}});export{d as _};
