@@ -1,17 +1,19 @@
-import { describe, expect, test, it } from 'vitest';
 import { mount } from '@vue/test-utils';
 import Button from '../src/button.vue';
 
-describe('测试按钮', () => {
+describe('test of button', () => {
   test('class test', () => {
     const wrapper = mount(Button, {
       props: {
         type: 'primary',
         loading: true
+      },
+      slots: {
+        default: 'Main Content'
       }
     });
     expect(wrapper.classes()).toContain('open-button--primary');
-    expect(wrapper.get('button').text()).toBe('button');
+    expect(wrapper.get('button').text()).toBe('Main Content');
   });
 
   it('nativeType', () => {

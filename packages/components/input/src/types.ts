@@ -1,6 +1,6 @@
 export interface InputProps {
   type?: string;
-  modelValue: string;
+  modelValue?: string;
   minlength?: string | number;
   maxlength?: string | number;
   size?: 'large' | 'small';

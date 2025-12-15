@@ -2,17 +2,17 @@
   <Transition name="fade-up" @enter="updateHeight" @after-leave="destroyComponent">
     <div
       ref="messageRef"
-      :id="id"
       v-show="visible"
-      @mouseenter="clearTimer"
-      @mouseleave="startTimer"
+      :id="id"
+      class="open-message"
       :class="{
         [`open-message--${type}`]: type,
         'is-close': showClose,
         center: center
       }"
       :style="customStyle"
-      class="open-message"
+      @mouseenter="clearTimer"
+      @mouseleave="startTimer"
     >
       <div class="open-message__content">
         <RenderVnode :vNode="message" v-if="message" />
@@ -42,7 +42,7 @@ defineOptions({
   name: 'OpenMessage'
 });
 
-const messageRef = ref<HTMLDivElement>();
+const messageRef = ref();
 const height = ref(0);
 const visible = ref(false);
 
@@ -74,8 +74,6 @@ const lastOffset = computed(() => getLastOffset(props.id));
 // console.log('lastOffset' + JSON.stringify(lastOffset))
 
 const offset = computed(() => getOffsetOrSpace(props.id, props.offset) + lastOffset.value);
-
-console.log(`offset${offset.value} ${lastOffset.value}`);
 
 const { currentZIndex, nextZIndex } = useZIndex();
 

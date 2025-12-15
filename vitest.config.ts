@@ -1,5 +1,4 @@
-/// <reference types="vitest" />
-import { defineConfig } from 'vite';
+import { defineConfig } from 'vitest/config';
 import VueMacros from 'unplugin-vue-macros';
 import vue from '@vitejs/plugin-vue';
 import vueJsx from '@vitejs/plugin-vue-jsx';
@@ -20,6 +19,9 @@ export default defineConfig({
       reporter: ['text', 'json', 'html']
     },
     globals: true,
-    environment: 'jsdom'
+    environment: 'jsdom',
+    include: [
+      'packages/components/*/_test_/*.{test,spec}.ts',
+    ],
   }
 });

@@ -33,7 +33,6 @@ export const createMessage = (props: CreateMessageProps) => {
     zIndex: nextZIndex(),
     onDestory: destory
   };
-  console.log(`newProps${JSON.stringify(newProps)}`);
   const vNode = h(MessageConstructor, newProps);
   render(vNode, container);
   document.body.appendChild(container.firstElementChild!);
@@ -45,9 +44,7 @@ export const createMessage = (props: CreateMessageProps) => {
     props: newProps,
     destory: manualDestroy
   };
-  // console.log('instance' + JSON.stringify(instance))
   instances.push(instance);
-  console.log(`instances.length${instances.length}`);
   return instance;
 };
 

@@ -15,8 +15,8 @@
             <li
               class="open-dropdown__item"
               :class="{ 'is-disabled': item.disabled, 'is-divided': item.divided }"
-              @click="handleClickItem(item)"
               :id="`open-dropdown-${item.key}`"
+              @click="handleClickItem(item)"
             >
               <RenderVnode :v-node="item.label" />
             </li>

@@ -27,9 +27,9 @@
         </span>
         <input
           ref="input"
+          v-model="innerValue"
           class="open-input__inner"
           :placeholder="placeholder"
-          v-model="innerValue"
           :minlength="minlength"
           :maxlength="maxlength"
           :type="showPassword ? (passwordVisible ? 'text' : 'password') : type"
