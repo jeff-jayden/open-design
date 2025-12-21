@@ -8,3 +8,4 @@ export * from './message';
 export * from './tooltip';
 export * from './select';
 export * from './switch';
+export * from './text-ellipsis';

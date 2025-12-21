@@ -1,4 +1,4 @@
-import './assets/main.css';
+import './assets/demo.css';
 
 import '@open-design/styles/src/index.scss';
 import { createApp } from 'vue';
