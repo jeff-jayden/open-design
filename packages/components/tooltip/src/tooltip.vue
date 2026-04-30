@@ -165,7 +165,7 @@ onUnmounted(() => {
 
 watch(
   () => props.manual,
-  (isManual: string) => {
+  (isManual: boolean | undefined) => {
     if (isManual) {
       events = {};
       outerEvents = {};
@@ -178,7 +178,7 @@ watch(
 // 当 click和hover变化时 监听
 watch(
   () => props.trigger,
-  ([newTrigger, oldTrigger]: [string, string]) => {
+  (newTrigger: ITooltipProps['trigger'], oldTrigger: ITooltipProps['trigger']) => {
     if (newTrigger === oldTrigger) return;
     events = {};
     outerEvents = {};

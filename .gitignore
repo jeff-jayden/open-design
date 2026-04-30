@@ -8,3 +8,5 @@ vite.config.ts.timestamp-*
 app
 pnpm-lock.yaml
 coverage
+storybook-static
+.pnpm-store

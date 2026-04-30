@@ -1,0 +1,9 @@
+{
+  "extends": "./tsconfig.web.json",
+  "compilerOptions": {
+    "composite": false,
+    "noEmit": true,
+    "types": ["unplugin-vue-macros/macros-global"]
+  },
+  "include": [".storybook/**/*", "stories/**/*", "packages/**/*", "typings/**/*.ts"]
+}
