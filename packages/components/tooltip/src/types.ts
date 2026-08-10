@@ -1,4 +1,5 @@
 import type { Options } from '@popperjs/core';
+import type { Ref } from 'vue';
 
 export type TPlacementType =
   | 'top'
@@ -35,6 +36,6 @@ export interface ITooltipEmits {
 export interface ITooltipInstance {
   show: () => void;
   hide: () => void;
-  isOpen: boolean;
+  isOpen: Ref<boolean>;
   updatePopper: () => void;
 }
