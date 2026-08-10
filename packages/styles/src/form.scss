@@ -37,27 +37,27 @@
     }
 
     .open-form-content {
-      align-items: center;
       display: flex;
       width: 100%;
+      min-width: 0;
+      position: relative;
+      align-items: center;
       flex-wrap: wrap;
       font-size: 14px;
       line-height: 32px;
-      min-width: 0;
-      position: relative;
 
       .open-input__wrapper {
         width: 450px;
       }
 
       .open-form-error {
-        color: #f56c6c;
-        font-size: 12px;
-        left: 0;
-        line-height: 1;
-        padding-top: 2px;
         position: absolute;
         top: 100%;
+        left: 0;
+        padding-top: 2px;
+        color: #f56c6c;
+        font-size: 12px;
+        line-height: 1;
       }
     }
   }

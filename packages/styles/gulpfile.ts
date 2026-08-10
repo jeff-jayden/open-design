@@ -3,6 +3,7 @@ import { src, dest, parallel, series } from 'gulp';
 import postcss from 'gulp-postcss';
 import each from 'postcss-each';
 import colorMix from 'postcss-color-mix';
+import cssnano from 'cssnano';
 
 import gulpSass from 'gulp-sass';
 import dartSass from 'sass';
@@ -16,7 +17,8 @@ const postcssProcessors = [
     plugins: {
       beforeEach: [colorMix]
     }
-  })
+  }),
+  cssnano({ preset: 'default' })
 ];
 
 export function copyThemeChalkBundle() {

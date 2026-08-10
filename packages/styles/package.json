@@ -17,6 +17,7 @@
     "@types/gulp-postcss": "^8.0.6",
     "gulp": "^4.0.2",
     "gulp-postcss": "^10.0.0",
+    "cssnano": "^8.0.5",
     "postcss-color-mix": "^1.1.0",
     "postcss-each": "^1.1.0",
     "postcss-each-variables": "^0.3.0",

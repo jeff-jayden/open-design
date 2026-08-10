@@ -2,26 +2,14 @@ import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import VueMacros from 'unplugin-vue-macros';
 import { resolve } from 'node:path';
-import dts from 'vite-plugin-dts';
+import { externalDependencies } from './vite.config.shared';
 
 export default defineConfig({
   plugins: [
     VueMacros.vite({
       plugins: {
-        vue: vue({
-          isProduction: true,
-          template: {
-            compilerOptions: {
-              hoistStatic: false,
-              cacheHandlers: false
-            }
-          }
-        })
+        vue: vue({ isProduction: true })
       }
-    }),
-    dts({
-      tsconfigPath: './tsconfig.web.json',
-      outDir: 'dist/types'
     })
   ],
   build: {
@@ -33,6 +21,7 @@ export default defineConfig({
       formats: ['cjs']
     },
     rollupOptions: {
+      external: externalDependencies,
       output: {
         exports: 'named',
         preserveModules: true,

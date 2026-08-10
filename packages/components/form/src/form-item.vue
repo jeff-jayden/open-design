@@ -51,7 +51,6 @@ import {
 import Schema, { RuleItem } from 'async-validator';
 import { clone, isFunction, isString } from 'lodash-es';
 import {
-  FormContext,
   FormItemContext,
   FormItemProps,
   FormItemRule,
@@ -66,14 +65,14 @@ defineOptions({
   name: 'OpenFormItem'
 });
 
-const props = withDefaults(defineProps<FormItemProps>(), {});
+const props = defineProps<FormItemProps>();
 const slots = useSlots();
 const formContext = inject(formContextKey, undefined);
 
 const validateState = ref<FormItemValidateState>('');
 const validateMessage = ref('');
 const formItemRef = ref<HTMLDivElement>(null);
-const initialValue: any = ref();
+let initialValue: any;
 const isResettingField = ref(false);
 
 // 获取校验规则
@@ -99,7 +98,7 @@ const isRequired = computed(() => {
 
 // 获取父表单绑定得model值 字段值
 const fieldValue = computed(() => {
-  console.log(`JSON.stringify(formContext?.model)${JSON.stringify(formContext?.model)}`);
+  // console.log(`JSON.stringify(formContext?.model)${JSON.stringify(formContext?.model)}`);
   const model = formContext?.model;
 
   if (!model || !props.prop) {
@@ -268,7 +267,7 @@ onMounted(() => {
     return;
   }
   formContext?.addField(context);
-  initialValue.value = clone(fieldValue.value);
+  initialValue = clone(fieldValue.value);
 });
 
 onBeforeUnmount(() => {

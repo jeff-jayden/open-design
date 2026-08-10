@@ -2,6 +2,7 @@ import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import VueMacros from 'unplugin-vue-macros';
 import { resolve } from 'node:path';
+import { umdExternalDependencies } from './vite.config.shared';
 
 export default defineConfig({
   plugins: [
@@ -20,11 +21,13 @@ export default defineConfig({
       formats: ['umd']
     },
     rollupOptions: {
-      external: ['vue'],
+      external: umdExternalDependencies,
       output: {
         exports: 'named',
         globals: {
-          vue: 'Vue'
+          vue: 'Vue',
+          'element-plus': 'ElementPlus',
+          '@element-plus/icons-vue': 'ElementPlusIconsVue'
         }
       }
     }

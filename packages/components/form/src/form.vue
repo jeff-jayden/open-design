@@ -44,7 +44,9 @@ const removeField: FormContext['removeField'] = (field) => {
 
 // 过滤字段
 const filterFields = (fields: FormItemContext[], props: Arrayable<FormItemProps>) => {
-  const normalized = ensureArray(props);
+  const normalized = ensureArray(props).map((prop) =>
+    Array.isArray(prop) ? prop.join('.') : prop
+  );
   return normalized.length > 0
     ? fields.filter((field) => field.prop && normalized.includes(field.prop))
     : fields;
@@ -124,8 +126,12 @@ provide(
 
 defineExpose({
   validate,
+  validateField,
   resetFields,
   clearValidate
+  /* scrollToField,
+  fields,
+  getField */
 });
 </script>
 

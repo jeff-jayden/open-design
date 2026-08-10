@@ -3,25 +3,21 @@ import vue from '@vitejs/plugin-vue';
 import VueMacros from 'unplugin-vue-macros';
 import { resolve } from 'node:path';
 import dts from 'vite-plugin-dts';
+import { externalDependencies } from './vite.config.shared';
 
 export default defineConfig({
   plugins: [
     VueMacros.vite({
       plugins: {
-        vue: vue({
-          isProduction: true,
-          template: {
-            compilerOptions: {
-              hoistStatic: false,
-              cacheHandlers: false
-            }
-          }
-        })
+        vue: vue({ isProduction: true })
       }
     }),
     dts({
       tsconfigPath: './tsconfig.web.json',
-      outDir: 'dist/types'
+      entryRoot: 'packages',
+      outDir: ['dist/es', 'dist/types'],
+      copyDtsFiles: true,
+      exclude: ['**/*.{test,spec}.{ts,tsx}', '**/_test_/**']
     })
   ],
   build: {
@@ -32,7 +28,7 @@ export default defineConfig({
       formats: ['es']
     },
     rollupOptions: {
-      external: ['vue', 'async-validator', '@popperjs/core', 'axios'],
+      external: externalDependencies,
       output: {
         dir: 'dist/es',
         preserveModules: true,
